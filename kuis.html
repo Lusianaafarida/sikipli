@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuis Level 1 - Evaluasi - JAVANESIA</title>
+  <meta name="description" content="Pengerjaan Kuis Interaktif Level 1 Pemula Budaya Jawa di Javanesia.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/icons/gunungan.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- @component:navbar:start -->
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="index.html" class="brand-logo" id="nav-brand-logo">
+      <img src="assets/icons/logo.png" alt="logo-javanesia" class="brand-icon">
+      <div class="brand-text-group">
+        <span class="brand-title">JAVANESIA</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu" id="nav-menu-list">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link" data-nav="beranda" id="nav-link-beranda">Beranda</a>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link" data-nav="materi" id="nav-link-materi">
+          Materi <span class="nav-link-dropdown-arrow">⌵</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="bahasa-jawa.html" class="dropdown-item" data-nav="bahasa-jawa" id="dropdown-bahasa-jawa">
+            <span class="dropdown-icon">💬</span> Bahasa Jawa
+          </a>
+          <a href="cerita-rakyat.html" class="dropdown-item" data-nav="cerita-rakyat" id="dropdown-cerita-rakyat">
+            <span class="dropdown-icon">📖</span> Cerita Rakyat
+          </a>
+          <a href="aksara-jawa.html" class="dropdown-item" data-nav="aksara-jawa" id="dropdown-aksara-jawa">
+            <span class="dropdown-icon">ꦤ</span> Aksara Jawa
+          </a>
+          <a href="wayang-kulit.html" class="dropdown-item" data-nav="wayang-kulit" id="dropdown-wayang-kulit">
+            <span class="dropdown-icon">🎭</span> Wayang Kulit
+          </a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="evaluasi.html" class="nav-link active" data-nav="evaluasi" id="nav-link-evaluasi">Evaluasi</a>
+      </div>
+      <div class="nav-item">
+        <a href="tentang-kami.html" class="nav-link" data-nav="tentang" id="nav-link-tentang">Tentang Kami</a>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="javascript:void(0)" class="btn-header-auth" id="btn-header-auth">
+        Masuk / Mulai <span>👤</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+  <!-- @component:navbar:end -->
+
+  <!-- Page Banner -->
+  <section class="subpage-banner" style="padding: 28px 0 32px;">
+    <div class="container subpage-banner-layout">
+      <div>
+        <h1 class="subpage-title" style="font-size: 2.2rem;">Evaluasi &amp; Kuis</h1>
+        <div class="subpage-subtitle" style="font-size: 0.95rem; margin-bottom: 0;">
+          Tingkatkan pengetahuanmu dan jadi bagian pelestari budaya Jawa!
+        </div>
+      </div>
+
+      <div class="subpage-art-box">
+        <img src="assets/icons/avatar-wayang.svg" alt="Wayang" class="subpage-art-img" style="max-height: 120px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz Section -->
+  <section class="page-section" style="padding-top: 28px;">
+    <div class="container" style="max-width: 860px;">
+      
+      <!-- Mini User Profile Card -->
+      <div class="eval-profile-header-card" style="padding: 16px 24px; margin-bottom: 20px; grid-template-columns: 60px 1.2fr 1fr;">
+        <div class="eval-avatar-round" style="width: 60px; height: 60px;">
+          <img src="assets/icons/avatar-wayang.svg" alt="Avatar Budaya" class="eval-avatar-img" style="width: 100%; height: 100%;">
+        </div>
+
+        <div>
+          <h3 class="eval-user-heading" style="font-size: 1.15rem;">Tamu Budaya</h3>
+          <div class="eval-level-bar-row">
+            <img src="assets/icons/level-shield-1.svg" alt="Shield 1" style="width: 20px; height: 24px;">
+            <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-dark);" id="evalUserRole">Level 1 - Pemula</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+          <div class="eval-stat-round-box" style="padding: 6px 14px; min-width: 75px;">
+            <div style="font-size: 0.65rem; color: var(--text-muted);">Poin</div>
+            <div style="font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;">120</div>
+          </div>
+          <div class="eval-stat-round-box" style="padding: 6px 14px; min-width: 75px;">
+            <div style="font-size: 0.65rem; color: var(--text-muted);">Peringkat</div>
+            <div style="font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;">#120</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs" style="margin-bottom: 16px;">
+        <a href="evaluasi.html" class="breadcrumb-link">Evaluasi</a>
+        <span class="breadcrumb-sep">&gt;</span>
+        <span class="breadcrumb-link">Level 1 - Pemula</span>
+        <span class="breadcrumb-sep">&gt;</span>
+        <span class="breadcrumb-current">Kuis 1</span>
+      </div>
+
+      <!-- Quiz Header with Dots -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+        <div>
+          <h2 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--text-heading);">Kuis Level 1</h2>
+          <p style="font-size: 0.82rem; color: var(--text-muted);">Uji pemahaman dasar tentang budaya Jawa.</p>
+        </div>
+
+        <div style="text-align: right;">
+          <div id="quizProgressText" style="font-size: 0.8rem; font-weight: 700; color: var(--text-heading); margin-bottom: 6px;">Soal 1 dari 10</div>
+          <div style="display: flex; gap: 6px; justify-content: flex-end;" id="quizDotsContainer">
+            <!-- 10 dots generated by js/kuis.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Card (Exact) -->
+      <div class="quiz-card-exact" id="quizCardContainer">
+        <span class="quiz-soal-pill">SOAL</span>
+
+        <div class="quiz-prompt-text" id="quizPrompt">Apa arti dari ungkapan Jawa berikut?</div>
+        <div class="quiz-quote-italic" id="quizQuote">“Urip iku urup”</div>
+        
+        <div style="text-align: center; margin-bottom: 14px;">
+          <img src="assets/icons/divider.svg" alt="Flourish" style="width: 70px; height: 14px;">
+        </div>
+
+        <!-- 4 Options -->
+        <div class="quiz-options-col" id="quizOptionsContainer">
+          <!-- Populated by js/kuis.js -->
+        </div>
+      </div>
+
+      <!-- Nav buttons -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px;">
+        <button class="btn btn-outline-dark" id="btnQuizPrev">
+          <span>←</span>
+          <span>Kembali</span>
+        </button>
+
+        <button class="btn btn-pill-dark" id="btnQuizNext">
+          <span>Lanjut</span>
+          <span>→</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Result Modal (Polished) -->
+  <div class="modal-backdrop" id="quizResultModal">
+    <div class="modal-dialog quiz-modal-dialog">
+      
+      <!-- Modal Header -->
+      <div class="quiz-modal-header">
+        <button class="modal-close-btn" aria-label="Tutup ringkasan" onclick="document.getElementById('quizResultModal').classList.remove('open'); document.body.style.overflow='';">✕</button>
+        <img src="assets/icons/badge-pemula.svg" alt="Badge" class="quiz-modal-badge-img" id="resultBadgeIcon">
+        <h2 class="quiz-modal-title" id="resultModalTitle">Sugeng! Kuis Selesai! 🎉</h2>
+        <p class="quiz-modal-desc" id="resultSummaryText">
+          Kamu berhasil menyelesaikan kuis dengan luar biasa!
+        </p>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="quiz-modal-body">
+        <!-- 3 Metrics Grid -->
+        <div class="quiz-metrics-grid">
+          <div class="quiz-metric-card">
+            <span class="quiz-metric-label">Nilai Akhir</span>
+            <div class="quiz-metric-val" id="resultScoreBadge">100</div>
+            <span class="quiz-metric-sub" id="resultGradeStatus" style="color: #27ae60;">Sempurna ✨</span>
+          </div>
+
+          <div class="quiz-metric-card">
+            <span class="quiz-metric-label">Ketepatan</span>
+            <div class="quiz-metric-val" id="resultAccuracy">10 / 10</div>
+            <span class="quiz-metric-sub" id="resultAccuracySub" style="color: var(--navy-dark);">100% Benar</span>
+          </div>
+
+          <div class="quiz-metric-card">
+            <span class="quiz-metric-label">Lencana Baru</span>
+            <div class="quiz-metric-val" id="resultBadgeName" style="color: var(--gold-dark); font-size: 1.05rem; line-height: 1.25;">Pemula Hebat 🏅</div>
+            <span class="quiz-metric-sub" id="resultBadgeStatus" style="color: #1e7e34;">Tercapai ✨</span>
+          </div>
+        </div>
+
+        <!-- Review Section with Toggle -->
+        <div class="quiz-review-toggle-bar" id="btnToggleReview" onclick="window.toggleReviewList()">
+          <span style="display: flex; align-items: center; gap: 8px;">
+            <span>📋</span>
+            <span>Kunci Jawaban &amp; Pembahasan</span>
+            <span id="reviewCountBadge" style="background: var(--cream-bg); padding: 2px 8px; border-radius: 999px; font-size: 0.72rem; color: var(--text-muted);">(10 Soal)</span>
+          </span>
+          <span id="reviewToggleArrow" style="font-size: 0.9rem; transition: transform 0.2s; transform: rotate(0deg);">▾</span>
+        </div>
+
+        <!-- Collapsible Review List (Collapsed by default) -->
+        <div class="quiz-review-list" id="quizReviewListContainer" style="display: none;">
+          <!-- Populated by js/kuis.js -->
+        </div>
+      </div>
+
+      <!-- Modal Footer (Sticky) -->
+      <div class="quiz-modal-footer">
+        <button class="btn btn-outline-dark" onclick="reviewOnPage()">
+          <span>Tinjau di Halaman</span>
+          <span>🔍</span>
+        </button>
+        <button class="btn btn-outline-dark" onclick="restartQuiz()">
+          <span>Ulangi Kuis</span>
+          <span>🔄</span>
+        </button>
+        <a href="evaluasi.html" class="btn btn-pill-dark">
+          <span>Ke Dashboard</span>
+          <span>→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- @component:footer:start -->
+  <footer class="site-footer footer-dark">
+  <div class="container footer-main">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand-col">
+        <div class="brand-logo">
+          <img src="assets/icons/gunungan.svg" alt="Gunungan" class="brand-icon" style="width: 28px; height: 38px;">
+          <div class="brand-text-group">
+            <span class="brand-title" style="font-size: 1.25rem; color: var(--gold-light);">JAVANESIA</span>
+            <span class="brand-tagline" style="font-size: 0.65rem;">Kenali. Pahami. Lestarikan.</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc" style="font-size: 0.82rem; margin-top: 6px;">
+          Belajar budaya Jawa,<br>mengenal warisan,<br>melestarikan makna.
+        </p>
+        <div class="footer-socials" style="margin-top: 8px;">
+          <a href="#" class="social-icon-btn" aria-label="Instagram">📷</a>
+          <a href="#" class="social-icon-btn" aria-label="YouTube">▶️</a>
+          <a href="#" class="social-icon-btn" aria-label="Email">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigasi</h4>
+        <div class="footer-links-list">
+          <a href="index.html">Beranda</a>
+          <a href="bahasa-jawa.html">
+            <span>Materi</span>
+            <span class="footer-dropdown-arrow">▾</span>
+          </a>
+          <a href="evaluasi.html">Evaluasi</a>
+          <a href="tentang-kami.html">Tentang Kami</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Sumber &amp; Referensi</h4>
+        <div class="footer-links-list">
+          <a href="#">Daftar Sumber</a>
+          <a href="#">Buku &amp; Artikel</a>
+          <a href="#">Perpustakaan Digital</a>
+          <a href="#">Balai Bahasa</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Kontak</h4>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">✉</span>
+          <span>hello@javanesia.id</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">📞</span>
+          <span>+62 812-3456-7890</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">📍</span>
+          <span>Yogyakarta, Indonesia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom-bar-wrapper">
+    <img src="assets/icons/batik-center-crest.svg" alt="Crest" class="footer-center-crest">
+    <div class="footer-bottom-bar">
+      <p>© 2024 Javanesia. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+  <!-- @component:footer:end -->
+
+  <script src="js/main.js"></script>
+  <script src="js/kuis.js"></script>
+</body>
+</html>

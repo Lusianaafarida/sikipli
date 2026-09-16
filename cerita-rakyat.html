@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Cerita Rakyat Jawa - JAVANESIA</title>
+  <meta name="description" content="Kisah-kisah cerita rakyat Jawa legendaris: Roro Jonggrang, Jaka Tarub, Kancil & Buaya, Danau Toba, dan Gunung Merapi.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/icons/gunungan.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Reusable Header Component -->
+  <!-- @component:navbar:start -->
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="index.html" class="brand-logo" id="nav-brand-logo">
+      <img src="assets/icons/logo.png" alt="logo-javanesia" class="brand-icon">
+      <div class="brand-text-group">
+        <span class="brand-title">JAVANESIA</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu" id="nav-menu-list">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link" data-nav="beranda" id="nav-link-beranda">Beranda</a>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link active" data-nav="materi" id="nav-link-materi">
+          Materi <span class="nav-link-dropdown-arrow">⌵</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="bahasa-jawa.html" class="dropdown-item" data-nav="bahasa-jawa" id="dropdown-bahasa-jawa">
+            <span class="dropdown-icon">💬</span> Bahasa Jawa
+          </a>
+          <a href="cerita-rakyat.html" class="dropdown-item active" data-nav="cerita-rakyat" id="dropdown-cerita-rakyat">
+            <span class="dropdown-icon">📖</span> Cerita Rakyat
+          </a>
+          <a href="aksara-jawa.html" class="dropdown-item" data-nav="aksara-jawa" id="dropdown-aksara-jawa">
+            <span class="dropdown-icon">ꦤ</span> Aksara Jawa
+          </a>
+          <a href="wayang-kulit.html" class="dropdown-item" data-nav="wayang-kulit" id="dropdown-wayang-kulit">
+            <span class="dropdown-icon">🎭</span> Wayang Kulit
+          </a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="evaluasi.html" class="nav-link" data-nav="evaluasi" id="nav-link-evaluasi">Evaluasi</a>
+      </div>
+      <div class="nav-item">
+        <a href="tentang-kami.html" class="nav-link" data-nav="tentang" id="nav-link-tentang">Tentang Kami</a>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="javascript:void(0)" class="btn-header-auth" id="btn-header-auth">
+        Masuk / Mulai <span>👤</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+  <!-- @component:navbar:end -->
+
+  <!-- Page Banner -->
+  <section class="subpage-banner">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html" class="breadcrumb-link">Beranda</a>
+        <span class="breadcrumb-sep">&gt;</span>
+        <span class="breadcrumb-link">Materi</span>
+        <span class="breadcrumb-sep">&gt;</span>
+        <span class="breadcrumb-current">Cerita Rakyat</span>
+      </div>
+
+      <div class="subpage-banner-layout">
+        <div>
+          <h1 class="subpage-title">Cerita Rakyat</h1>
+          <div class="subpage-subtitle">Kisah lampau, pelajaran sepanjang zaman.</div>
+          <img src="assets/icons/divider.svg" alt="Flourish" class="flourish-divider" style="margin: 4px 0 14px; width: 64px;">
+          <p class="subpage-desc">
+            Cerita rakyat Jawa bukan sekadar dongeng pengantar tidur, melainkan cermin kearifan lokal yang sarat akan nilai budi pekerti, kejujuran, dan penghormatan kepada alam serta sesama.
+          </p>
+        </div>
+
+        <div class="subpage-art-box">
+          <img src="assets/images/roro-jonggrang.jpg" alt="Roro Jonggrang" class="subpage-art-img" style="border-radius: 12px; border: 1.5px solid var(--card-border); max-height: 180px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Jelajahi Cerita Rakyat Jawa -->
+  <section class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag-flourish">
+          <img src="assets/icons/divider.svg" alt="Flourish" class="flourish-divider">
+        </div>
+        <h2 class="section-title">Jelajahi Cerita Rakyat Jawa</h2>
+        <p class="section-description">Pilih cerita yang ingin kamu baca dan tonton.</p>
+      </div>
+
+      <div class="folklore-cards-wrap">
+        <!-- 01: Danau Toba -->
+        <div class="folklore-row-card">
+          <div class="folklore-badge-num">01</div>
+          <div class="folklore-img-frame">
+            <img src="assets/images/danau-toba.jpg" alt="Legenda Danau Toba">
+          </div>
+          <div class="folklore-info-col">
+            <h3 class="folklore-card-heading">Legenda Danau Toba</h3>
+            <p class="folklore-card-paragraph">
+              Kisah seorang pemuda yang melanggar janji kepada istrinya hingga menyebabkan terjadinya Danau Toba. Cerita ini mengajarkan tentang pentingnya menepati janji dan menghargai orang lain.
+            </p>
+            <div class="folklore-btns-row">
+              <button class="btn btn-pill-dark" data-play-video data-video-title="Legenda Danau Toba" style="font-size: 0.8rem; padding: 7px 18px;">
+                <span>Tonton Video</span>
+                <span>▶</span>
+              </button>
+              <button class="btn" style="color: #4A3222; font-size: 0.82rem; font-weight: 600;" onclick="readFolkloreStory('danau-toba')">
+                <span>Baca Cerita</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02: Roro Jonggrang -->
+        <div class="folklore-row-card">
+          <div class="folklore-badge-num">02</div>
+          <div class="folklore-img-frame">
+            <img src="assets/images/roro-jonggrang.jpg" alt="Roro Jonggrang">
+          </div>
+          <div class="folklore-info-col">
+            <h3 class="folklore-card-heading">Roro Jonggrang</h3>
+            <p class="folklore-card-paragraph">
+              Kisah cinta yang berujung kutukan. Roro Jonggrang mengajukan syarat mustahil kepada Bandung Bondowoso yang akhirnya membuatnya dikutuk menjadi arca batu.
+            </p>
+            <div class="folklore-btns-row">
+              <button class="btn btn-pill-dark" data-play-video data-video-title="Legenda Roro Jonggrang" style="font-size: 0.8rem; padding: 7px 18px;">
+                <span>Tonton Video</span>
+                <span>▶</span>
+              </button>
+              <button class="btn" style="color: #4A3222; font-size: 0.82rem; font-weight: 600;" onclick="readFolkloreStory('roro-jonggrang')">
+                <span>Baca Cerita</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03: Jaka Tarub -->
+        <div class="folklore-row-card">
+          <div class="folklore-badge-num">03</div>
+          <div class="folklore-img-frame">
+            <img src="assets/images/jaka-tarub.jpg" alt="Jaka Tarub">
+          </div>
+          <div class="folklore-info-col">
+            <h3 class="folklore-card-heading">Jaka Tarub</h3>
+            <p class="folklore-card-paragraph">
+              Kisah Jaka Tarub yang menikahi seorang bidadari yang turun ke bumi. Cerita ini mengajarkan tentang kasih sayang, kejujuran, dan akibat dari sebuah pelanggaran janji.
+            </p>
+            <div class="folklore-btns-row">
+              <button class="btn btn-pill-dark" data-play-video data-video-title="Legenda Jaka Tarub" style="font-size: 0.8rem; padding: 7px 18px;">
+                <span>Tonton Video</span>
+                <span>▶</span>
+              </button>
+              <button class="btn" style="color: #4A3222; font-size: 0.82rem; font-weight: 600;" onclick="readFolkloreStory('jaka-tarub')">
+                <span>Baca Cerita</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04: Kancil & Buaya -->
+        <div class="folklore-row-card">
+          <div class="folklore-badge-num">04</div>
+          <div class="folklore-img-frame">
+            <img src="assets/images/kancil-buaya.jpg" alt="Kancil & Buaya">
+          </div>
+          <div class="folklore-info-col">
+            <h3 class="folklore-card-heading">Kancil &amp; Buaya</h3>
+            <p class="folklore-card-paragraph">
+              Kisah kecerdikan Kancil yang berhasil mengelabui Buaya. Cerita ini menggambarkan bahwa kecerdasan dapat mengatasi kekuatan.
+            </p>
+            <div class="folklore-btns-row">
+              <button class="btn btn-pill-dark" data-play-video data-video-title="Kancil & Buaya" style="font-size: 0.8rem; padding: 7px 18px;">
+                <span>Tonton Video</span>
+                <span>▶</span>
+              </button>
+              <button class="btn" style="color: #4A3222; font-size: 0.82rem; font-weight: 600;" onclick="readFolkloreStory('kancil-buaya')">
+                <span>Baca Cerita</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05: Gunung Merapi -->
+        <div class="folklore-row-card">
+          <div class="folklore-badge-num">05</div>
+          <div class="folklore-img-frame">
+            <img src="assets/images/gunung-merapi.jpg" alt="Gunung Merapi">
+          </div>
+          <div class="folklore-info-col">
+            <h3 class="folklore-card-heading">Gunung Merapi</h3>
+            <p class="folklore-card-paragraph">
+              Legenda Putri Merapi yang menjaga kedamaian Merapi. Cerita ini mengajarkan tentang pengorbanan, cinta tanah kelahiran, dan hubungan manusia dengan alam.
+            </p>
+            <div class="folklore-btns-row">
+              <button class="btn btn-pill-dark" data-play-video data-video-title="Legenda Gunung Merapi" style="font-size: 0.8rem; padding: 7px 18px;">
+                <span>Tonton Video</span>
+                <span>▶</span>
+              </button>
+              <button class="btn" style="color: #4A3222; font-size: 0.82rem; font-weight: 600;" onclick="readFolkloreStory('gunung-merapi')">
+                <span>Baca Cerita</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jejak Cerita di Dunia Nyata -->
+      <div class="section-header" style="margin-top: 50px;">
+        <div class="section-tag-flourish">
+          <img src="assets/icons/divider.svg" alt="Flourish" class="flourish-divider">
+        </div>
+        <h2 class="section-title">Jejak Cerita di Dunia Nyata</h2>
+        <p class="section-description">Tempat-tempat asli yang menjadi bagian dari cerita rakyat Jawa.</p>
+      </div>
+
+      <div class="places-grid-5">
+        <div class="place-card-item">
+          <img src="assets/images/danau-toba.jpg" alt="Danau Toba">
+          <div class="place-card-overlay">
+            <div class="place-name">Danau Toba</div>
+            <div class="place-location">Sumatera Utara</div>
+          </div>
+        </div>
+
+        <div class="place-card-item">
+          <img src="assets/images/candi-prambanan.jpg" alt="Candi Prambanan">
+          <div class="place-card-overlay">
+            <div class="place-name">Candi Prambanan</div>
+            <div class="place-location">Yogyakarta</div>
+          </div>
+        </div>
+
+        <div class="place-card-item">
+          <img src="assets/images/gua-tetes.jpg" alt="Gua Tetes">
+          <div class="place-card-overlay">
+            <div class="place-name">Gua Tetes</div>
+            <div class="place-location">Pacitan, Jawa Timur</div>
+          </div>
+        </div>
+
+        <div class="place-card-item">
+          <img src="assets/images/bengawan-solo.jpg" alt="Sungai Bengawan Solo">
+          <div class="place-card-overlay">
+            <div class="place-name">Sungai Bengawan Solo</div>
+            <div class="place-location">Jawa Tengah - Jawa Timur</div>
+          </div>
+        </div>
+
+        <div class="place-card-item">
+          <img src="assets/images/gunung-merapi.jpg" alt="Gunung Merapi">
+          <div class="place-card-overlay">
+            <div class="place-name">Gunung Merapi</div>
+            <div class="place-location">Yogyakarta - Jawa Tengah</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Reusable Footer Component -->
+  <!-- @component:footer:start -->
+  <footer class="site-footer footer-dark">
+  <div class="container footer-main">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand-col">
+        <div class="brand-logo">
+          <img src="assets/icons/gunungan.svg" alt="Gunungan" class="brand-icon" style="width: 28px; height: 38px;">
+          <div class="brand-text-group">
+            <span class="brand-title" style="font-size: 1.25rem; color: var(--gold-light);">JAVANESIA</span>
+            <span class="brand-tagline" style="font-size: 0.65rem;">Kenali. Pahami. Lestarikan.</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc" style="font-size: 0.82rem; margin-top: 6px;">
+          Belajar budaya Jawa,<br>mengenal warisan,<br>melestarikan makna.
+        </p>
+        <div class="footer-socials" style="margin-top: 8px;">
+          <a href="#" class="social-icon-btn" aria-label="Instagram">📷</a>
+          <a href="#" class="social-icon-btn" aria-label="YouTube">▶️</a>
+          <a href="#" class="social-icon-btn" aria-label="Email">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigasi</h4>
+        <div class="footer-links-list">
+          <a href="index.html">Beranda</a>
+          <a href="bahasa-jawa.html">
+            <span>Materi</span>
+            <span class="footer-dropdown-arrow">▾</span>
+          </a>
+          <a href="evaluasi.html">Evaluasi</a>
+          <a href="tentang-kami.html">Tentang Kami</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Sumber &amp; Referensi</h4>
+        <div class="footer-links-list">
+          <a href="#">Daftar Sumber</a>
+          <a href="#">Buku &amp; Artikel</a>
+          <a href="#">Perpustakaan Digital</a>
+          <a href="#">Balai Bahasa</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Kontak</h4>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">✉</span>
+          <span>hello@javanesia.id</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">📞</span>
+          <span>+62 812-3456-7890</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">📍</span>
+          <span>Yogyakarta, Indonesia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom-bar-wrapper">
+    <img src="assets/icons/batik-center-crest.svg" alt="Crest" class="footer-center-crest">
+    <div class="footer-bottom-bar">
+      <p>© 2024 Javanesia. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+  <!-- @component:footer:end -->
+
+  <!-- Modal Video Player -->
+  <div class="modal-backdrop" id="videoModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Tutup video">✕</button>
+      <h3 id="modalVideoTitle" style="font-family: var(--font-serif); margin-bottom: 16px; color: var(--text-dark);">Video Cerita Rakyat</h3>
+      <div style="border-radius: 10px; overflow: hidden; background: #000; aspect-ratio: 16/9; margin-bottom: 14px; border: 1.5px solid var(--card-border);">
+        <img src="assets/images/wayang-performance.jpg" alt="Video Player" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+        Saksikan narasi visual dan pementasan wayang dari cerita rakyat Jawa yang kaya akan pesan moral kehidupan.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Story Reader -->
+  <div class="modal-backdrop" id="storyReaderModal">
+    <div class="modal-dialog" style="max-width: 720px;">
+      <button class="modal-close-btn" aria-label="Tutup cerita">✕</button>
+      <h2 id="storyModalTitle" style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--text-dark); margin-bottom: 4px;">Judul Cerita</h2>
+      <div id="storyModalOrigin" style="font-size: 0.85rem; color: var(--gold-dark); font-weight: 600; margin-bottom: 16px;">Asal Daerah</div>
+      <div style="height: 220px; border-radius: var(--radius-md); overflow: hidden; border: 1.5px solid var(--card-border); margin-bottom: 18px;">
+        <img id="storyModalImg" src="" alt="Cover" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div id="storyModalBody" style="font-size: 0.92rem; color: var(--text-dark); line-height: 1.8; margin-bottom: 20px;"></div>
+      <div style="background: #EFE4D6; border-left: 3px solid var(--gold-primary); padding: 12px 16px; border-radius: 4px;">
+        <strong style="color: #4A3222; font-size: 0.88rem;">🌿 Nilai Luhur (Piwulang):</strong>
+        <p id="storyModalMoral" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/cerita.js"></script>
+</body>
+</html>

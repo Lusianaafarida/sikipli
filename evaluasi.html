@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluasi & Kuis - JAVANESIA</title>
+  <meta name="description" content="Dashboard evaluasi pembelajaran budaya Jawa, level kuis, badge pencapaian, dan leaderboard.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/icons/gunungan.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- @component:navbar:start -->
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="index.html" class="brand-logo" id="nav-brand-logo">
+      <img src="assets/icons/logo.png" alt="logo-javanesia" class="brand-icon">
+      <div class="brand-text-group">
+        <span class="brand-title">JAVANESIA</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu" id="nav-menu-list">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link" data-nav="beranda" id="nav-link-beranda">Beranda</a>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link" data-nav="materi" id="nav-link-materi">
+          Materi <span class="nav-link-dropdown-arrow">⌵</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="bahasa-jawa.html" class="dropdown-item" data-nav="bahasa-jawa" id="dropdown-bahasa-jawa">
+            <span class="dropdown-icon">💬</span> Bahasa Jawa
+          </a>
+          <a href="cerita-rakyat.html" class="dropdown-item" data-nav="cerita-rakyat" id="dropdown-cerita-rakyat">
+            <span class="dropdown-icon">📖</span> Cerita Rakyat
+          </a>
+          <a href="aksara-jawa.html" class="dropdown-item" data-nav="aksara-jawa" id="dropdown-aksara-jawa">
+            <span class="dropdown-icon">ꦤ</span> Aksara Jawa
+          </a>
+          <a href="wayang-kulit.html" class="dropdown-item" data-nav="wayang-kulit" id="dropdown-wayang-kulit">
+            <span class="dropdown-icon">🎭</span> Wayang Kulit
+          </a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="evaluasi.html" class="nav-link active" data-nav="evaluasi" id="nav-link-evaluasi">Evaluasi</a>
+      </div>
+      <div class="nav-item">
+        <a href="tentang-kami.html" class="nav-link" data-nav="tentang" id="nav-link-tentang">Tentang Kami</a>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="javascript:void(0)" class="btn-header-auth" id="btn-header-auth">
+        Masuk / Mulai <span>👤</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+  <!-- @component:navbar:end -->
+
+  <!-- Page Banner -->
+  <section class="subpage-banner" style="padding: 32px 0 36px;">
+    <div class="container subpage-banner-layout">
+      <div>
+        <h1 class="subpage-title">Evaluasi &amp; Kuis</h1>
+        <div class="subpage-subtitle">Uji pemahamanmu, raih ilmu dan jadi bagian pelestari budaya Jawa!</div>
+        <p class="subpage-desc">
+          Kerjakan kuis menarik di setiap level untuk mengasah pengetahuanmu tentang Bahasa Jawa, Wayang, Cerita Rakyat, dan Aksara Jawa. Semakin tinggi levelmu, semakin luas wawasan yang kamu dapatkan!
+        </p>
+      </div>
+
+      <div class="subpage-art-box">
+        <img src="assets/icons/avatar-wayang.svg" alt="Wayang Figure" class="subpage-art-img" style="max-height: 150px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Evaluation Main Content Section -->
+  <section class="page-section" style="padding-top: 28px;">
+    <div class="container">
+      
+      <!-- User Profile Card -->
+      <div class="eval-profile-header-card" style="padding: 20px 28px; margin-bottom: 36px;">
+        <div class="eval-avatar-round" style="width: 80px; height: 80px;">
+          <img src="assets/icons/avatar-wayang.svg" alt="Avatar Budaya" class="eval-avatar-img" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+
+        <div>
+          <h2 class="eval-user-heading" style="font-size: 1.3rem;">Tamu Budaya</h2>
+          <div class="eval-role-tag">
+            <span>⭐</span>
+            <span>Pelajar Budaya Jawa</span>
+          </div>
+          <div class="eval-level-bar-row">
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-dark);">Level</span>
+            <img src="assets/icons/level-shield-1.svg" alt="Shield 1" class="level-shield-icon">
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--gold-dark);" id="evalLevelLabel">1 - Pemula</span>
+          </div>
+        </div>
+
+        <div class="eval-right-stats-wrap">
+          <div style="display: flex; gap: 12px;">
+            <div class="eval-stat-round-box" style="padding: 6px 16px; min-width: 85px;">
+              <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Poin</div>
+              <div style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--text-dark);" id="evalUserPoin">120</div>
+            </div>
+            <div class="eval-stat-round-box" style="padding: 6px 16px; min-width: 85px;">
+              <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Peringkat</div>
+              <div style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--text-dark);">#120</div>
+            </div>
+          </div>
+          <div class="eval-quote-box" style="margin-top: 4px;">
+            "Belajar hari ini, lestarikan selamanya."
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Pilih Level Kuis -->
+      <div class="section-header">
+        <div class="section-tag-flourish">
+          <img src="assets/icons/divider.svg" alt="Flourish" class="flourish-divider">
+        </div>
+        <h2 class="section-title">Pilih Level Kuis</h2>
+        <p class="section-description">Tingkatkan levelmu dan dapatkan hadiah menarik!</p>
+      </div>
+
+      <!-- 4 Level Cards -->
+      <div class="levels-4-grid">
+        <!-- Level 1 -->
+        <div class="level-tall-card" style="border-color: var(--gold-primary);">
+          <span class="level-tag-top open">TERBUKA</span>
+          <h3 class="level-num-title">Level 1</h3>
+          <div class="level-subtitle">Tingkat Dasar (Kelas 1)</div>
+          <div class="level-art-box">
+            <img src="assets/icons/book-level.svg" alt="Level 1" style="width: 75px; height: 75px;">
+          </div>
+          <p class="level-req-text">
+            Pemahaman tembung, basa sedina-dina, sesorah prasaja, lan wayang.
+          </p>
+          <a href="kuis.html?level=1" class="btn btn-pill-dark" style="width: 100%; font-size: 0.8rem; padding: 7px 12px; margin-bottom: 10px;">
+            <span>Mulai Kuis</span>
+            <span>▶</span>
+          </a>
+          <div class="level-reward-text">Hadiah ⭐ 50 Poin</div>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="level-tall-card">
+          <span class="level-tag-top locked">🔒 TERKUNCI</span>
+          <h3 class="level-num-title">Level 2</h3>
+          <div class="level-subtitle">Tingkat Menengah (Kelas 4)</div>
+          <div class="level-art-box">
+            <img src="assets/icons/padlock.svg" alt="Terkunci" style="width: 60px; height: 60px; opacity: 0.75;">
+          </div>
+          <p class="level-req-text">
+            Crita rakyat Timun Mas, jinis dongeng, lan paugeran tembang Gambuh.
+          </p>
+          <div style="width: 40px; height: 1px; background: var(--card-border); margin: 6px auto 10px;"></div>
+          <div class="level-reward-text" style="color: var(--text-muted);">Hadiah 100 Poin</div>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="level-tall-card">
+          <span class="level-tag-top locked">🔒 TERKUNCI</span>
+          <h3 class="level-num-title">Level 3</h3>
+          <div class="level-subtitle">Tingkat Lanjutan (Kelas 5)</div>
+          <div class="level-art-box">
+            <img src="assets/icons/padlock.svg" alt="Terkunci" style="width: 60px; height: 60px; opacity: 0.75;">
+          </div>
+          <p class="level-req-text">
+            Teks sesorah, basa krama, piranti pewayangan, lan Pandhawa lima.
+          </p>
+          <div style="width: 40px; height: 1px; background: var(--card-border); margin: 6px auto 10px;"></div>
+          <div class="level-reward-text" style="color: var(--text-muted);">Hadiah 150 Poin</div>
+        </div>
+
+        <!-- Level 4 -->
+        <div class="level-tall-card">
+          <span class="level-tag-top locked">🔒 TERKUNCI</span>
+          <h3 class="level-num-title">Level 4</h3>
+          <div class="level-subtitle">Tingkat Mahir (Kelas 6)</div>
+          <div class="level-art-box">
+            <img src="assets/icons/padlock.svg" alt="Terkunci" style="width: 60px; height: 60px; opacity: 0.75;">
+          </div>
+          <p class="level-req-text">
+            Geguritan modern, analisis sesorah resmi, makna konotatif, lan basa alus.
+          </p>
+          <div style="width: 40px; height: 1px; background: var(--card-border); margin: 6px auto 10px;"></div>
+          <div class="level-reward-text" style="color: var(--text-muted);">Hadiah 200 Poin</div>
+        </div>
+      </div>
+
+      <!-- Bottom Layout: Pencapaian (Left) & Papan Peringkat (Right) -->
+      <div style="display: grid; grid-template-columns: 1fr 1.25fr; gap: 24px;">
+        <!-- Pencapaian -->
+        <div style="background: var(--card-bg); border: 1.5px solid var(--card-border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px;">
+            <span style="font-size: 1.2rem;">🏆</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--text-heading);">Pencapaian</h3>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; text-align: center;">
+            <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 14px 8px;">
+              <img src="assets/icons/badge-pemula.svg" alt="Pemula Hebat" style="width: 52px; height: 60px; margin: 0 auto 6px;">
+              <div style="font-family: var(--font-serif); font-size: 0.82rem; font-weight: 700; color: var(--text-heading);">Pemula Hebat</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted);">Level 1 (Kelas 1)</div>
+            </div>
+
+            <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 14px 8px;">
+              <img src="assets/icons/badge-kata.svg" alt="Pangripta Cerita" style="width: 52px; height: 60px; margin: 0 auto 6px;">
+              <div style="font-family: var(--font-serif); font-size: 0.82rem; font-weight: 700; color: #88786C;">Pangripta Cerita</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted);">Level 2 (Kelas 4)</div>
+            </div>
+
+            <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 14px 8px;">
+              <img src="assets/icons/badge-wayang.svg" alt="Wayang Expert" style="width: 52px; height: 60px; margin: 0 auto 6px;">
+              <div style="font-family: var(--font-serif); font-size: 0.82rem; font-weight: 700; color: #88786C;">Wayang Expert</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted);">Level 3 (Kelas 5)</div>
+            </div>
+
+            <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 14px 8px;">
+              <img src="assets/icons/gunungan.svg" alt="Master Sastra" style="width: 46px; height: 60px; margin: 0 auto 6px; opacity: 0.85;">
+              <div style="font-family: var(--font-serif); font-size: 0.82rem; font-weight: 700; color: #88786C;">Master Sastra</div>
+              <div style="font-size: 0.68rem; color: var(--text-muted);">Level 4 (Kelas 6)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Papan Peringkat -->
+        <div style="background: var(--card-bg); border: 1.5px solid var(--card-border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.2rem;">👑</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--text-heading);">Papan Peringkat</h3>
+            </div>
+            <button class="btn btn-pill-cream" style="font-size: 0.75rem; padding: 4px 14px;" onclick="window.showToast('Menampilkan seluruh papan peringkat...')">
+              Lihat Semua
+            </button>
+          </div>
+
+          <table style="width: 100%; border-collapse: separate; border-spacing: 0 4px; font-size: 0.86rem;">
+            <tbody>
+              <tr style="border-bottom: 1px solid #EFE4D6; height: 38px;">
+                <td style="width: 42px; font-weight: 700; color: #BD6827; padding: 6px 12px;">1</td>
+                <td style="padding: 6px 12px;">👑 <strong>Raden Anindya</strong></td>
+                <td style="padding: 6px 12px; color: var(--text-muted);">Level 4</td>
+                <td style="padding: 6px 12px; text-align: right; font-weight: 700; color: var(--text-dark);">2500 Poin</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #EFE4D6; height: 38px;">
+                <td style="width: 42px; font-weight: 700; color: #88786C; padding: 6px 12px;">2</td>
+                <td style="padding: 6px 12px;">🥈 <strong>Dewi Lestari</strong></td>
+                <td style="padding: 6px 12px; color: var(--text-muted);">Level 4</td>
+                <td style="padding: 6px 12px; text-align: right; font-weight: 700; color: var(--text-dark);">2400 Poin</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #EFE4D6; height: 38px;">
+                <td style="width: 42px; font-weight: 700; color: #88786C; padding: 6px 12px;">3</td>
+                <td style="padding: 6px 12px;">🥉 <strong>Arjuna Wijaya</strong></td>
+                <td style="padding: 6px 12px; color: var(--text-muted);">Level 4</td>
+                <td style="padding: 6px 12px; text-align: right; font-weight: 700; color: var(--text-dark);">2300 Poin</td>
+              </tr>
+              <!-- User (Highlighted Row) -->
+              <tr style="background: #E8B966; height: 42px; font-weight: 700; color: #2C1A10;">
+                <td style="width: 42px; padding: 6px 12px; font-weight: 800; border-radius: 6px 0 0 6px;">120</td>
+                <td id="evalLeaderboardUserName" style="padding: 6px 12px;">Tamu Budaya (Kamu)</td>
+                <td style="padding: 6px 12px;">Level 1</td>
+                <td style="padding: 6px 12px; text-align: right; border-radius: 0 6px 6px 0;">120 Poin</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- @component:footer:start -->
+  <footer class="site-footer footer-dark">
+  <div class="container footer-main">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand-col">
+        <div class="brand-logo">
+          <img src="assets/icons/gunungan.svg" alt="Gunungan" class="brand-icon" style="width: 28px; height: 38px;">
+          <div class="brand-text-group">
+            <span class="brand-title" style="font-size: 1.25rem; color: var(--gold-light);">JAVANESIA</span>
+            <span class="brand-tagline" style="font-size: 0.65rem;">Kenali. Pahami. Lestarikan.</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc" style="font-size: 0.82rem; margin-top: 6px;">
+          Belajar budaya Jawa,<br>mengenal warisan,<br>melestarikan makna.
+        </p>
+        <div class="footer-socials" style="margin-top: 8px;">
+          <a href="#" class="social-icon-btn" aria-label="Instagram">📷</a>
+          <a href="#" class="social-icon-btn" aria-label="YouTube">▶️</a>
+          <a href="#" class="social-icon-btn" aria-label="Email">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigasi</h4>
+        <div class="footer-links-list">
+          <a href="index.html">Beranda</a>
+          <a href="bahasa-jawa.html">
+            <span>Materi</span>
+            <span class="footer-dropdown-arrow">▾</span>
+          </a>
+          <a href="evaluasi.html">Evaluasi</a>
+          <a href="tentang-kami.html">Tentang Kami</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Sumber &amp; Referensi</h4>
+        <div class="footer-links-list">
+          <a href="#">Daftar Sumber</a>
+          <a href="#">Buku &amp; Artikel</a>
+          <a href="#">Perpustakaan Digital</a>
+          <a href="#">Balai Bahasa</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Kontak</h4>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">✉</span>
+          <span>hello@javanesia.id</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">📞</span>
+          <span>+62 812-3456-7890</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">📍</span>
+          <span>Yogyakarta, Indonesia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom-bar-wrapper">
+    <img src="assets/icons/batik-center-crest.svg" alt="Crest" class="footer-center-crest">
+    <div class="footer-bottom-bar">
+      <p>© 2024 Javanesia. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+  <!-- @component:footer:end -->
+
+  <script src="js/main.js"></script>
+  <script src="js/evaluasi.js"></script>
+</body>
+</html>

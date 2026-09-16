@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 48" width="40" height="48">
+  <defs>
+    <linearGradient id="shieldGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7D97B"/>
+      <stop offset="60%" stop-color="#C9A227"/>
+      <stop offset="100%" stop-color="#8B5A2B"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield Outline -->
+  <path d="M20,2 L36,8 C36,24 28,38 20,46 C12,38 4,24 4,8 Z" fill="url(#shieldGold)" stroke="#6E4620" stroke-width="1.5"/>
+  <!-- Inner Shield -->
+  <path d="M20,6 L32,11 C32,24 25,35 20,41 C15,35 8,24 8,11 Z" fill="#241B12" opacity="0.85"/>
+  <!-- Star or Number -->
+  <text x="20" y="27" font-family="'Playfair Display', serif" font-size="16" font-weight="bold" fill="#E8C766" text-anchor="middle">1</text>
+  <path d="M20,9 L22,14 L27,14 L23,17 L25,22 L20,19 L15,22 L17,17 L13,14 L18,14 Z" fill="#E8C766" opacity="0.4" transform="scale(0.5) translate(20, -2)"/>
+</svg>

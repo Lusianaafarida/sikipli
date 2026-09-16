@@ -1,0 +1,1026 @@
+/* ==========================================================================
+   JAVANESIA — pages.css
+   Page-specific components: Bahasa Jawa (kamus, usage rows), Aksara Jawa
+   (hanacaraka, sandhangan), Cerita Rakyat (folklore, places), Wayang
+   (catalog, filters), Evaluasi/Kuis (profile, levels, quiz card).
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   1. Bahasa Jawa — Kamus
+   ------------------------------------------------------------------------- */
+.kamus-card-box {
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.kamus-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.kamus-search-box {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-pill);
+  padding: 6px 6px 6px 18px;
+  background: var(--cream-bg-soft);
+}
+
+.kamus-search-input {
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.kamus-search-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--navy-dark);
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s ease;
+}
+.kamus-search-btn:hover { background: var(--navy-darker); }
+
+.kamus-counter-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--gold-soft-bg);
+  border: 1.5px solid #EAD8A9;
+  border-radius: var(--radius-md);
+  padding: 10px 20px;
+}
+
+.kamus-counter-num {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--gold-dark);
+}
+
+.kamus-counter-sub { font-size: 0.72rem; color: var(--text-muted); }
+
+.kamus-table th {
+  text-align: left;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+  padding: 12px 14px;
+  border-bottom: 2px solid var(--card-border);
+}
+
+.kamus-table td {
+  padding: 14px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--text-dark);
+}
+
+.kamus-table tbody tr:hover { background: var(--cream-bg-soft); }
+
+.kamus-col-bookmark { text-align: center; width: 70px; }
+
+.kamus-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.kamus-pagination button,
+.kamus-pagination span {
+  min-width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.kamus-pagination button:hover { background: var(--cream-bg-soft); }
+.kamus-pagination .active {
+  background: var(--navy-dark);
+  color: #FFF;
+}
+
+/* -------------------------------------------------------------------------
+   2. Contoh Penggunaan — usage rows (shared: Bahasa Jawa & Aksara Jawa)
+   ------------------------------------------------------------------------- */
+.usage-rows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.usage-row-card {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 18px 24px;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.usage-row-card:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.usage-row-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.usage-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--gold-soft-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.usage-topic-title {
+  font-weight: 700;
+  color: var(--text-heading);
+  font-size: 0.95rem;
+}
+
+.usage-topic-id {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.usage-col-ngoko,
+.usage-col-krama {
+  font-size: 0.86rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+.usage-col-ngoko strong,
+.usage-col-krama strong { color: var(--gold-dark); }
+
+/* -------------------------------------------------------------------------
+   3. Aksara Jawa — Hanacaraka & Sandhangan
+   ------------------------------------------------------------------------- */
+.hanacaraka-20-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.hanacaraka-item-card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 14px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.hanacaraka-item-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.hanacaraka-top-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.hanacaraka-glyph-main {
+  font-family: var(--font-javanese);
+  font-size: 2rem;
+  color: var(--navy-dark);
+  margin: 8px 0 6px;
+}
+
+.hanacaraka-bottom-latin {
+  font-size: 0.78rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+.sandhangan-5-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.sandhangan-item-box {
+  background: linear-gradient(160deg, var(--cream-card), var(--cream-bg-soft));
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.sandhangan-top-bar {
+  display: inline-block;
+  min-width: 26px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #FFF;
+  background: var(--navy-dark);
+  border-radius: var(--radius-pill);
+  padding: 2px 8px;
+  margin-bottom: 10px;
+}
+
+.sandhangan-glyph-box {
+  font-family: var(--font-javanese);
+  font-size: 2.1rem;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.sandhangan-read-label { font-size: 0.76rem; color: var(--text-muted); }
+
+/* -------------------------------------------------------------------------
+   4. Cerita Rakyat — Folklore rows & Places
+   ------------------------------------------------------------------------- */
+.folklore-cards-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.folklore-row-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.folklore-row-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.folklore-badge-num {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gold-primary);
+  color: #FFF;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.folklore-img-frame {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.folklore-img-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+.folklore-info-col { display: flex; flex-direction: column; justify-content: center; }
+
+.folklore-card-heading { font-size: 1.2rem; margin-bottom: 8px; }
+
+.folklore-card-paragraph {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.folklore-btns-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.places-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.place-card-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.18s ease;
+}
+.place-card-item:hover { transform: translateY(-4px); }
+.place-card-item img { width: 100%; height: 100%; object-fit: cover; }
+
+.place-card-overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 14px 12px;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.75));
+  color: #FFF;
+}
+
+.place-name { font-weight: 700; font-size: 0.9rem; }
+.place-location { font-size: 0.72rem; opacity: 0.85; margin-top: 2px; }
+
+/* -------------------------------------------------------------------------
+   5. Wayang Kulit — filters & catalog
+   ------------------------------------------------------------------------- */
+.wayang-filter-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.wayang-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--card-border);
+  background: var(--card-bg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+.wayang-filter-btn:hover { border-color: var(--gold-primary); color: var(--gold-dark); }
+.wayang-filter-btn.active {
+  background: var(--navy-dark);
+  border-color: var(--navy-dark);
+  color: #FFF;
+}
+
+.wayang-category-block { margin-bottom: 44px; }
+
+.wayang-5-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.wayang-char-card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.wayang-char-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.wayang-art-stage {
+  background: linear-gradient(160deg, var(--cream-bg-soft), var(--cream-bg));
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 14px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wayang-char-name {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: var(--text-heading);
+}
+
+/* -------------------------------------------------------------------------
+   6. Evaluasi — profile card & level grid
+   ------------------------------------------------------------------------- */
+.eval-profile-header-card {
+  display: grid;
+  grid-template-columns: 90px 1.4fr 1fr;
+  align-items: center;
+  gap: 24px;
+  background: linear-gradient(135deg, var(--cream-card), var(--gold-soft-bg));
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 26px 32px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 44px;
+}
+
+.eval-avatar-round {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--gold-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.eval-user-heading { font-size: 1.4rem; margin-bottom: 6px; }
+
+.eval-role-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold-dark);
+  background: rgba(201, 162, 39, 0.14);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 10px;
+}
+
+.eval-level-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.level-shield-icon { width: 26px; height: 30px; }
+
+.eval-right-stats-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.eval-stat-round-box {
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 8px 20px;
+  text-align: center;
+  min-width: 90px;
+}
+
+.eval-quote-box {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: right;
+  max-width: 220px;
+}
+
+.levels-4-grid,
+.levels-5-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.level-tall-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 26px 18px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.level-tall-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.level-tag-top {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 14px;
+}
+.level-tag-top.open { background: rgba(31, 61, 46, 0.12); color: var(--green-dark); }
+.level-tag-top.locked { background: rgba(116, 100, 79, 0.12); color: var(--text-muted); }
+
+.level-num-title { font-size: 1.15rem; }
+
+.level-subtitle {
+  font-size: 0.8rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.level-art-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  height: 80px;
+}
+
+.level-req-text {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  min-height: 34px;
+}
+
+.level-reward-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+}
+
+/* -------------------------------------------------------------------------
+   7. Kuis — quiz card
+   ------------------------------------------------------------------------- */
+.quiz-card-exact {
+  position: relative;
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.quiz-soal-pill {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy-dark);
+  color: #FFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 20px;
+  border-radius: var(--radius-pill);
+}
+
+.quiz-prompt-text {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.quiz-quote-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--gold-dark);
+  margin-bottom: 18px;
+}
+
+.quiz-options-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.quiz-option-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  background: var(--cream-bg-soft);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+.quiz-option-item:hover { border-color: var(--gold-primary); transform: translateY(-1px); }
+.quiz-option-item.selected { border-color: var(--navy-dark); background: #EAEFF7; }
+.quiz-option-item.correct { border-color: var(--green-dark); background: #E7F1EB; }
+.quiz-option-item.wrong { border-color: #B3452F; background: #FBEAE5; }
+.quiz-option-item.disabled { pointer-events: none; }
+
+.quiz-opt-letter {
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--card-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--text-dark);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.quiz-option-item.selected .quiz-opt-letter { background: var(--navy-dark); color: #FFF; }
+.quiz-option-item.correct .quiz-opt-letter { background: #27ae60; color: #FFF; }
+.quiz-option-item.wrong .quiz-opt-letter { background: #d63031; color: #FFF; }
+
+.quiz-opt-text {
+  flex: 1;
+  line-height: 1.45;
+}
+
+/* Quiz Dots Indicator */
+.quiz-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #D6CBB4;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+}
+.quiz-dot:hover {
+  transform: scale(1.2);
+}
+.quiz-dot.active {
+  background: var(--gold-primary);
+  border-color: #FFF;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.4);
+  transform: scale(1.25);
+}
+.quiz-dot.answered {
+  background: var(--navy-dark);
+}
+.quiz-dot.correct {
+  background: #27ae60;
+}
+.quiz-dot.wrong {
+  background: #d63031;
+}
+
+/* Quiz Feedback Box */
+.quiz-feedback-box {
+  margin-top: 18px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: #FDFAF1;
+  border-left: 4px solid var(--gold-primary);
+  text-align: left;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  animation: quizFadeIn 0.3s ease-out;
+}
+.quiz-feedback-box.correct {
+  border-left-color: #27ae60;
+  background: #F0F9F4;
+}
+.quiz-feedback-box.wrong {
+  border-left-color: #d63031;
+  background: #FDF2F2;
+}
+.quiz-feedback-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.quiz-feedback-box.correct .quiz-feedback-title { color: #1e7e34; }
+.quiz-feedback-box.wrong .quiz-feedback-title { color: #c0392b; }
+
+@keyframes quizFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------------------------------------
+   7b. Quiz Result Modal & Review (Compact, Clean, Viewport-Safe)
+   ------------------------------------------------------------------------- */
+.modal-backdrop#quizResultModal {
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 14px !important;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-dialog.quiz-modal-dialog {
+  max-width: 560px !important;
+  width: 100% !important;
+  max-height: calc(100vh - 36px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+  margin: auto !important;
+  overflow: hidden !important;
+  background: #FDFAF2 !important;
+  border: 2px solid var(--card-border) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 20px 50px rgba(30, 20, 10, 0.4) !important;
+  position: relative !important;
+  animation: quizModalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes quizModalPop {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.quiz-modal-header {
+  padding: 20px 20px 14px;
+  text-align: center;
+  background: linear-gradient(180deg, #FBF3E0 0%, #FDFAF2 100%);
+  border-bottom: 1.5px solid var(--card-border);
+  position: relative;
+}
+
+.quiz-modal-badge-img {
+  width: 56px;
+  height: 62px;
+  margin: 0 auto 6px;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(201, 162, 39, 0.35));
+  transition: transform 0.25s ease;
+}
+.quiz-modal-badge-img:hover {
+  transform: scale(1.08);
+}
+
+.quiz-modal-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.quiz-modal-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.quiz-modal-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.quiz-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.quiz-modal-body::-webkit-scrollbar-thumb {
+  background: #D9CBAC;
+  border-radius: 4px;
+}
+
+/* Metrics Grid (3 columns) */
+.quiz-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.quiz-metric-card {
+  background: #FFFFFF;
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 10px 8px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-metric-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.quiz-metric-val {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #8C5F16;
+  line-height: 1.15;
+}
+
+.quiz-metric-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+/* Review Section / Toggle */
+.quiz-review-toggle-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--card-border);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+.quiz-review-toggle-bar:hover {
+  border-color: var(--gold-primary);
+  background: #FFFDF8;
+}
+
+.quiz-review-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.quiz-review-list::-webkit-scrollbar {
+  width: 5px;
+}
+.quiz-review-list::-webkit-scrollbar-thumb {
+  background: #C9A227;
+  border-radius: 3px;
+}
+
+.quiz-review-card {
+  background: #FFFFFF;
+  border: 1.5px solid var(--card-border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: left;
+  border-left-width: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+.quiz-review-card.is-correct { border-left-color: #27ae60; }
+.quiz-review-card.is-wrong { border-left-color: #d63031; }
+
+.quiz-review-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.quiz-review-num {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.quiz-review-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.quiz-review-pill.correct {
+  background: #E8F8EE;
+  color: #1e7e34;
+}
+.quiz-review-pill.wrong {
+  background: #FDF0EE;
+  color: #c0392b;
+}
+
+.quiz-review-question {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.quiz-review-answers-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.76rem;
+  margin-bottom: 6px;
+}
+
+.quiz-ans-line {
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+.quiz-ans-line.user {
+  background: var(--cream-bg-soft);
+  color: var(--text-dark);
+}
+.quiz-ans-line.correct-key {
+  background: #EAF7EF;
+  color: #1e7e34;
+  font-weight: 600;
+}
+
+.quiz-review-explanation {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  background: #FAF6ED;
+  border-left: 2px solid var(--gold-primary);
+  padding: 6px 8px;
+  border-radius: 4px;
+  line-height: 1.45;
+}
+
+/* Modal Footer */
+.quiz-modal-footer {
+  padding: 12px 18px;
+  background: #F5EEDB;
+  border-top: 1.5px solid var(--card-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quiz-modal-footer .btn {
+  font-size: 0.78rem !important;
+  padding: 7px 15px !important;
+  border-radius: var(--radius-pill) !important;
+}
+
+
+/* -------------------------------------------------------------------------
+   8. Responsive
+   ------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hanacaraka-20-grid { grid-template-columns: repeat(5, 1fr); }
+  .sandhangan-5-grid { grid-template-columns: repeat(3, 1fr); }
+  .wayang-5-grid { grid-template-columns: repeat(3, 1fr); }
+  .places-grid-5 { grid-template-columns: repeat(3, 1fr); }
+  .levels-4-grid,
+  .levels-5-grid { grid-template-columns: repeat(2, 1fr); }
+  .folklore-row-card { grid-template-columns: 160px 1fr; }
+}
+
+@media (max-width: 900px) {
+  .kamus-toolbar { flex-direction: column; align-items: stretch; }
+  .usage-row-card { grid-template-columns: 1fr; text-align: left; }
+  .eval-profile-header-card { grid-template-columns: 1fr; text-align: center; }
+  .eval-right-stats-wrap { align-items: center; }
+  .eval-quote-box { text-align: center; max-width: none; }
+}
+
+@media (max-width: 640px) {
+  .hanacaraka-20-grid { grid-template-columns: repeat(3, 1fr); }
+  .sandhangan-5-grid { grid-template-columns: repeat(2, 1fr); }
+  .wayang-5-grid { grid-template-columns: repeat(2, 1fr); }
+  .places-grid-5 { grid-template-columns: repeat(2, 1fr); }
+  .levels-4-grid,
+  .levels-5-grid { grid-template-columns: 1fr; }
+  .folklore-row-card { grid-template-columns: 1fr; }
+  .folklore-img-frame { aspect-ratio: 16/9; }
+  .quiz-card-exact { padding: 30px 20px; }
+}

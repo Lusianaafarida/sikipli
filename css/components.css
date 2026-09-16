@@ -1,0 +1,496 @@
+/* ==========================================================================
+   JAVANESIA — components.css
+   Home page sections: Hero, About/Video, Feature Grid, Tahukah Kamu,
+   Mengapa Javanesia.
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   1. Hero
+   ------------------------------------------------------------------------- */
+.home-hero-section {
+  background-repeat: no-repeat, repeat, no-repeat;
+  background-size: auto, 72px 72px, auto;
+  padding: 64px 0 40px;
+  overflow: hidden;
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 32px;
+}
+
+.home-hero-greeting {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--gold-dark);
+  margin-bottom: 6px;
+}
+
+.home-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  line-height: 1.18;
+}
+
+.home-hero-desc {
+  margin-top: 18px;
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  max-width: 460px;
+}
+
+.home-hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.home-hero-art-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-hero-art-frame {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.home-hero-art-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: drop-shadow(0 18px 30px rgba(43, 33, 22, 0.18));
+}
+
+/* -------------------------------------------------------------------------
+   2. About + Video section
+   ------------------------------------------------------------------------- */
+.about-section {
+  position: relative;
+}
+
+.about-section-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+}
+
+/* Left-aligned, smaller flourish variant used above body copy */
+.flourish-divider-left {
+  margin: 2px 0 10px;
+  width: 64px;
+}
+
+.about-cta-wrap { margin-top: 6px; }
+
+.about-gunungan-bg {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.video-box {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1.5px solid var(--card-border);
+  aspect-ratio: 16 / 10;
+  background: #000;
+  z-index: 1;
+}
+
+.video-player-el {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: rgba(244, 238, 220, 0.92);
+  color: var(--navy-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+.video-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: var(--gold-primary);
+  color: #FFF;
+}
+
+/* Hide the overlay play button once the video has started playing;
+   .is-playing is toggled on #main-video-player by js/main.js */
+.video-box.is-playing .video-play-btn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.about-text-content { position: relative; z-index: 1; }
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.about-title span { color: var(--gold-dark); }
+
+.about-p {
+  color: var(--text-muted);
+  margin-top: 14px;
+  font-size: 0.96rem;
+}
+
+/* -------------------------------------------------------------------------
+   3. Fitur Unggulan — feature cards
+   ------------------------------------------------------------------------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.feature-card {
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-bahasa { background: linear-gradient(160deg, var(--green-mid), var(--green-dark)); }
+.card-wayang { background: linear-gradient(160deg, #22345C, var(--navy-dark)); }
+.card-cerita { background: linear-gradient(160deg, #9C6B34, var(--brown-primary)); }
+.card-aksara { background: linear-gradient(160deg, #22345C, var(--navy-dark)); }
+.card-kuis   { background: linear-gradient(160deg, var(--green-mid), var(--green-dark)); }
+
+.feature-icon-circle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.feature-icon-img {
+  width: 48px;
+  height: 48px;
+}
+
+.feature-title {
+  color: var(--gold-light);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.feature-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.82);
+  flex: 1 1 auto;
+}
+
+.feature-btn {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #FFF;
+  padding: 8px 20px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-pill);
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+.feature-btn:hover {
+  background: var(--gold-primary);
+  border-color: var(--gold-primary);
+}
+
+/* -------------------------------------------------------------------------
+   4. Tahukah Kamu?
+   ------------------------------------------------------------------------- */
+.dyk-section {
+  padding-top: 10px;
+  position: relative;
+}
+
+.dyk-container { position: relative; }
+
+.dyk-wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  background: var(--navy-dark);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.dyk-navy-card {
+  background: linear-gradient(150deg, var(--navy-dark), var(--navy-darker));
+  padding: 40px 36px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: #FFF;
+}
+
+.dyk-gold-art {
+  flex-shrink: 0;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 12px rgba(201, 162, 39, 0.25));
+  max-height: 160px;
+  width: auto;
+}
+
+.dyk-card-title {
+  color: var(--gold-light);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.dyk-card-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 18px;
+  max-width: 320px;
+}
+
+/* "Selengkapnya" CTA sitting on the dark navy card */
+.dyk-card-btn {
+  font-size: 0.8rem;
+  padding: 6px 18px;
+  background: transparent;
+  border-color: var(--gold-primary);
+  color: #FFF;
+}
+.dyk-card-btn:hover {
+  background: var(--gold-primary);
+  color: var(--navy-darker);
+}
+
+.dyk-items-list {
+  background: var(--cream-card);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.dyk-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.dyk-item-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+.dyk-item-icon-circle.bg-bahasa { background: #183E31; }
+.dyk-item-icon-circle.bg-aksara { background: #183253; }
+.dyk-item-icon-circle.bg-tradisi { background: #482B1B; }
+
+.dyk-item-icon-img {
+  width: 28px;
+  height: 28px;
+}
+
+.dyk-item-title {
+  font-weight: 700;
+  color: var(--text-heading);
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+}
+
+.dyk-item-desc {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+}
+
+.dyk-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cream-card);
+  border: 1.5px solid var(--gold-primary);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.dyk-nav-arrow:hover { background: var(--gold-primary); color: #FFF; }
+.dyk-nav-arrow.prev { left: -12px; }
+.dyk-nav-arrow.next { right: -12px; }
+
+/* -------------------------------------------------------------------------
+   5. Mengapa Javanesia?
+   ------------------------------------------------------------------------- */
+.why-javanesia-section {
+  position: relative;
+  overflow: hidden;
+  padding: 76px 0;
+  margin-top: 8px;
+  background-image:
+    linear-gradient(160deg, var(--green-dark), var(--green-darker));
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+  background-size: auto, auto, 72px 72px, auto;
+  isolation: isolate;
+}
+
+/* Gold botanical flourish, top-left corner (matches reference layout) */
+.why-javanesia-section::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 400px;
+  height: 400px;
+  background-image: url('../assets/patterns/flourish-corner.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Mirrored flourish, bottom-right corner */
+.why-javanesia-section::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 400px;
+  height: 400px;
+  background-image: url('../assets/patterns/flourish-corner.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.why-javanesia-section .container { position: relative; z-index: 1; }
+
+/* Section sits on a dark green background again — light text */
+.why-javanesia-section .section-title { color: #FFF; }
+.why-javanesia-section .section-description { color: #D6E4D7; }
+.why-javanesia-section .highlight-gold { color: var(--gold-light); }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  text-align: center;
+}
+
+.why-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-col-icon {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+}
+
+.why-col-title {
+  color: var(--gold-light);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.why-col-desc {
+  color: rgba(244, 238, 220, 0.82);
+  font-size: 0.9rem;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------------------------------
+   6. Responsive
+   ------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .feature-grid { grid-template-columns: repeat(3, 1fr); }
+  .dyk-wrapper { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .home-hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .home-hero-desc { margin-left: auto; margin-right: auto; }
+  .home-hero-btns { justify-content: center; }
+  .home-hero-art-wrapper { order: -1; }
+  .about-section-layout { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .home-hero-title { font-size: 2.2rem; }
+  .dyk-navy-card { flex-direction: column; text-align: center; padding: 32px 24px; }
+}
+
+@media (max-width: 420px) {
+  .feature-grid { grid-template-columns: 1fr; }
+}

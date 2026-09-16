@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 90" width="80" height="90">
+  <defs>
+    <linearGradient id="medalGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFEAA7"/>
+      <stop offset="50%" stop-color="#E17055"/>
+      <stop offset="100%" stop-color="#D63031"/>
+    </linearGradient>
+    <linearGradient id="ribbonGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B894"/>
+      <stop offset="100%" stop-color="#006266"/>
+    </linearGradient>
+    <linearGradient id="coinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFEAA7"/>
+      <stop offset="40%" stop-color="#FDCB6E"/>
+      <stop offset="100%" stop-color="#E17055"/>
+    </linearGradient>
+  </defs>
+  <!-- Ribbons behind -->
+  <path d="M28,45 L18,78 L34,70 L38,48 Z" fill="url(#ribbonGreen)"/>
+  <path d="M52,45 L62,78 L46,70 L42,48 Z" fill="url(#ribbonGreen)"/>
+  <!-- Medal Outer Star/Petals -->
+  <circle cx="40" cy="40" r="28" fill="#B8860B" stroke="#6E4620" stroke-width="1.5"/>
+  <circle cx="40" cy="40" r="25" fill="url(#coinGrad)"/>
+  <circle cx="40" cy="40" r="21" fill="none" stroke="#FFF" stroke-width="1.2" stroke-dasharray="3 1.5"/>
+  <!-- Center Icon: Trophy / Star -->
+  <path d="M40,25 L44,34 L54,35 L46,42 L49,52 L40,46 L31,52 L34,42 L26,35 L36,34 Z" fill="#FFF" stroke="#B8860B" stroke-width="1.2"/>
+  <circle cx="40" cy="40" r="4" fill="#E17055"/>
+</svg>

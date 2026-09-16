@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVANESIA - Kenali, Pahami, Lestarikan Budaya Jawa</title>
+  <meta name="description" content="Javanesia adalah media pembelajaran digital untuk mengenal, memahami, dan mencintai kekayaan budaya Jawa.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/gunungan.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- @component:navbar:start -->
+  <header class="site-header">
+  <div class="container nav-container">
+    <a href="index.html" class="brand-logo" id="nav-brand-logo">
+      <img src="assets/icons/logo.png" alt="logo-javanesia" class="brand-icon">
+      <div class="brand-text-group">
+        <span class="brand-title">JAVANESIA</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu" id="nav-menu-list">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link active" data-nav="beranda" id="nav-link-beranda">Beranda</a>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link" data-nav="materi" id="nav-link-materi">
+          Materi <span class="nav-link-dropdown-arrow">⌵</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="bahasa-jawa.html" class="dropdown-item" data-nav="bahasa-jawa" id="dropdown-bahasa-jawa">
+            <span class="dropdown-icon">💬</span> Bahasa Jawa
+          </a>
+          <a href="cerita-rakyat.html" class="dropdown-item" data-nav="cerita-rakyat" id="dropdown-cerita-rakyat">
+            <span class="dropdown-icon">📖</span> Cerita Rakyat
+          </a>
+          <a href="aksara-jawa.html" class="dropdown-item" data-nav="aksara-jawa" id="dropdown-aksara-jawa">
+            <span class="dropdown-icon">ꦤ</span> Aksara Jawa
+          </a>
+          <a href="wayang-kulit.html" class="dropdown-item" data-nav="wayang-kulit" id="dropdown-wayang-kulit">
+            <span class="dropdown-icon">🎭</span> Wayang Kulit
+          </a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="evaluasi.html" class="nav-link" data-nav="evaluasi" id="nav-link-evaluasi">Evaluasi</a>
+      </div>
+      <div class="nav-item">
+        <a href="tentang-kami.html" class="nav-link" data-nav="tentang" id="nav-link-tentang">Tentang Kami</a>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="javascript:void(0)" class="btn-header-auth" id="btn-header-auth">
+        Masuk / Mulai <span>👤</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+  <!-- @component:navbar:end -->
+
+  <!-- Hero Section -->
+  <section class="home-hero-section">
+    <div class="container home-hero-grid">
+      <div>
+        <div class="home-hero-greeting">Sugeng Rawuh!</div>
+        <h1 class="home-hero-title">
+          Mari Kenali dan<br>Lestarikan Budaya Jawa
+        </h1>
+        <p class="home-hero-desc">
+          Belajar bahasa, aksara, cerita, wayang dan banyak lagi dengan cara yang menyenangkan.
+        </p>
+        <div class="home-hero-btns">
+          <a href="bahasa-jawa.html" class="btn btn-pill-dark" id="btn-hero-explore">
+            <span>Mulai Eksplorasi</span>
+            <span>→</span>
+          </a>
+          <a href="#fitur-unggulan" class="btn btn-outline-dark" id="btn-hero-materi">
+            <span>Jelajahi Materi</span>
+            <span>📖</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="home-hero-art-wrapper">
+        <div class="home-hero-art-frame">
+          <img src="assets/images/model.png" alt="Karakter Javanesia" class="home-hero-art-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Tentang Javanesia -->
+  <section class="page-section about-section" id="tentang-javanesia">
+    <div class="container about-section-layout">
+      <!-- Video Player -->
+      <div class="video-box" id="main-video-player">
+        <video
+          class="video-player-el"
+          id="homeVideo"
+          poster="assets/images/candi-prambanan.jpg"
+          preload="metadata"
+          playsinline
+          controls
+        >
+          <source src="assets/video/tentang-javanesia.mp4" type="video/mp4">
+          Browser Anda tidak mendukung tag video HTML5.
+        </video>
+        <button class="video-play-btn" id="homeVideoPlayBtn" aria-label="Putar video Tentang Javanesia">
+          <span>▶</span>
+        </button>
+      </div>
+
+      <!-- About Text -->
+      <div class="about-text-content">
+        <h2 class="about-title">Tentang <span>Javanesia</span></h2>
+        <img src="assets/icons/divider.svg" alt="Flourish" class="flourish-divider flourish-divider-left">
+        <p class="about-p">
+          Javanesia adalah media pembelajaran digital yang hadir untuk membantu generasi muda mengenal, memahami, dan mencintai kekayaan budaya Jawa.
+        </p>
+        <p class="about-p">
+          Melalui materi yang lengkap, ilustrasi menarik, dan interaksi menyenangkan, Javanesia menjadi teman belajarmu dalam menjelajahi warisan leluhur kita.
+        </p>
+        <div class="about-cta-wrap">
+          <a href="tentang-kami.html" class="btn btn-pill-cream" id="btn-about-more">
+            <span>Selengkapnya</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Watermark Gunungan on Right -->
+      <img src="assets/icons/gunungan.svg" alt="Gunungan Background" class="about-gunungan-bg">
+    </div>
+  </section>
+
+  <!-- Section: Fitur Unggulan -->
+  <section class="page-section" id="fitur-unggulan">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Fitur Unggulan</h2>
+        <p class="section-description">Pilih materi yang ingin kamu pelajari</p>
+      </div>
+
+      <div class="feature-grid">
+        <!-- 1. Bahasa Jawa -->
+        <div class="feature-card card-bahasa" id="card-fitur-bahasa">
+          <div class="feature-icon-circle">
+            <img src="assets/icons/icon-bahasa.png" alt="Bahasa Jawa Icon" class="feature-icon-img">
+          </div>
+          <h3 class="feature-title">Bahasa Jawa</h3>
+          <p class="feature-desc">
+            Mengenal kosakata, unggah-ungguh bahasa, dan percakapan sehari-hari.
+          </p>
+          <a href="bahasa-jawa.html" class="feature-btn" id="link-fitur-bahasa">
+            <span>Jelajahi</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- 2. Wayang -->
+        <div class="feature-card card-wayang" id="card-fitur-wayang">
+          <div class="feature-icon-circle">
+            <img src="assets/icons/icon-wayang.png" alt="Wayang Icon" class="feature-icon-img">
+          </div>
+          <h3 class="feature-title">Wayang</h3>
+          <p class="feature-desc">
+            Kenali tokoh wayang, jenis, cerita, dan nilai filosofinya.
+          </p>
+          <a href="wayang-kulit.html" class="feature-btn" id="link-fitur-wayang">
+            <span>Jelajahi</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- 3. Cerita Rakyat -->
+        <div class="feature-card card-cerita" id="card-fitur-cerita">
+          <div class="feature-icon-circle">
+            <img src="assets/icons/icon-cerita.png" alt="Cerita Rakyat Icon" class="feature-icon-img">
+          </div>
+          <h3 class="feature-title">Cerita Rakyat</h3>
+          <p class="feature-desc">
+            Baca berbagai cerita rakyat Jawa yang penuh pesan dan nilai luhur.
+          </p>
+          <a href="cerita-rakyat.html" class="feature-btn" id="link-fitur-cerita">
+            <span>Jelajahi</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- 4. Aksara Jawa -->
+        <div class="feature-card card-aksara" id="card-fitur-aksara">
+          <div class="feature-icon-circle">
+            <img src="assets/icons/icon-aksara.png" alt="Aksara Jawa Icon" class="feature-icon-img">
+          </div>
+          <h3 class="feature-title">Aksara Jawa</h3>
+          <p class="feature-desc">
+            Belajar menulis, membaca, dan memahami aksara Jawa dengan mudah.
+          </p>
+          <a href="aksara-jawa.html" class="feature-btn" id="link-fitur-aksara">
+            <span>Jelajahi</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- 5. Evaluasi / Kuis -->
+        <div class="feature-card card-kuis" id="card-fitur-kuis">
+          <div class="feature-icon-circle">
+            <img src="assets/icons/icon-evaluasi.png" alt="Evaluasi Icon" class="feature-icon-img">
+          </div>
+          <h3 class="feature-title">Evaluasi / Kuis</h3>
+          <p class="feature-desc">
+            Uji pemahamanmu dengan kuis seru dan dapatkan poin terbaik!
+          </p>
+          <a href="evaluasi.html" class="feature-btn" id="link-fitur-kuis">
+            <span>Mainkan</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Mengapa Javanesia? -->
+  <section class="page-section why-javanesia-section" id="mengapa-javanesia">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Mengapa <span class="highlight-gold">Javanesia?</span></h2>
+        <p class="section-description">Tujuan kami menghadirkan Javanesia untuk kamu</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-col">
+          <img src="assets/icons/mengenal.png" alt="Mengenal" class="why-col-icon">
+          <h3 class="why-col-title">Mengenal</h3>
+          <p class="why-col-desc">
+            Memahami keberagaman budaya Jawa sebagai bagian dari identitas bangsa.
+          </p>
+        </div>
+
+        <div class="why-col">
+          <img src="assets/icons/belajar.png" alt="Belajar" class="why-col-icon">
+          <h3 class="why-col-title">Belajar</h3>
+          <p class="why-col-desc">
+            Menyediakan materi lengkap dan interaktif untuk belajar dengan mudah dan menyenangkan.
+          </p>
+        </div>
+
+        <div class="why-col">
+          <img src="assets/icons/lestari.png" alt="Melestarikan" class="why-col-icon">
+          <h3 class="why-col-title">Melestarikan</h3>
+          <p class="why-col-desc">
+            Menumbuhkan rasa cinta dan kepedulian untuk melestarikan budaya Jawa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- @component:footer:start -->
+  <footer class="site-footer footer-dark">
+  <div class="container footer-main">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand-col">
+        <div class="brand-logo">
+          <img src="assets/icons/gunungan.svg" alt="Gunungan" class="brand-icon" style="width: 28px; height: 38px;">
+          <div class="brand-text-group">
+            <span class="brand-title" style="font-size: 1.25rem; color: var(--gold-light);">JAVANESIA</span>
+            <span class="brand-tagline" style="font-size: 0.65rem;">Kenali. Pahami. Lestarikan.</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc" style="font-size: 0.82rem; margin-top: 6px;">
+          Belajar budaya Jawa,<br>mengenal warisan,<br>melestarikan makna.
+        </p>
+        <div class="footer-socials" style="margin-top: 8px;">
+          <a href="#" class="social-icon-btn" aria-label="Instagram">📷</a>
+          <a href="#" class="social-icon-btn" aria-label="YouTube">▶️</a>
+          <a href="#" class="social-icon-btn" aria-label="Email">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigasi</h4>
+        <div class="footer-links-list">
+          <a href="index.html">Beranda</a>
+          <a href="bahasa-jawa.html">
+            <span>Materi</span>
+            <span class="footer-dropdown-arrow">▾</span>
+          </a>
+          <a href="evaluasi.html">Evaluasi</a>
+          <a href="tentang-kami.html">Tentang Kami</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Sumber &amp; Referensi</h4>
+        <div class="footer-links-list">
+          <a href="#">Daftar Sumber</a>
+          <a href="#">Buku &amp; Artikel</a>
+          <a href="#">Perpustakaan Digital</a>
+          <a href="#">Balai Bahasa</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Kontak</h4>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">✉</span>
+          <span>hello@javanesia.id</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">📞</span>
+          <span>+62 812-3456-7890</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">📍</span>
+          <span>Yogyakarta, Indonesia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom-bar-wrapper">
+    <img src="assets/icons/batik-center-crest.svg" alt="Crest" class="footer-center-crest">
+    <div class="footer-bottom-bar">
+      <p>© 2024 Javanesia. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+  <!-- @component:footer:end -->
+
+  <!-- Modal Video Player -->
+  <div class="modal-backdrop" id="videoModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Tutup video">✕</button>
+      <h3 id="modalVideoTitle" class="modal-title">Video Pengantar Javanesia</h3>
+      <div class="modal-video-frame">
+        <img src="assets/images/candi-prambanan.jpg" alt="Video Player">
+      </div>
+      <p class="modal-desc">
+        Media pembelajaran multimedia Javanesia memperkenalkan keindahan filosofi, bahasa, aksara, cerita, dan wayang kulit dalam format visual dinamis.
+      </p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
