@@ -29,30 +29,6 @@
     });
   }
 
-  const homeVideo = document.getElementById('homeVideo');
-  const homeVideoBox = document.getElementById('main-video-player');
-  const homeVideoPlayBtn = document.getElementById('homeVideoPlayBtn');
-
-  if (homeVideo && homeVideoBox && homeVideoPlayBtn) {
-    homeVideoPlayBtn.addEventListener('click', function () {
-      homeVideo.play().catch(function () {
-        window.showToast('Video belum bisa diputar. Pastikan file mp4 sudah tersedia di assets/video.');
-      });
-    });
-
-    homeVideo.addEventListener('play', function () {
-      homeVideoBox.classList.add('is-playing');
-    });
-
-    homeVideo.addEventListener('pause', function () {
-      homeVideoBox.classList.remove('is-playing');
-    });
-
-    homeVideo.addEventListener('ended', function () {
-      homeVideoBox.classList.remove('is-playing');
-    });
-  }
-
   const videoModal = document.getElementById('videoModal');
   const modalVideoPlayer = document.getElementById('modalVideoPlayer');
   const modalVideoTitle = document.getElementById('modalVideoTitle');

@@ -288,6 +288,16 @@
 
 .kamus-counter-sub { font-size: 0.72rem; color: var(--text-muted); }
 
+.kamus-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.kamus-table {
+  min-width: 520px;
+}
+
 .kamus-table th {
   text-align: left;
   font-size: 0.8rem;
@@ -357,6 +367,16 @@
 .usage-row-card:hover {
   box-shadow: var(--shadow-sm);
   transform: translateY(-2px);
+}
+
+.aksara-usage-grid {
+  grid-template-columns: 1.2fr 2fr 1.5fr;
+}
+
+.aksara-word-glyph {
+  font-family: var(--font-javanese);
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: var(--text-dark);
 }
 
 .usage-row-left {
@@ -506,7 +526,7 @@
   height: 40px;
   border-radius: 50%;
   background: var(--gold-primary);
-  color: #FFF;
+  color: #1A130B;
   font-family: var(--font-serif);
   font-weight: 700;
   display: flex;
@@ -811,6 +831,13 @@
   padding: 26px 32px;
   box-shadow: var(--shadow-sm);
   margin-bottom: 44px;
+}
+
+.kuis-profile-card {
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  grid-template-columns: 60px 1fr auto;
+  align-items: center;
 }
 
 .eval-avatar-round {
@@ -1411,20 +1438,45 @@
 
 @media (max-width: 900px) {
   .kamus-toolbar { flex-direction: column; align-items: stretch; }
-  .usage-row-card { grid-template-columns: 1fr; text-align: left; }
-  .eval-profile-header-card { grid-template-columns: 1fr; text-align: center; }
-  .eval-right-stats-wrap { align-items: center; }
+  .usage-row-card,
+  .aksara-usage-grid { grid-template-columns: 1fr !important; text-align: left; padding: 16px 14px; gap: 12px; }
+  .eval-profile-header-card,
+  .kuis-profile-card { grid-template-columns: 1fr !important; text-align: center; }
+  .eval-right-stats-wrap { align-items: center; width: 100%; }
   .eval-quote-box { text-align: center; max-width: none; }
 }
 
+@media (max-width: 768px) {
+  .folklore-row-card { grid-template-columns: 1fr; padding: 18px 14px; }
+  .folklore-badge-num { top: -10px; left: 10px; }
+  .eval-profile-header-card,
+  .kuis-profile-card { padding: 20px 16px !important; gap: 14px !important; }
+  .eval-avatar-round { margin: 0 auto; }
+  .eval-point-card { min-width: 0 !important; width: 100%; max-width: 240px; justify-content: center; }
+}
+
 @media (max-width: 640px) {
-  .hanacaraka-20-grid { grid-template-columns: repeat(3, 1fr); }
+  .hanacaraka-20-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .sandhangan-5-grid { grid-template-columns: repeat(2, 1fr); }
   .wayang-5-grid { grid-template-columns: repeat(2, 1fr); }
   .places-grid-5 { grid-template-columns: repeat(2, 1fr); }
   .levels-4-grid,
   .levels-5-grid { grid-template-columns: 1fr; }
+  .level-tall-card { padding: 22px 14px 18px; }
   .folklore-row-card { grid-template-columns: 1fr; }
   .folklore-img-frame { aspect-ratio: 16/9; }
-  .quiz-card-exact { padding: 30px 20px; }
+  .quiz-card-exact { padding: 30px 16px; }
+  .quiz-quote-italic { font-size: clamp(1.2rem, 5vw, 1.45rem); }
+  .quiz-metrics-grid { grid-template-columns: 1fr; }
+  .kamus-card-box { padding: 20px 14px; }
+  .kamus-search-box { min-width: 0; width: 100%; }
+  .kamus-counter-box { width: 100%; justify-content: center; }
+  .translator-card-box { padding: 18px 14px; }
+}
+
+@media (max-width: 400px) {
+  .hanacaraka-20-grid { grid-template-columns: repeat(2, 1fr); }
+  .sandhangan-5-grid { grid-template-columns: 1fr; }
+  .places-grid-5 { grid-template-columns: 1fr; }
+  .wayang-4x4-grid { grid-template-columns: 1fr; }
 }
