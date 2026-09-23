@@ -1,29 +1,18 @@
-/* ==========================================================================
-   JAVANESIA — kuis.js
-   Static Quiz Engine with Multi-level Question Bank (4 Levels from folder soal/),
-   Interactive Feedback, Dynamic Progress Indicator, Score Calculation,
-   and LocalStorage Sync.
-   ========================================================================== */
-
 (function () {
   'use strict';
 
-  /* --------------------------------------------------------------------------
-     1. Question Bank (Statis 4 Level adhedhasar folder soal/)
-     -------------------------------------------------------------------------- */
   const QUIZ_DATABASE = {
     1: {
       levelId: 1,
       title: 'Kuis Level 1',
-      subtitle: 'Tingkat Dasar (Kelas 1) - Pemahaman tembung, basa sedina-dina, sesorah prasaja, lan wayang.',
-      badgeName: 'Pemula Hebat 🏅',
+      subtitle: 'Tingkat Dasar (Kelas 1) - Pemahaman kata, bahasa sehari-hari, pidato sederhana, dan wayang.',
+      badgeName: 'Dasar 🏅',
       badgeIcon: 'assets/icons/badge-pemula.svg',
-      rewardPoin: 50,
+      rewardPoin: 100,
       questions: [
         {
           category: 'Tegese Tembung',
           prompt: 'Tegese tembung “kabersihan” ing teks sesorah utawa pidhato yaiku …',
-          quote: '“Njaga kabersihan lingkungan sekolah”',
           options: ['Reged lan rusuh', 'Resik lan sehat', 'Rusak kahanane', 'Kotor ora karu-ruwan'],
           correctIndex: 1,
           explanation: 'Tembung “kabersihan” asale saka lingga “resik”, tegese kahanan sing resik, rapi, sarta adoh saka reregedan.'
@@ -31,7 +20,6 @@
         {
           category: 'Unggah-Ungguh Basa',
           prompt: 'Basa krama sing bener saka ukara “Aku arep lunga” yaiku …',
-          quote: '“Aku arep lunga menyang Solo”',
           options: ['Kula badhe kesah', 'Kula arep tindak', 'Aku tindak dhisik', 'Kula badhe mlaku'],
           correctIndex: 0,
           explanation: 'Kanggo awake dhewe nggunakake tembung “kula” lan “kesah” (krama lugu/andhap). Tembung “tindak” minangka krama inggil kagem wong liya.'
@@ -39,7 +27,6 @@
         {
           category: 'Crita Wayang',
           prompt: 'Ing jagad pewayangan Jawa, Raden Werkudara (Bima) kalebu sedulur …',
-          quote: '“Satriya gagah ing Jodhipati”',
           options: ['Kurawa', 'Pandhawa', 'Punakawan', 'Para Dewa'],
           correctIndex: 1,
           explanation: 'Raden Werkudara (Bima) yaiku satriya panenggak Pandhawa lima, putrane Prabu Pandu Dewanata lan Dewi Kunthi.'
@@ -47,7 +34,6 @@
         {
           category: 'Watak Tokoh Wayang',
           prompt: 'Watak utama saka satriya panenggak Pandhawa, yaiku Raden Bima, yaiku …',
-          quote: '“Watak satriya sejati”',
           options: [
             'Penakut lan gampang bingung',
             'Licik lan seneng cidra',
@@ -60,7 +46,6 @@
         {
           category: 'Tegese Tembung',
           prompt: 'Tegese tembung “gagah” ing ukara “Satriya iku awake gagah prakosa” yaiku …',
-          quote: '“Pawakan gagah prakosa”',
           options: ['Kuwat, sentosa, lan wani', 'Lemah lan ringkih', 'Susah lan prihatin', 'Wedi marang musuh'],
           correctIndex: 0,
           explanation: 'Gagah tegese pawakan kang kuwat, sentosa, dhuwur gedhe, sarta ngemu watak kang kendel (wani).'
@@ -68,7 +53,6 @@
         {
           category: 'Sastra Sesorah',
           prompt: 'Perangan pambuka (purwaka) sajrone sesorah/pidhato lumrahe ngemot …',
-          quote: '“Purwaka sesorah”',
           options: [
             'Isi baku lan wigatining sesorah',
             'Salam pambuka, puji syukur, lan pakurmatan',
@@ -81,7 +65,6 @@
         {
           category: 'Kabudayan Wayang',
           prompt: 'Wayang kulit tradhisional Jawa lumrahe kagawe saka bahan …',
-          quote: '“Kagunan seni wayang kulit”',
           options: [
             'Kayu jati utawa trembesi',
             'Lulang / kulit kewan (sapi utawa kebo)',
@@ -94,7 +77,6 @@
         {
           category: 'Tokoh Wayang',
           prompt: 'Abdi dalem ing pewayangan kang asipat guyon, lucu, nanging kebak kawicaksanan diarani …',
-          quote: '“Pamomong para satriya”',
           options: [
             'Para Kurawa',
             'Para Raseksa',
@@ -107,7 +89,6 @@
         {
           category: 'Tata Krama Sesorah',
           prompt: 'Sikap lan tata krama sing becik nalika maju maca sesorah (pidhato) yaiku …',
-          quote: '“Subasita maca sesorah”',
           options: [
             'Swara lirih banget lan ngadeg sembarangan',
             'Sopan, swara cetha, lan mantep pitaya diri',
@@ -120,7 +101,6 @@
         {
           category: 'Piwulang Budi Pekerti',
           prompt: 'Piwulang luhur sing kakandhut sajrone pagelaran seni wayang yaiku …',
-          quote: '“Tontonan lan tuntunan”',
           options: [
             'Mung kanggo dolanan ngisi wektu lodhang',
             'Ngemot nilai moral, piwulang luhur, lan tuntunan urip',
@@ -135,15 +115,14 @@
     2: {
       levelId: 2,
       title: 'Kuis Level 2',
-      subtitle: 'Tingkat Menengah (Kelas 4) - Crita rakyat Timun Mas, jinis dongeng, lan paugeran tembang Gambuh.',
-      badgeName: 'Pangripta Cerita 📜',
-      badgeIcon: 'assets/icons/badge-kata.svg',
+      subtitle: 'Tingkat Menengah (Kelas 4) - Cerita rakyat Timun Mas, jenis dongeng, dan aturan tembang Gambuh.',
+      badgeName: 'Menengah 📜',
+      badgeIcon: 'assets/icons/badge-pemula.svg',
       rewardPoin: 100,
       questions: [
         {
           category: 'Crita Rakyat',
           prompt: 'Adhedhasar crita rakyat “Timun Mas”, apa sebabe buta ijo/raksasa ngoyak Timun Mas?',
-          quote: '“Janji lawas ing desa”',
           options: [
             'Amarga Timun Mas nyolong panganan raksasa',
             'Amarga raksasa kepengin dadi kancane Timun Mas',
@@ -156,7 +135,6 @@
         {
           category: 'Crita Rakyat',
           prompt: 'Benda-benda pusaka paringane pertapa sing digunakake Timun Mas kanggo nglawan raksasa yaiku …',
-          quote: '“Pusaka pitulungan pertapa”',
           options: [
             'Wiji timun, jarum, uyah, lan terasi',
             'Emas, inten, watu kali, lan keris',
@@ -169,7 +147,6 @@
         {
           category: 'Penokohan Crita',
           prompt: 'Saka crita Timun Mas, watak lan sipat utama sing paling katon saka tokoh Timun Mas yaiku …',
-          quote: '“Watak tokoh Timun Mas”',
           options: [
             'Kesed, gumendhe, lan manja',
             'Pemberani, cerdas, lan ora gampang pasrah',
@@ -182,7 +159,6 @@
         {
           category: 'Unsur Intrinsik',
           prompt: 'Unsur intrinsik sajrone crita rakyat sing nuduhake papan panggonan lan wektu dumadine crita diarani …',
-          quote: '“Papan lan wektu kedadeyan”',
           options: ['Alur / plot', 'Latar / setting', 'Amanat / pesen moral', 'Tema crita'],
           correctIndex: 1,
           explanation: 'Latar utawa setting nyakup latar panggonan (desa/alas), latar wektu (jaman biyen/esuk), lan latar kahanan/swasana.'
@@ -190,7 +166,6 @@
         {
           category: 'Jinis Crita Rakyat',
           prompt: 'Crita rakyat sing nyritakake babagan asal-usul dumadine sawijining panggonan diarani …',
-          quote: '“Tuladha: Rawa Pening, Banyuwangi”',
           options: [
             'Mite (babagan para dewa utawa roh alus)',
             'Legenda (asal-usul papan panggonan)',
@@ -203,7 +178,6 @@
         {
           category: 'Tembang Macapat',
           prompt: 'Ing kasusastran tradisi Jawa, tembang Gambuh kalebu golongane …',
-          quote: '“Sekar Gambuh Ping Catur”',
           options: ['Geguritan modhern', 'Parikan bebas', 'Tembang Macapat', 'Tembang Dolanan bocah'],
           correctIndex: 2,
           explanation: 'Gambuh iku salah siji saka 11 jinis tembang macapat Jawa (Maskumambang, Mijil, Sinom, Kinanthi, Asmaradana, Gambuh, Dhandhanggula, Durma, Pangkur, Megatruh, Pocung).'
@@ -211,7 +185,6 @@
         {
           category: 'Watak Tembang',
           prompt: 'Watak saka tembang Gambuh lumrahe ngemot swasana …',
-          quote: '“Watak Sekar Gambuh”',
           options: [
             'Susah, nelangsa, lan sedhih banget',
             'Pitutur luhur, mulang, lan aweh nasihat babagan urip',
@@ -224,7 +197,6 @@
         {
           category: 'Paugeran Macapat',
           prompt: 'Guru gatra (cacahe larik utawa baris saben sabait/pada) saka tembang Gambuh ana …',
-          quote: '“Cacahe larik tembang Gambuh”',
           options: ['4 larik', '5 larik', '6 larik', '7 larik'],
           correctIndex: 1,
           explanation: 'Tembang Gambuh nduweni guru gatra 5 larik saben sakpada (sabait).'
@@ -232,7 +204,6 @@
         {
           category: 'Guru Wilangan & Lagu',
           prompt: 'Paugeran guru wilangan lan guru lagu tembang Gambuh yaiku …',
-          quote: '“Guru wilangan & guru lagu Gambuh”',
           options: [
             '7u, 10u, 12i, 8u, 8o',
             '8a, 11i, 8u, 7a, 12u',
@@ -245,7 +216,6 @@
         {
           category: 'Tegese Tembung',
           prompt: 'Nalika maca tembang Gambuh ana tembung “pitutur” lan “luhur”. Tegese tembung kasebut yaiku …',
-          quote: '“Pitutur luhur marang sapadha”',
           options: [
             'Dolanan lan bungah',
             'Nasihat lan mulia',
@@ -260,15 +230,14 @@
     3: {
       levelId: 3,
       title: 'Kuis Level 3',
-      subtitle: 'Tingkat Lanjutan (Kelas 5) - Teks sesorah, basa krama, piranti pewayangan, lan Pandhawa lima.',
-      badgeName: 'Wayang Expert 🎭',
-      badgeIcon: 'assets/icons/badge-wayang.svg',
-      rewardPoin: 150,
+      subtitle: 'Tingkat Lanjutan (Kelas 5) - Teks pidato, bahasa krama, perlengkapan wayang, dan Pandhawa lima.',
+      badgeName: 'Menengah Atas 🎭',
+      badgeIcon: 'assets/icons/badge-pemula.svg',
+      rewardPoin: 100,
       questions: [
         {
           category: 'Teks Sesorah',
           prompt: 'Gatekna ukara sesorah: “Para rawuh, dinten menika kula badhe nyariosaken wigatosipun njaga kebersihan”. Tembung “wigatosipun” tegese …',
-          quote: '“Wigatosipun njaga karesikan”',
           options: ['Kaendahane', 'Pentingipun / pentinge', 'Karesikane', 'Kepenake'],
           correctIndex: 1,
           explanation: 'Tembung “wigatos” iku basa krama saka tembung “penting” utawa bab kang kudu diutamakake.'
@@ -276,7 +245,6 @@
         {
           category: 'Unggah-Ungguh Basa',
           prompt: 'Ukara “Aku arep mangan” yen diowahi menyang basa krama lugu/andhap kagem awake dhewe yaiku …',
-          quote: '“Basa krama mangan”',
           options: ['Kula badhe nedha', 'Kula badhe dahar', 'Aku badhe nedha', 'Kula mangan sekul'],
           correctIndex: 0,
           explanation: 'Kanggo nyritakake awake dhewe mangan nggunakake “nedha”. Tembung “dahar” minangka krama inggil kagem tiyang sanes ingkang dipunurmati.'
@@ -284,7 +252,6 @@
         {
           category: 'Nulis Sesorah',
           prompt: 'Langkah sepisanan sing kudu ditindakake sadurunge nulis teks sesorah yaiku …',
-          quote: '“Langkah nggawe sesorah”',
           options: [
             'Nulis perangan panutup dhisik',
             'Nemtokake tema sesorah',
@@ -297,7 +264,6 @@
         {
           category: 'Piranti Wayang',
           prompt: 'Layar kain putih sing dibentangake kanggo papan wewayangan sajrone pagelaran wayang kulit diarani …',
-          quote: '“Layar putih pagelaran wayang”',
           options: ['Blencong', 'Kelir', 'Kothak wayang', 'Cempala'],
           correctIndex: 1,
           explanation: 'Kelir yaiku mori putih sing dibentangake minangka layar kanggo nampani wewayangan wayang sajrone pagelaran wayang kulit.'
@@ -305,7 +271,6 @@
         {
           category: 'Piranti Wayang',
           prompt: 'Lampu colok mirunggan (tradhisional lenga klentik) sing dadi sumber pepadhang wewayanganing wayang diarani …',
-          quote: '“Pepadhang sajrone kelir”',
           options: ['Blencong', 'Kelir', 'Cempala', 'Kepyak'],
           correctIndex: 0,
           explanation: 'Blencong yaiku lampu mirunggan kanggo madhangi kelir, saengga bisa ngasilake wewayangan wayang sing cetha lan urip.'
@@ -313,7 +278,6 @@
         {
           category: 'Falsafah Wayang',
           prompt: 'Kayon utawa Gunungan sajrone pagelaran wayang kulit nduweni pralambang minangka …',
-          quote: '“Kayon / Gunungan Wayang”',
           options: [
             'Omah gedhe darbeke para raja',
             'Gumelaring alam semesta (wit kalpataru/jagad raya)',
@@ -326,7 +290,6 @@
         {
           category: 'Pandhawa Lima',
           prompt: 'Sebutna urutan Pandhawa lima saka sing pambarep (paling sepuh) tumekaning waruju (ragil)!',
-          quote: '“Urutan Pandhawa Lima”',
           options: [
             'Yudhistira, Bima, Arjuna, Nakula, Sadewa',
             'Bima, Arjuna, Yudhistira, Nakula, Sadewa',
@@ -339,7 +302,6 @@
         {
           category: 'Tokoh Seni Pagelaran',
           prompt: 'Pawongan sing nduweni tugas ngatur lakon, ngobahake wayang, sarta nyritakake lakon sajrone pagelaran wayang diarani …',
-          quote: '“Pemimpin pagelaran wayang”',
           options: ['Sinden / Waranggana', 'Niyaga / Pengrawit', 'Dhalang', 'Wiyaga'],
           correctIndex: 2,
           explanation: 'Dhalang asale saka tembung “ngudhal piwulang”, yaiku sutradara sarta pamicara tunggal sing nyritakake lan ngobahake wayang.'
@@ -347,7 +309,6 @@
         {
           category: 'Paugeran Macapat',
           prompt: 'Sajrone paugeran tembang macapat, cacahe wanda (suku kata) ing saben sapada/sabaris diarani …',
-          quote: '“Cacahe suku kata saben baris”',
           options: ['Guru lagu', 'Guru wilangan', 'Guru gatra', 'Guru swara'],
           correctIndex: 1,
           explanation: 'Guru wilangan yaiku cacahe wanda (suku kata) saben sabaris/sagatra. Tuladha: “Sekar gambuh ping catur” = 7 wanda.'
@@ -355,7 +316,6 @@
         {
           category: 'Paugeran Macapat',
           prompt: 'Dhawahing swara vokal (a, i, u, e, o) ing pungkasaning gatra sajrone tembang macapat diarani …',
-          quote: '“Tibaning swara pungkasaning gatra”',
           options: ['Guru gatra', 'Guru wilangan', 'Guru lagu', 'Guru sastra'],
           correctIndex: 2,
           explanation: 'Guru lagu yaiku tibaning swara vokal ing saben pungkasane gatra/larik tembang macapat.'
@@ -365,15 +325,14 @@
     4: {
       levelId: 4,
       title: 'Kuis Level 4',
-      subtitle: 'Tingkat Mahir (Kelas 6) - Geguritan modern, analisis sesorah resmi, makna konotatif, lan basa alus.',
-      badgeName: 'Master Sastra Jawa 👑',
-      badgeIcon: 'assets/icons/gunungan.svg',
-      rewardPoin: 200,
+      subtitle: 'Tingkat Mahir (Kelas 6) - Geguritan modern, analisis pidato resmi, makna konotatif, dan bahasa krama alus.',
+      badgeName: 'Handal 👑',
+      badgeIcon: 'assets/icons/badge-pemula.svg',
+      rewardPoin: 100,
       questions: [
         {
           category: 'Karya Sastra Geguritan',
           prompt: 'Puisi Jawa modhern kang sipate bebas tanpa kaiket dening paugeran guru gatra, guru wilangan, lan guru lagu diarani …',
-          quote: '“Rumpakan sastra gagrag anyar”',
           options: ['Tembang Macapat', 'Geguritan', 'Parikan', 'Wangsalan'],
           correctIndex: 1,
           explanation: 'Geguritan yaiku puisi gagrag anyar (modern) ing basa Jawa kang ora kaiket paugeran kaya dene macapat, nanging ngugemi kaendahan basa lan makna.'
@@ -381,7 +340,6 @@
         {
           category: 'Makna Tembung Sesorah',
           prompt: 'Gatekna pethikan sesorah: “Para siswa ingkang kula tresnani…”. Tembung “tresnani” nduweni teges …',
-          quote: '“Para siswa ingkang kula tresnani”',
           options: [
             'Sengit lan mangkel',
             'Tresna, asih, lan disenengi kanthi tulus',
@@ -394,7 +352,6 @@
         {
           category: 'Ukara Pambuka Sesorah',
           prompt: 'Ukara pambuka sesorah resmi ing ngisor iki sing paling trep lan nuduhake subasita pakurmatan marang para rawuh yaiku …',
-          quote: '“Purwaka atur sesorah resmi”',
           options: [
             'Ayo kanca-kanca enggal padha mangan bareng!',
             'Para rawuh kakung miwah putri ingkang dahat kinurmatan…',
@@ -407,7 +364,6 @@
         {
           category: 'Struktur Teks Sesorah',
           prompt: 'Struktur teks sesorah (pidhato) kanthi urutan kang runtut lan trep yaiku …',
-          quote: '“Urutan struktur sesorah”',
           options: [
             'Isi (surasa basa) – Pambuka (purwaka) – Panutup (wasana basa)',
             'Pambuka (purwaka) – Isi (surasa basa) – Panutup (wasana basa)',
@@ -420,7 +376,6 @@
         {
           category: 'Apresiasi Geguritan',
           prompt: 'Gatekna pethikan geguritan: “Sekolahku resik lan asri, panggonan sinau saben dina”. Tembung “asri” nduweni teges …',
-          quote: '“Sekolahku resik lan asri”',
           options: [
             'Reged, rusuh, lan peteng kahanane',
             'Apik, endah, lan nengsemake disawang',
@@ -433,7 +388,6 @@
         {
           category: 'Makna Geguritan',
           prompt: 'Gatekna geguritan: “Tanduran ijo royo-royo, nggawé ati tentrem lan ayem”. Makna lan rasa sing diwedharake yaiku …',
-          quote: '“Nggawé ati tentrem lan ayem”',
           options: [
             'Lingkungan sing ijo lan asri nuwuhake katentreman lan kanyamanan ing ati',
             'Tanduran gawe regeting plataran sekolah',
@@ -446,7 +400,6 @@
         {
           category: 'Unggah-Ungguh Krama Alus',
           prompt: 'Ukara ing ngisor iki sing nggunakake tataran basa Krama Alus kanthi bener lan trep yaiku …',
-          quote: '“Tataran Krama Alus”',
           options: [
             'Kula badhe tindak sekolah sakmenika',
             'Bapak nembe sare wonten ing kamar',
@@ -459,7 +412,6 @@
         {
           category: 'Unsur Geguritan',
           prompt: 'Babagan paling baku lan wigati sing kakandhut sajrone teks geguritan yaiku …',
-          quote: '“Wos surasa geguritan”',
           options: [
             'Cacahe kaca lan wernane kertas',
             'Makna, surasa, lan pesen amanat kang diwedharake pangripta',
@@ -472,7 +424,6 @@
         {
           category: 'Panutup Sesorah',
           prompt: 'Ukara panutup sesorah resmi ing ngisor iki sing paling sopan lan trep yaiku …',
-          quote: '“Wasana basa sesorah”',
           options: [
             'Cukup semene wae sesorahku, aku kesel.',
             'Mugi-mugi sesorah punika saged migunani tumrap kita sedaya, nyuwun agunging pangaksami, matur nuwun.',
@@ -485,7 +436,6 @@
         {
           category: 'Kabudayan & Basa Jawa',
           prompt: 'Basa Jawa alus sing nengenake subasita lan tata krama pakurmatan marang wong liya diarani basa …',
-          quote: '“Subasita Basa Jawa”',
           options: [
             'Ngoko lugu',
             'Ngoko alus',
@@ -499,11 +449,13 @@
     }
   };
 
-  /* --------------------------------------------------------------------------
-     2. State Management & Storage
-     -------------------------------------------------------------------------- */
   const STORAGE_KEY = 'javanesia_quiz_state';
   const AUTH_KEY = 'javanesia_user_name';
+
+  function recalculateTotalPoints(completedLevels) {
+    if (!completedLevels || typeof completedLevels !== 'object') return 0;
+    return Object.values(completedLevels).reduce((sum, s) => sum + (Number(s) || 0), 0);
+  }
 
   function getUserStats() {
     const authName = (window.JavanesiaAuth && window.JavanesiaAuth.getUserName())
@@ -512,11 +464,11 @@
     const defaultStats = {
       name: authName || 'Tamu Budaya',
       role: 'Pelajar Budaya Jawa',
-      poin: 120,
-      rank: 120,
+      poin: 0,
+      rank: 1,
       unlockedLevels: [1],
       completedLevels: {},
-      badges: ['Pemula Hebat 🏅']
+      badges: []
     };
 
     try {
@@ -529,6 +481,8 @@
         } else if (!merged.name || merged.name === 'Saka Ardian') {
           merged.name = 'Tamu Budaya';
         }
+
+        merged.poin = recalculateTotalPoints(merged.completedLevels);
         return merged;
       }
     } catch (e) {
@@ -545,7 +499,6 @@
     }
   }
 
-  // Parse level parameter from URL (e.g. kuis.html?level=2)
   const urlParams = new URLSearchParams(window.location.search);
   let activeLevelId = parseInt(urlParams.get('level'), 10);
   if (!activeLevelId || !QUIZ_DATABASE[activeLevelId]) {
@@ -557,12 +510,9 @@
 
   let currentQuestionIndex = 0;
   let isSubmitted = false;
-  // userAnswers: array of { selectedIndex: number, isCorrect: boolean }
+
   const userAnswers = new Array(questions.length).fill(null);
 
-  /* --------------------------------------------------------------------------
-     3. Audio Effects (Web Audio API Synthesizer - No External Audio Files)
-     -------------------------------------------------------------------------- */
   function playSound(type) {
     try {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -622,35 +572,27 @@
         });
       }
     } catch (e) {
-      // Audio context might be restricted before first interaction
+
     }
   }
 
-  /* --------------------------------------------------------------------------
-     4. DOM Elements Cache
-     -------------------------------------------------------------------------- */
   const dom = {
     quizProgressText: document.getElementById('quizProgressText'),
     quizDotsContainer: document.getElementById('quizDotsContainer'),
     quizCardContainer: document.getElementById('quizCardContainer'),
     quizPrompt: document.getElementById('quizPrompt'),
-    quizQuote: document.getElementById('quizQuote'),
     quizOptionsContainer: document.getElementById('quizOptionsContainer'),
     btnQuizPrev: document.getElementById('btnQuizPrev'),
     btnQuizNext: document.getElementById('btnQuizNext'),
-    // Result modal
+
     quizResultModal: document.getElementById('quizResultModal'),
     resultScoreBadge: document.getElementById('resultScoreBadge'),
-    resultSummaryText: document.getElementById('resultSummaryText'),
-    // Profile displays on quiz page
-    evalUserPoin: document.querySelector('.eval-stat-round-box:first-of-type div:last-child')
+
+    evalUserPoin: document.getElementById('evalUserPoin') || document.querySelector('.eval-point-number') || document.querySelector('.eval-stat-round-box:first-of-type div:last-child')
   };
 
-  /* --------------------------------------------------------------------------
-     5. Render Methods
-     -------------------------------------------------------------------------- */
   function renderHeaderAndBreadcrumbs() {
-    // Breadcrumbs
+
     const breadcrumbCurrent = document.querySelector('.breadcrumb-current');
     const breadcrumbLink = document.querySelectorAll('.breadcrumbs .breadcrumb-link');
     if (breadcrumbLink && breadcrumbLink[1]) {
@@ -660,15 +602,12 @@
       breadcrumbCurrent.textContent = `Kuis Level ${activeLevelId}`;
     }
 
-    // Page title
     const mainTitle = document.querySelector('.subpage-title');
     if (mainTitle) mainTitle.textContent = currentLevelData.title;
 
-    // Subtitle
     const subDesc = document.querySelector('.subpage-subtitle');
     if (subDesc) subDesc.textContent = currentLevelData.subtitle;
 
-    // Section title
     const secTitle = document.querySelector('h2');
     if (secTitle && secTitle.textContent.includes('Kuis')) {
       secTitle.textContent = currentLevelData.title;
@@ -730,15 +669,12 @@
     const q = questions[currentQuestionIndex];
     if (!q) return;
 
-    // 1. Progress Text
     if (dom.quizProgressText) {
       dom.quizProgressText.textContent = `Soal ${currentQuestionIndex + 1} dari ${questions.length}`;
     }
 
-    // 2. Dots
     renderDots();
 
-    // 3. Category Pill
     let pill = dom.quizCardContainer.querySelector('.quiz-soal-pill');
     if (!pill) {
       pill = document.createElement('span');
@@ -747,22 +683,10 @@
     }
     pill.textContent = q.category || `SOAL ${currentQuestionIndex + 1}`;
 
-    // 4. Prompt
     if (dom.quizPrompt) {
       dom.quizPrompt.textContent = q.prompt;
     }
 
-    // 5. Quote
-    if (dom.quizQuote) {
-      if (q.quote) {
-        dom.quizQuote.style.display = 'block';
-        dom.quizQuote.textContent = q.quote;
-      } else {
-        dom.quizQuote.style.display = 'none';
-      }
-    }
-
-    // 6. Options
     if (dom.quizOptionsContainer) {
       dom.quizOptionsContainer.innerHTML = '';
       const letters = ['A', 'B', 'C', 'D'];
@@ -808,7 +732,6 @@
       });
     }
 
-    // 7. Feedback Box (hanya muncul setelah kuis selesai disubmit)
     let feedbackBox = document.getElementById('quizFeedbackBox');
     if (!feedbackBox) {
       feedbackBox = document.createElement('div');
@@ -820,7 +743,7 @@
     if (isSubmitted && currentAns !== null) {
       feedbackBox.style.display = 'block';
       feedbackBox.className = 'quiz-feedback-box ' + (currentAns.isCorrect ? 'correct' : 'wrong');
-      const icon = currentAns.isCorrect ? '✅ Bener Banget!' : '❌ Kurang Trep!';
+      const icon = currentAns.isCorrect ? '✅ Benar Sekali!' : '❌ Kurang Tepat!';
       feedbackBox.innerHTML = `
         <div class="quiz-feedback-title">${icon}</div>
         <div style="font-size: 0.85rem; color: var(--text-dark);">${q.explanation}</div>
@@ -830,7 +753,6 @@
       feedbackBox.innerHTML = '';
     }
 
-    // 8. Navigation Buttons State
     if (dom.btnQuizPrev) {
       dom.btnQuizPrev.disabled = (currentQuestionIndex === 0);
       dom.btnQuizPrev.style.opacity = (currentQuestionIndex === 0) ? '0.45' : '1';
@@ -849,9 +771,6 @@
     }
   }
 
-  /* --------------------------------------------------------------------------
-     6. User Interaction Handlers
-     -------------------------------------------------------------------------- */
   function handleAnswer(selectedIndex) {
     if (isSubmitted) return;
 
@@ -880,7 +799,7 @@
   function nextQuestion() {
     if (!isSubmitted && userAnswers[currentQuestionIndex] === null) {
       if (window.showToast) {
-        window.showToast('Mangga pilih salah siji wangsulan dhisik ya! ✨');
+        window.showToast('Silakan pilih salah satu jawaban terlebih dahulu ya! ✨');
       }
       return;
     }
@@ -896,7 +815,7 @@
       }
       const unanswered = userAnswers.filter(a => a === null).length;
       if (unanswered > 0) {
-        if (confirm(`Ana ${unanswered} soal sing durung diwangsuli. Apa kowe tetep arep mungkasi kuis iki?`)) {
+        if (confirm(`Ada ${unanswered} soal yang belum dijawab. Apakah kamu tetap ingin mengakhiri kuis ini?`)) {
           finishQuiz();
         }
       } else {
@@ -912,9 +831,6 @@
     }
   }
 
-  /* --------------------------------------------------------------------------
-     7. Finish & Results Calculation
-     -------------------------------------------------------------------------- */
   function finishQuiz() {
     isSubmitted = true;
     playSound('complete');
@@ -927,11 +843,7 @@
     const score = Math.round((correctCount / questions.length) * 100);
     const passed = score >= 60;
 
-    // Update LocalStorage Stats
     const stats = getUserStats();
-
-    const poinEarned = Math.round((score / 100) * currentLevelData.rewardPoin);
-    stats.poin = (stats.poin || 0) + poinEarned;
 
     if (!stats.completedLevels) stats.completedLevels = {};
     const prevBest = stats.completedLevels[activeLevelId] || 0;
@@ -939,7 +851,8 @@
       stats.completedLevels[activeLevelId] = score;
     }
 
-    // Unlock next level if passed (Total 4 Levels)
+    stats.poin = recalculateTotalPoints(stats.completedLevels);
+
     if (passed && activeLevelId < 4) {
       const nextLevel = activeLevelId + 1;
       if (!stats.unlockedLevels.includes(nextLevel)) {
@@ -947,7 +860,6 @@
       }
     }
 
-    // Award Badge
     if (passed && currentLevelData.badgeName && !stats.badges.includes(currentLevelData.badgeName)) {
       stats.badges.push(currentLevelData.badgeName);
     }
@@ -956,11 +868,10 @@
     renderUserProfile();
     renderQuestion();
 
-    // Show Result in Modal
-    showResultModal(score, correctCount, poinEarned, passed);
+    showResultModal(score, correctCount, passed);
   }
 
-  function showResultModal(score, correctCount, poinEarned, passed) {
+  function showResultModal(score, correctCount, passed) {
     if (!dom.quizResultModal) return;
 
     if (dom.resultScoreBadge) {
@@ -993,7 +904,7 @@
 
     const badgeNameEl = document.getElementById('resultBadgeName');
     if (badgeNameEl) {
-      badgeNameEl.textContent = passed ? currentLevelData.badgeName : 'Coba Meneh 💪';
+      badgeNameEl.textContent = passed ? currentLevelData.badgeName : 'Coba Lagi 💪';
     }
 
     const badgeStatusEl = document.getElementById('resultBadgeStatus');
@@ -1009,26 +920,16 @@
 
     const currentName = getUserStats().name;
     const isNamed = currentName && currentName !== 'Tamu Budaya';
-    const greeting = isNamed ? `Sugeng, ${currentName}! ` : '';
+    const greeting = isNamed ? `Selamat, ${currentName}! ` : '';
 
     const modalTitle = document.getElementById('resultModalTitle');
     if (modalTitle) {
       if (score === 100) {
-        modalTitle.textContent = isNamed ? `Sampurna, ${currentName}! 🎉` : 'Sampurna! Luar Biasa! 🎉';
+        modalTitle.textContent = isNamed ? `Sempurna, ${currentName}! 🎉` : 'Sempurna! Luar Biasa! 🎉';
       } else if (passed) {
-        modalTitle.textContent = isNamed ? `Sugeng, ${currentName}! Kuis Selesai! 🎉` : 'Sugeng! Kuis Selesai! 🎉';
+        modalTitle.textContent = isNamed ? `Selamat, ${currentName}! Kuis Selesai! 🎉` : 'Selamat! Kuis Selesai! 🎉';
       } else {
-        modalTitle.textContent = isNamed ? `Tetep Semangat, ${currentName}! 💪` : 'Tetep Semangat Nyinaoni! 💪';
-      }
-    }
-
-    if (dom.resultSummaryText) {
-      if (score === 100) {
-        dom.resultSummaryText.textContent = `${greeting}Kowe kasil mangsuli kabeh ${questions.length} pitakonan kanthi bener tanpa cacat (+${poinEarned} Poin)! Kawruhmu babagan kabudayan Jawa wis jero banget.`;
-      } else if (passed) {
-        dom.resultSummaryText.textContent = `${greeting}Kowe kasil mangsuli ${correctCount} saka ${questions.length} pitakonan kanthi bener (+${poinEarned} Poin).`;
-      } else {
-        dom.resultSummaryText.textContent = `${greeting}Kowe mangsuli ${correctCount} saka ${questions.length} pitakonan kanthi bener (${score} poin). Aja patah semangat, ayo disinaoni maneh!`;
+        modalTitle.textContent = isNamed ? `Tetap Semangat, ${currentName}! 💪` : 'Tetap Semangat Belajar! 💪';
       }
     }
 
@@ -1037,14 +938,13 @@
       reviewBadge.textContent = `(${correctCount}/${questions.length} Benar)`;
     }
 
-    // Populate Review Cards
     const reviewContainer = document.getElementById('quizReviewListContainer');
     if (reviewContainer) {
       reviewContainer.innerHTML = '';
       questions.forEach((q, idx) => {
         const uAns = userAnswers[idx];
         const isRight = uAns && uAns.isCorrect;
-        const userChoice = (uAns !== null && uAns.selectedIndex !== undefined) ? q.options[uAns.selectedIndex] : '(Ora diwangsuli)';
+        const userChoice = (uAns !== null && uAns.selectedIndex !== undefined) ? q.options[uAns.selectedIndex] : '(Tidak dijawab)';
         const rightChoice = q.options[q.correctIndex];
 
         const card = document.createElement('div');
@@ -1064,7 +964,7 @@
             ${!isRight ? `<div class="quiz-ans-line correct-key"><strong>Kunci Jawaban:</strong> ${rightChoice}</div>` : ''}
           </div>
           <div class="quiz-review-explanation">
-            <strong>Piwulang:</strong> ${q.explanation}
+            <strong>Pembahasan:</strong> ${q.explanation}
           </div>
         `;
         reviewContainer.appendChild(card);
@@ -1109,9 +1009,6 @@
     jumpToQuestion(0);
   };
 
-  /* --------------------------------------------------------------------------
-     8. Initialization
-     -------------------------------------------------------------------------- */
   function init() {
     renderHeaderAndBreadcrumbs();
     renderUserProfile();
@@ -1124,7 +1021,6 @@
       dom.btnQuizPrev.addEventListener('click', prevQuestion);
     }
 
-    // Support keyboard arrows
     document.addEventListener('keydown', function (e) {
       if (dom.quizResultModal && dom.quizResultModal.classList.contains('open')) {
         return;
@@ -1144,7 +1040,6 @@
 
   window.addEventListener('javanesia:auth-changed', renderUserProfile);
 
-  // Run on DOM Ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

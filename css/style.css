@@ -1,16 +1,7 @@
-/* ==========================================================================
-   JAVANESIA — style.css
-   Base design system: variables, reset, typography, layout, buttons,
-   header/nav, footer, and shared elements used across every page.
-   ========================================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&family=Noto+Sans+Javanese&display=swap');
 
-/* -------------------------------------------------------------------------
-   1. Design tokens
-   ------------------------------------------------------------------------- */
 :root {
-  /* Palette */
+
   --cream-bg:        #F4EEDC;
   --cream-bg-soft:   #F8F2E3;
   --cream-card:       #FDFAF1;
@@ -41,12 +32,10 @@
   --text-on-dark:     #F4EEDC;
   --text-on-dark-muted: #D6CBB4;
 
-  /* Fonts */
   --font-serif:       'Playfair Display', Georgia, serif;
   --font-sans:        'Poppins', 'Segoe UI', sans-serif;
   --font-javanese:    'Noto Sans Javanese', 'Poppins', sans-serif;
 
-  /* Radii / shadows */
   --radius-sm:  8px;
   --radius-md:  14px;
   --radius-lg:  22px;
@@ -59,12 +48,15 @@
   --container-w: 1180px;
 }
 
-/* -------------------------------------------------------------------------
-   2. Reset & base
-   ------------------------------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
   margin: 0;
@@ -111,9 +103,6 @@ table { border-collapse: collapse; width: 100%; }
 
 .highlight-gold { color: var(--gold-dark); }
 
-/* -------------------------------------------------------------------------
-   3. Buttons
-   ------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -191,9 +180,6 @@ table { border-collapse: collapse; width: 100%; }
 }
 .btn-detail-dark:hover { background: var(--navy-darker); }
 
-/* -------------------------------------------------------------------------
-   4. Header / Navigation
-   ------------------------------------------------------------------------- */
 .site-header {
   background: var(--header-bg);
   border-bottom: 1px solid rgba(201, 162, 39, 0.35);
@@ -242,7 +228,7 @@ table { border-collapse: collapse; width: 100%; }
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 38px;
 }
 
 .nav-item { position: relative; }
@@ -327,9 +313,6 @@ table { border-collapse: collapse; width: 100%; }
   border-radius: 2px;
 }
 
-/* -------------------------------------------------------------------------
-   5. Section headers & flourish
-   ------------------------------------------------------------------------- */
 .section-header {
   text-align: center;
   max-width: 640px;
@@ -362,9 +345,6 @@ table { border-collapse: collapse; width: 100%; }
   color: var(--text-muted);
 }
 
-/* -------------------------------------------------------------------------
-   6. Breadcrumbs & subpage banner (shared across inner pages)
-   ------------------------------------------------------------------------- */
 .subpage-banner {
   background: linear-gradient(180deg, var(--cream-bg-soft) 0%, var(--cream-bg) 100%);
   border-bottom: 1px solid var(--card-border);
@@ -420,9 +400,6 @@ table { border-collapse: collapse; width: 100%; }
 
 .subpage-art-img { max-width: 100%; }
 
-/* -------------------------------------------------------------------------
-   7. Footer
-   ------------------------------------------------------------------------- */
 .site-footer { padding-top: 56px; }
 
 .footer-light {
@@ -436,21 +413,19 @@ table { border-collapse: collapse; width: 100%; }
   color: var(--text-on-dark-muted);
 }
 
-.footer-main { padding-top: 44px; padding-bottom: 36px; }
+.footer-main { padding-top: 48px; padding-bottom: 48px; }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 32px;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
 }
 
-/* Simplified footer: only the "Sumber & Referensi" column remains */
 .footer-sources-col { max-width: 360px; }
 
 .footer-dark .brand-title { color: var(--gold-light); }
 .footer-light .brand-title { color: var(--brown-dark); }
 
-/* Slightly smaller brand mark used inside the footer column */
 .footer-brand-icon { width: 28px; height: 38px; }
 .footer-brand-title { font-size: 1.25rem; }
 .footer-brand-tagline { font-size: 0.65rem; }
@@ -558,9 +533,6 @@ table { border-collapse: collapse; width: 100%; }
   opacity: 0.7;
 }
 
-/* -------------------------------------------------------------------------
-   8. Modal (video player)
-   ------------------------------------------------------------------------- */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -633,9 +605,6 @@ table { border-collapse: collapse; width: 100%; }
   line-height: 1.6;
 }
 
-/* -------------------------------------------------------------------------
-   9. Toast (JS-driven notifications, class expected: .toast)
-   ------------------------------------------------------------------------- */
 .toast {
   position: fixed;
   bottom: 28px;
@@ -657,9 +626,6 @@ table { border-collapse: collapse; width: 100%; }
   transform: translateX(-50%) translateY(0);
 }
 
-/* -------------------------------------------------------------------------
-   10. Auth Modal & User Dropdown
-   ------------------------------------------------------------------------- */
 .nav-actions {
   position: relative;
 }
@@ -730,7 +696,6 @@ table { border-collapse: collapse; width: 100%; }
   color: #8C2C18;
 }
 
-/* Modal Popup */
 .auth-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -791,21 +756,23 @@ table { border-collapse: collapse; width: 100%; }
 }
 
 .auth-modal-icon {
-  width: 68px;
-  height: 68px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
   border: 2.5px solid var(--gold-primary);
-  padding: 3px;
   margin: 0 auto 14px;
-  background: var(--cream-bg);
+  background: var(--gold-soft-bg);
   box-shadow: 0 4px 12px rgba(201, 162, 39, 0.2);
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
 .auth-modal-title {
   font-family: var(--font-serif);
   font-size: 1.35rem;
   color: var(--text-heading);
-  margin-bottom: 6px;
+  margin-bottom: 20px;
 }
 
 .auth-modal-desc {
@@ -844,7 +811,7 @@ table { border-collapse: collapse; width: 100%; }
 
 .auth-input-field {
   width: 100%;
-  padding: 12px 14px 12px 42px;
+  padding: 12px 16px;
   font-family: var(--font-sans);
   font-size: 0.95rem;
   font-weight: 600;
@@ -862,20 +829,45 @@ table { border-collapse: collapse; width: 100%; }
   box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.22);
 }
 
-/* -------------------------------------------------------------------------
-   10. Responsive
-   ------------------------------------------------------------------------- */
 @media (max-width: 960px) {
   .nav-menu { display: none; }
+  .nav-menu.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--header-bg);
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--card-border);
+    box-shadow: var(--shadow-lg);
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .nav-menu.open .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 8px;
+    width: 100%;
+  }
+  .nav-menu.open .dropdown-item {
+    color: #FFF;
+  }
   .mobile-toggle { display: flex; }
   .subpage-banner-layout { grid-template-columns: 1fr; text-align: center; }
   .subpage-art-box { order: -1; }
   .subpage-desc { margin: 0 auto; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 
 @media (max-width: 600px) {
-  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .subpage-title { font-size: 1.9rem; }
   .section-title { font-size: 1.6rem; }
 }

@@ -9,27 +9,20 @@
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#8B5A2B" flood-opacity="0.3"/>
     </filter>
   </defs>
-  <!-- Gunungan Body Shape -->
   <path d="M60,8 C40,40 12,85 12,125 C12,142 35,148 60,148 C85,148 108,142 108,125 C108,85 80,40 60,8 Z" 
         fill="url(#gununganGold)" filter="url(#goldGlow)" stroke="#6E4620" stroke-width="2"/>
-  <!-- Inner Border Line -->
   <path d="M60,18 C44,46 22,86 22,122 C22,136 40,140 60,140 C80,140 98,136 98,122 C98,86 76,46 60,18 Z" 
         fill="none" stroke="#FFF7D6" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.8"/>
-  <!-- Central Tree of Life (Pohon Hayat) Trunk -->
   <path d="M57,144 L57,75 Q60,70 63,75 L63,144 Z" fill="#4A3222" opacity="0.85"/>
-  <!-- Gate / Gapura at base -->
   <path d="M46,144 L46,120 Q60,114 74,120 L74,144 Z" fill="#2E1C0C" opacity="0.6"/>
   <circle cx="60" cy="116" r="5" fill="#E8C766"/>
-  <!-- Branches / Leaves -->
   <path d="M60,78 Q42,65 34,76 Q46,74 57,83" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
   <path d="M60,78 Q78,65 86,76 Q74,74 63,83" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
   <path d="M60,62 Q45,50 40,58 Q50,57 58,66" fill="none" stroke="#FFF" stroke-width="1.8" stroke-linecap="round"/>
   <path d="M60,62 Q75,50 80,58 Q70,57 62,66" fill="none" stroke="#FFF" stroke-width="1.8" stroke-linecap="round"/>
   <path d="M60,45 Q50,34 46,40 Q53,40 58,48" fill="none" stroke="#FFF" stroke-width="1.5" stroke-linecap="round"/>
   <path d="M60,45 Q70,34 74,40 Q67,40 62,48" fill="none" stroke="#FFF" stroke-width="1.5" stroke-linecap="round"/>
-  <!-- Peak Finial -->
   <circle cx="60" cy="14" r="3.5" fill="#FFF7D6"/>
   <path d="M60,4 L60,14" stroke="#FFF7D6" stroke-width="2"/>
-  <!-- Handle / Gagang Gapit -->
   <path d="M58,148 L58,158 L62,158 L62,148 Z" fill="#6E4620"/>
 </svg>

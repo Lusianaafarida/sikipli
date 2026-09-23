@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kuis Level 1 - Evaluasi - JAVANESIA</title>
   <meta name="description" content="Pengerjaan Kuis Interaktif Level 1 Pemula Budaya Jawa di Javanesia.">
-  
-  <link rel="icon" type="image/svg+xml" href="assets/icons/gunungan.svg">
+
+  <link rel="icon" type="image/png" href="assets/icons/logo.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
@@ -17,9 +17,10 @@
   <header class="site-header">
   <div class="container nav-container">
     <a href="index.html" class="brand-logo" id="nav-brand-logo">
-      <img src="assets/icons/logo.png" alt="logo-javanesia" class="brand-icon">
+      <img src="assets/icons/logo.png" alt="Logo SIKIPLI (Karya Orisinal Pengembang)" title="Logo SIKIPLI - Karya Orisinal Pengembang" class="brand-icon">
       <div class="brand-text-group">
-        <span class="brand-title">JAVANESIA</span>
+        <span class="brand-title">SIKIPLI</span>
+        <span class="brand-tagline">Sahabat Interaktif Kanggo Piwulangan lan Pitedah</span>
       </div>
     </a>
 
@@ -49,14 +50,11 @@
       <div class="nav-item">
         <a href="evaluasi.html" class="nav-link active" data-nav="evaluasi" id="nav-link-evaluasi">Evaluasi</a>
       </div>
-      <div class="nav-item">
-        <a href="tentang-kami.html" class="nav-link" data-nav="tentang" id="nav-link-tentang">Tentang Kami</a>
-      </div>
     </nav>
 
     <div class="nav-actions">
       <a href="javascript:void(0)" class="btn-header-auth" id="btn-header-auth">
-        Masuk / Mulai <span>👤</span>
+        Mulai
       </a>
       <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle menu">
         <span></span>
@@ -68,94 +66,76 @@
 </header>
   <!-- @component:navbar:end -->
 
-  <!-- Page Banner -->
-  <section class="subpage-banner" style="padding: 28px 0 32px;">
-    <div class="container subpage-banner-layout">
-      <div>
-        <h1 class="subpage-title" style="font-size: 2.2rem;">Evaluasi &amp; Kuis</h1>
-        <div class="subpage-subtitle" style="font-size: 0.95rem; margin-bottom: 0;">
-          Tingkatkan pengetahuanmu dan jadi bagian pelestari budaya Jawa!
+  <section class="subpage-banner">
+    <div class="container">
+      <div class="subpage-banner-layout">
+        <div>
+          <h1 class="subpage-title">Evaluasi &amp; Kuis</h1>
+          <img src="assets/icons/divider.svg" alt="Flourish" class="flourish-divider" style="margin: 4px 0 14px; width: 64px;">
+          <p class="subpage-desc">
+            Kerjakan kuis menarik di setiap level untuk mengasah pengetahuanmu tentang Bahasa Jawa, Wayang, Cerita Rakyat, dan Aksara Jawa.
+          </p>
         </div>
-      </div>
 
-      <div class="subpage-art-box">
-        <img src="assets/icons/avatar-wayang.svg" alt="Wayang" class="subpage-art-img" style="max-height: 120px;">
+        <div class="subpage-art-box">
+          <img src="assets/images/model.png" alt="Model Evaluasi SIKIPLI (Hasil karya dari Gemini 3.6 Flash)" title="Model Evaluasi SIKIPLI - Hasil karya dari Gemini 3.6 Flash" class="subpage-art-img" style="max-height: 220px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Quiz Section -->
   <section class="page-section" style="padding-top: 28px;">
     <div class="container" style="max-width: 860px;">
-      
-      <!-- Mini User Profile Card -->
-      <div class="eval-profile-header-card" style="padding: 16px 24px; margin-bottom: 20px; grid-template-columns: 60px 1.2fr 1fr;">
-        <div class="eval-avatar-round" style="width: 60px; height: 60px;">
-          <img src="assets/icons/avatar-wayang.svg" alt="Avatar Budaya" class="eval-avatar-img" style="width: 100%; height: 100%;">
+
+      <div class="eval-profile-header-card" style="padding: 16px 24px; margin-bottom: 24px; grid-template-columns: 60px 1fr auto; align-items: center;">
+        <div class="eval-avatar-round" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: var(--gold-soft-bg); overflow: hidden; border-radius: 50%;">
+          <img src="assets/images/model.png" alt="Avatar Budaya (Hasil karya dari Gemini 3.6 Flash)" title="Avatar Budaya - Hasil karya dari Gemini 3.6 Flash" class="eval-avatar-img" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;">
         </div>
 
         <div>
-          <h3 class="eval-user-heading" style="font-size: 1.15rem;">Tamu Budaya</h3>
-          <div class="eval-level-bar-row">
-            <img src="assets/icons/level-shield-1.svg" alt="Shield 1" style="width: 20px; height: 24px;">
-            <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-dark);" id="evalUserRole">Level 1 - Pemula</span>
-          </div>
+          <h3 class="eval-user-heading" style="font-size: 1.15rem; margin: 0;">Tamu Budaya</h3>
         </div>
 
-        <div style="display: flex; gap: 12px; justify-content: flex-end;">
-          <div class="eval-stat-round-box" style="padding: 6px 14px; min-width: 75px;">
-            <div style="font-size: 0.65rem; color: var(--text-muted);">Poin</div>
-            <div style="font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;">120</div>
-          </div>
-          <div class="eval-stat-round-box" style="padding: 6px 14px; min-width: 75px;">
-            <div style="font-size: 0.65rem; color: var(--text-muted);">Peringkat</div>
-            <div style="font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;">#120</div>
+        <div class="eval-right-stats-wrap" style="display: flex; justify-content: flex-end;">
+          <div class="eval-stat-round-box eval-point-card" style="padding: 8px 18px; min-width: 140px;">
+            <div class="eval-point-icon-badge" style="width: 36px; height: 36px; font-size: 1.1rem;">
+              ⭐
+            </div>
+            <div style="text-align: left;">
+              <div class="eval-point-label" style="font-size: 0.68rem;">Poin</div>
+              <div class="eval-point-number" id="evalUserPoin" style="font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--gold-dark); line-height: 1.2;">0</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Breadcrumbs -->
-      <div class="breadcrumbs" style="margin-bottom: 16px;">
-        <a href="evaluasi.html" class="breadcrumb-link">Evaluasi</a>
-        <span class="breadcrumb-sep">&gt;</span>
-        <span class="breadcrumb-link">Level 1 - Pemula</span>
-        <span class="breadcrumb-sep">&gt;</span>
-        <span class="breadcrumb-current">Kuis 1</span>
-      </div>
-
-      <!-- Quiz Header with Dots -->
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
         <div>
-          <h2 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--text-heading);">Kuis Level 1</h2>
-          <p style="font-size: 0.82rem; color: var(--text-muted);">Uji pemahaman dasar tentang budaya Jawa.</p>
+          <h2 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--text-heading); margin: 0;">Kuis Level 1</h2>
         </div>
 
         <div style="text-align: right;">
           <div id="quizProgressText" style="font-size: 0.8rem; font-weight: 700; color: var(--text-heading); margin-bottom: 6px;">Soal 1 dari 10</div>
           <div style="display: flex; gap: 6px; justify-content: flex-end;" id="quizDotsContainer">
-            <!-- 10 dots generated by js/kuis.js -->
+
           </div>
         </div>
       </div>
 
-      <!-- Quiz Card (Exact) -->
       <div class="quiz-card-exact" id="quizCardContainer">
         <span class="quiz-soal-pill">SOAL</span>
 
         <div class="quiz-prompt-text" id="quizPrompt">Apa arti dari ungkapan Jawa berikut?</div>
-        <div class="quiz-quote-italic" id="quizQuote">“Urip iku urup”</div>
-        
+
         <div style="text-align: center; margin-bottom: 14px;">
           <img src="assets/icons/divider.svg" alt="Flourish" style="width: 70px; height: 14px;">
         </div>
 
-        <!-- 4 Options -->
         <div class="quiz-options-col" id="quizOptionsContainer">
-          <!-- Populated by js/kuis.js -->
+
         </div>
       </div>
 
-      <!-- Nav buttons -->
       <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px;">
         <button class="btn btn-outline-dark" id="btnQuizPrev">
           <span>←</span>
@@ -171,23 +151,17 @@
     </div>
   </section>
 
-  <!-- Result Modal (Polished) -->
   <div class="modal-backdrop" id="quizResultModal">
     <div class="modal-dialog quiz-modal-dialog">
-      
-      <!-- Modal Header -->
+
       <div class="quiz-modal-header">
         <button class="modal-close-btn" aria-label="Tutup ringkasan" onclick="document.getElementById('quizResultModal').classList.remove('open'); document.body.style.overflow='';">✕</button>
-        <img src="assets/icons/badge-pemula.svg" alt="Badge" class="quiz-modal-badge-img" id="resultBadgeIcon">
-        <h2 class="quiz-modal-title" id="resultModalTitle">Sugeng! Kuis Selesai! 🎉</h2>
-        <p class="quiz-modal-desc" id="resultSummaryText">
-          Kamu berhasil menyelesaikan kuis dengan luar biasa!
-        </p>
+        <img src="assets/icons/badge-pemula.svg" alt="Badge Hasil Kuis (Hasil karya dari Gemini 3.8 Flash)" title="Badge Hasil Kuis - Hasil karya dari Gemini 3.8 Flash" class="quiz-modal-badge-img" id="resultBadgeIcon">
+        <h2 class="quiz-modal-title" id="resultModalTitle">Selamat! Kuis Selesai! 🎉</h2>
       </div>
 
-      <!-- Modal Body (Scrollable) -->
       <div class="quiz-modal-body">
-        <!-- 3 Metrics Grid -->
+
         <div class="quiz-metrics-grid">
           <div class="quiz-metric-card">
             <span class="quiz-metric-label">Nilai Akhir</span>
@@ -208,7 +182,6 @@
           </div>
         </div>
 
-        <!-- Review Section with Toggle -->
         <div class="quiz-review-toggle-bar" id="btnToggleReview" onclick="window.toggleReviewList()">
           <span style="display: flex; align-items: center; gap: 8px;">
             <span>📋</span>
@@ -218,13 +191,11 @@
           <span id="reviewToggleArrow" style="font-size: 0.9rem; transition: transform 0.2s; transform: rotate(0deg);">▾</span>
         </div>
 
-        <!-- Collapsible Review List (Collapsed by default) -->
         <div class="quiz-review-list" id="quizReviewListContainer" style="display: none;">
-          <!-- Populated by js/kuis.js -->
+
         </div>
       </div>
 
-      <!-- Modal Footer (Sticky) -->
       <div class="quiz-modal-footer">
         <button class="btn btn-outline-dark" onclick="reviewOnPage()">
           <span>Tinjau di Halaman</span>
@@ -247,69 +218,28 @@
   <footer class="site-footer footer-dark">
   <div class="container footer-main">
     <div class="footer-grid">
+
       <div class="footer-col footer-brand-col">
         <div class="brand-logo">
-          <img src="assets/icons/gunungan.svg" alt="Gunungan" class="brand-icon" style="width: 28px; height: 38px;">
+          <img src="assets/icons/logo.png" alt="Logo SIKIPLI (Karya Orisinal Pengembang)" title="Logo SIKIPLI - Karya Orisinal Pengembang" class="brand-icon" style="height: 34px; width: auto;">
           <div class="brand-text-group">
-            <span class="brand-title" style="font-size: 1.25rem; color: var(--gold-light);">JAVANESIA</span>
-            <span class="brand-tagline" style="font-size: 0.65rem;">Kenali. Pahami. Lestarikan.</span>
+            <span class="brand-title" style="font-size: 1.25rem; color: var(--gold-light);">SIKIPLI</span>
+            <span class="brand-tagline" style="font-size: 0.65rem;">Sahabat Interaktif Kanggo Piwulangan lan Pitedah</span>
           </div>
         </div>
-        <p class="footer-brand-desc" style="font-size: 0.82rem; margin-top: 6px;">
-          Belajar budaya Jawa,<br>mengenal warisan,<br>melestarikan makna.
+        <p class="footer-brand-desc" style="font-size: 0.84rem; margin-top: 10px; line-height: 1.6;">
+          Platform media pembelajaran digital interaktif untuk mengenal, memahami, dan melestarikan kekayaan seni, bahasa, aksara, dan sastra budaya Jawa.
         </p>
-        <div class="footer-socials" style="margin-top: 8px;">
-          <a href="#" class="social-icon-btn" aria-label="Instagram">📷</a>
-          <a href="#" class="social-icon-btn" aria-label="YouTube">▶️</a>
-          <a href="#" class="social-icon-btn" aria-label="Email">✉️</a>
-        </div>
       </div>
 
       <div class="footer-col">
-        <h4 class="footer-col-title">Navigasi</h4>
+        <h4 class="footer-col-title">Daftar Pustaka</h4>
         <div class="footer-links-list">
-          <a href="index.html">Beranda</a>
-          <a href="bahasa-jawa.html">
-            <span>Materi</span>
-            <span class="footer-dropdown-arrow">▾</span>
-          </a>
-          <a href="evaluasi.html">Evaluasi</a>
-          <a href="tentang-kami.html">Tentang Kami</a>
+          <a href="#">Katalog Dias Oktri Raka Setiadi</a>
+          <a href="#">Gramore Studio Series</a>
+          <a href="#">Scribd</a>
         </div>
       </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Sumber &amp; Referensi</h4>
-        <div class="footer-links-list">
-          <a href="#">Daftar Sumber</a>
-          <a href="#">Buku &amp; Artikel</a>
-          <a href="#">Perpustakaan Digital</a>
-          <a href="#">Balai Bahasa</a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Kontak</h4>
-        <div class="footer-contact-row">
-          <span class="footer-contact-icon">✉</span>
-          <span>hello@javanesia.id</span>
-        </div>
-        <div class="footer-contact-row">
-          <span class="footer-contact-icon">📞</span>
-          <span>+62 812-3456-7890</span>
-        </div>
-        <div class="footer-contact-row">
-          <span class="footer-contact-icon">📍</span>
-          <span>Yogyakarta, Indonesia</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom-bar-wrapper">
-    <img src="assets/icons/batik-center-crest.svg" alt="Crest" class="footer-center-crest">
-    <div class="footer-bottom-bar">
-      <p>© 2024 Javanesia. All rights reserved.</p>
     </div>
   </div>
 </footer>

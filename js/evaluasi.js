@@ -1,14 +1,13 @@
-/* ==========================================================================
-   JAVANESIA — evaluasi.js
-   Sync dashboard with user stats from localStorage (Poin, unlocked levels,
-   badges), and dynamic start links for each quiz level.
-   ========================================================================== */
-
 (function () {
   'use strict';
 
   const STORAGE_KEY = 'javanesia_quiz_state';
   const AUTH_KEY = 'javanesia_user_name';
+
+  function recalculateTotalPoints(completedLevels) {
+    if (!completedLevels || typeof completedLevels !== 'object') return 0;
+    return Object.values(completedLevels).reduce((sum, s) => sum + (Number(s) || 0), 0);
+  }
 
   function getUserStats() {
     const authName = (window.JavanesiaAuth && window.JavanesiaAuth.getUserName())
@@ -16,12 +15,12 @@
 
     const defaultStats = {
       name: authName || 'Tamu Budaya',
-      role: 'Pelajar Budaya Jawa',
-      poin: 120,
-      rank: 120,
+      role: 'Pelajar',
+      poin: 0,
+      rank: 1,
       unlockedLevels: [1],
       completedLevels: {},
-      badges: ['Pemula Hebat 🏅']
+      badges: []
     };
 
     try {
@@ -34,6 +33,7 @@
         } else if (!merged.name || merged.name === 'Saka Ardian') {
           merged.name = 'Tamu Budaya';
         }
+        merged.poin = recalculateTotalPoints(merged.completedLevels);
         return merged;
       }
     } catch (e) {
@@ -45,7 +45,6 @@
   function renderDashboard() {
     const stats = getUserStats();
 
-    // 0. User Profile Name & Leaderboard
     const userHeadings = document.querySelectorAll('.eval-user-heading');
     userHeadings.forEach(h => {
       h.textContent = stats.name;
@@ -54,16 +53,8 @@
     const leaderboardUserCell = document.getElementById('evalLeaderboardUserName');
     if (leaderboardUserCell) {
       leaderboardUserCell.textContent = `${stats.name} (Kamu)`;
-    } else {
-      document.querySelectorAll('tr').forEach(tr => {
-        const td = tr.querySelectorAll('td');
-        if (td.length >= 2 && td[1].textContent.includes('(Kamu)')) {
-          td[1].textContent = `${stats.name} (Kamu)`;
-        }
-      });
     }
 
-    // 1. Profile Points & Level
     const userPoin = document.getElementById('evalUserPoin');
     if (userPoin) {
       userPoin.textContent = stats.poin;
@@ -76,13 +67,12 @@
       levelLabel.textContent = `${maxUnlocked} - ${names[maxUnlocked - 1] || 'Tingkat Dasar'}`;
     }
 
-    // 2. Levels Grid (4 Levels)
     const levelCards = document.querySelectorAll('.levels-4-grid .level-tall-card, .levels-5-grid .level-tall-card');
     const levelConfigs = [
-      { id: 1, name: 'Tingkat Dasar (Kelas 1)', reward: 50, icon: 'assets/icons/book-level.svg' },
+      { id: 1, name: 'Tingkat Dasar (Kelas 1)', reward: 100, icon: 'assets/icons/book-level.svg' },
       { id: 2, name: 'Tingkat Menengah (Kelas 4)', reward: 100, icon: 'assets/icons/badge-kata.svg' },
-      { id: 3, name: 'Tingkat Lanjutan (Kelas 5)', reward: 150, icon: 'assets/icons/badge-wayang.svg' },
-      { id: 4, name: 'Tingkat Mahir (Kelas 6)', reward: 200, icon: 'assets/icons/gunungan.svg' }
+      { id: 3, name: 'Tingkat Lanjutan (Kelas 5)', reward: 100, icon: 'assets/icons/badge-wayang.svg' },
+      { id: 4, name: 'Tingkat Mahir (Kelas 6)', reward: 100, icon: 'assets/icons/gunungan.svg' }
     ];
 
     levelCards.forEach((card, idx) => {
@@ -97,24 +87,29 @@
       const reqText = card.querySelector('.level-req-text');
       const rewardText = card.querySelector('.level-reward-text');
 
+
       if (isUnlocked) {
-        card.style.borderColor = 'var(--gold-primary)';
+        card.style.borderColor = 'var(--gold-primary)'
+          ;
         if (tag) {
           tag.className = 'level-tag-top open';
           tag.textContent = isCompleted ? `SELESAI (${bestScore}/100)` : 'TERBUKA';
         }
 
         if (artBox) {
-          artBox.innerHTML = `<img src="${config.icon}" alt="Level ${levelId}" style="width: 70px; height: 70px;">`;
+          artBox.innerHTML = `<img src="${config.icon}" alt="Badge Level ${levelId} (Hasil karya dari Gemini 3.8 Flash)" title="Badge Level ${levelId} - Hasil karya dari Gemini 3.8 Flash" style="width: 70px; height: 70px;">`;
         }
 
         if (reqText) {
-          reqText.textContent = isCompleted 
-            ? `Skor terbaikmu: ${bestScore} poin. Kuis bisa diulangi kapan wae.` 
-            : `Materi level ${levelId} siap kamu pelajari dan uji!`;
+          if (isCompleted) {
+            reqText.textContent = `Skor terbaikmu: ${bestScore} poin. Kuis dapat diulangi kapan saja.`;
+            reqText.style.display = 'block';
+          } else {
+            reqText.textContent = '';
+            reqText.style.display = 'none';
+          }
         }
 
-        // Action button
         let actionBtn = card.querySelector('a.btn');
         if (!actionBtn) {
           actionBtn = document.createElement('a');
@@ -135,17 +130,16 @@
 
         if (rewardText) {
           rewardText.style.color = 'var(--gold-dark)';
-          rewardText.textContent = `Hadiah ⭐ ${config.reward} Poin`;
+          rewardText.textContent = `Hadiah ⭐ Hingga ${config.reward} Poin`;
         }
       } else {
-        // Locked
         card.style.borderColor = 'var(--card-border)';
         if (tag) {
           tag.className = 'level-tag-top locked';
           tag.textContent = '🔒 TERKUNCI';
         }
         if (artBox) {
-          artBox.innerHTML = `<img src="assets/icons/padlock.svg" alt="Terkunci" style="width: 60px; height: 60px; opacity: 0.75;">`;
+          artBox.innerHTML = `<img src="assets/icons/padlock.svg" alt="Ikon Level Terkunci (Hasil karya dari Gemini 3.8 Flash)" title="Ikon Level Terkunci - Hasil karya dari Gemini 3.8 Flash" style="width: 60px; height: 60px; opacity: 0.75;">`;
         }
         if (reqText) {
           reqText.textContent = `Selesaikan Level ${levelId - 1} untuk membuka level ini.`;
@@ -154,12 +148,11 @@
         if (existingBtn) existingBtn.remove();
         if (rewardText) {
           rewardText.style.color = 'var(--text-muted)';
-          rewardText.textContent = `Hadiah ${config.reward} Poin`;
+          rewardText.textContent = `Hadiah Hingga ${config.reward} Poin`;
         }
       }
     });
 
-    // 3. Badges Highlight in Pencapaian
     const headings = document.querySelectorAll('h3');
     let pencapaianCard = null;
     headings.forEach(h => {
@@ -169,23 +162,30 @@
     });
 
     if (pencapaianCard) {
-      const badgeCols = pencapaianCard.querySelectorAll('div[style*="grid-template-columns"] > div');
-      badgeCols.forEach(col => {
-        const bTitle = col.querySelector('div[style*="font-weight: 700"]');
-        if (bTitle) {
-          const titleText = bTitle.textContent.trim();
-          const isEarned = stats.badges && stats.badges.some(b => b.toLowerCase().includes(titleText.toLowerCase()));
-          if (isEarned) {
-            col.style.opacity = '1';
-            bTitle.style.color = 'var(--text-heading)';
-            const img = col.querySelector('img');
-            if (img) img.style.filter = 'drop-shadow(0 4px 8px rgba(201,162,39,0.35))';
-          } else {
-            col.style.opacity = '0.45';
-            bTitle.style.color = 'var(--text-muted)';
-            const img = col.querySelector('img');
-            if (img) img.style.filter = 'grayscale(100%)';
-          }
+      const badgeCols = pencapaianCard.querySelectorAll('.pencapaian-badges-grid > div, div[style*="grid-template-columns"] > div');
+      const badgeKeys = ['dasar', 'menengah', 'menengah atas', 'handal'];
+      const oldKeys = ['pemula', 'pangripta', 'wayang', 'master'];
+      badgeCols.forEach((col, idx) => {
+        const bTitle = col.querySelector('div[style*="font-weight: 700"], div');
+        const levelId = idx + 1;
+        const key = badgeKeys[idx] || '';
+        const oldKey = oldKeys[idx] || '';
+        const isEarned = (stats.badges && stats.badges.some(b => {
+          const bl = b.toLowerCase();
+          return bl.includes(key) || bl.includes(oldKey);
+        }))
+          || (stats.completedLevels && stats.completedLevels[levelId] !== undefined && stats.completedLevels[levelId] >= 60);
+
+        if (isEarned) {
+          col.style.opacity = '1';
+          if (bTitle) bTitle.style.color = 'var(--text-heading)';
+          const img = col.querySelector('img');
+          if (img) img.style.filter = 'drop-shadow(0 4px 8px rgba(201,162,39,0.35))';
+        } else {
+          col.style.opacity = '0.45';
+          if (bTitle) bTitle.style.color = 'var(--text-muted)';
+          const img = col.querySelector('img');
+          if (img) img.style.filter = 'grayscale(100%)';
         }
       });
     }

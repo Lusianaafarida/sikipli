@@ -1,18 +1,6 @@
-/* ==========================================================================
-   JAVANESIA — main.js
-   Shared site behaviour: toast notifications, mobile nav toggle, the
-   homepage inline video player, and a reusable video modal used by
-   "Tonton Video"-style triggers on other pages.
-   ========================================================================== */
-
 (function () {
   'use strict';
 
-  /* ------------------------------------------------------------------
-     1. Toast notification — window.showToast(message)
-        Used by inline onclick="window.showToast('...')" calls
-        (e.g. the "Tahukah Kamu?" prev/next arrows).
-     ------------------------------------------------------------------ */
   let toastTimer = null;
 
   window.showToast = function showToast(message) {
@@ -31,9 +19,6 @@
     }, 2600);
   };
 
-  /* ------------------------------------------------------------------
-     2. Mobile navigation toggle
-     ------------------------------------------------------------------ */
   const mobileToggle = document.getElementById('mobile-toggle-btn');
   const navMenu = document.getElementById('nav-menu-list');
 
@@ -44,10 +29,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------
-     3. Homepage inline video player (#main-video-player)
-        Plays the real mp4 in place — no modal involved.
-     ------------------------------------------------------------------ */
   const homeVideo = document.getElementById('homeVideo');
   const homeVideoBox = document.getElementById('main-video-player');
   const homeVideoPlayBtn = document.getElementById('homeVideoPlayBtn');
@@ -59,7 +40,6 @@
       });
     });
 
-    // Clicking the video itself (native controls) also counts as "play".
     homeVideo.addEventListener('play', function () {
       homeVideoBox.classList.add('is-playing');
     });
@@ -73,11 +53,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------
-     4. Shared video modal — for [data-play-video] triggers on other
-        pages (e.g. "Tonton Video" buttons on Cerita Rakyat / Wayang).
-        Reads data-video-src and data-video-title from the trigger.
-     ------------------------------------------------------------------ */
   const videoModal = document.getElementById('videoModal');
   const modalVideoPlayer = document.getElementById('modalVideoPlayer');
   const modalVideoTitle = document.getElementById('modalVideoTitle');
@@ -98,7 +73,7 @@
     videoModal.classList.add('open');
     document.body.style.overflow = 'hidden';
     modalVideoPlayer.play().catch(function () {
-      /* Autoplay may be blocked; the user can press play manually. */
+
     });
   }
 
@@ -129,14 +104,6 @@
     if (e.key === 'Escape') closeVideoModal();
   });
 
-  /* ------------------------------------------------------------------
-     5. Javanesia Auth Manager
-        - Name input via clean modal
-        - Stored in localStorage ('javanesia_user_name')
-        - Synchronized with quiz & evaluation pages
-        - User dropdown (Dashboard Evaluasi, Ganti Nama, Logout)
-        - Deletes stored name on logout
-     ------------------------------------------------------------------ */
   const AUTH_STORAGE_KEY = 'javanesia_user_name';
   const QUIZ_STORAGE_KEY = 'javanesia_quiz_state';
 
@@ -169,7 +136,6 @@
       try {
         localStorage.setItem(AUTH_STORAGE_KEY, cleanName);
 
-        // Sync into javanesia_quiz_state if it exists
         const quizStateStr = localStorage.getItem(QUIZ_STORAGE_KEY);
         let quizState = quizStateStr ? JSON.parse(quizStateStr) : {};
         quizState.name = cleanName;
@@ -206,7 +172,7 @@
       }));
 
       if (window.showToast) {
-        window.showToast('Kowe wis kasil metu (logout). Jeneng dibusak.');
+        window.showToast('Kamu telah berhasil keluar (logout). Nama akun telah dihapus.');
       }
     },
 
@@ -215,33 +181,29 @@
       const isLoggedIn = !!name;
       const displayName = isLoggedIn ? name : 'Tamu Budaya';
 
-      // 1. Update header button text
       const authBtns = document.querySelectorAll('.btn-header-auth, #btn-header-auth');
       authBtns.forEach(function (btn) {
         if (isLoggedIn) {
-          btn.innerHTML = `<span class="auth-btn-name">${escapeHTML(name)}</span> <span>👤</span>`;
-          btn.setAttribute('title', `Akun: ${name} (Klik kanggo menu akun)`);
+          btn.innerHTML = `<span class="auth-btn-name">${escapeHTML(name)}</span>`;
+          btn.setAttribute('title', `Akun: ${name} (Klik untuk menu akun)`);
           btn.setAttribute('aria-label', `Akun: ${name}`);
         } else {
-          btn.innerHTML = `<span>Masuk / Mulai</span> <span>👤</span>`;
-          btn.setAttribute('title', 'Ketik Jeneng kanggo Masuk');
-          btn.setAttribute('aria-label', 'Masuk / Mulai');
+          btn.innerHTML = `Mulai`;
+          btn.setAttribute('title', 'Mulai');
+          btn.setAttribute('aria-label', 'Mulai');
         }
       });
 
-      // 2. Update page user headings (.eval-user-heading)
       const userHeadings = document.querySelectorAll('.eval-user-heading');
       userHeadings.forEach(function (el) {
         el.textContent = displayName;
       });
 
-      // 3. Update avatar alt text
       const avatars = document.querySelectorAll('.eval-avatar-img, img[alt*="Ardian"], img[alt*="Tamu Budaya"]');
       avatars.forEach(function (img) {
         img.alt = displayName;
       });
 
-      // 4. Update leaderboard row if present
       const leaderboardCell = document.getElementById('evalLeaderboardUserName');
       if (leaderboardCell) {
         leaderboardCell.textContent = `${displayName} (Kamu)`;
@@ -254,7 +216,6 @@
         });
       }
 
-      // 5. Update dropdown display name
       const dropdownName = document.getElementById('authDropdownUserName');
       if (dropdownName) {
         dropdownName.textContent = displayName;
@@ -278,14 +239,20 @@
 
       const currentName = this.getUserName();
       if (mode === 'edit' && currentName) {
-        if (title) title.textContent = 'Ganti Jeneng Penganggo';
-        if (desc) desc.textContent = 'Ubah jenengmu sing katampil ing asil kuis lan evaluasi budaya.';
-        if (submitBtn) submitBtn.innerHTML = '<span>Simpan Jeneng Anyar</span> <span>💾</span>';
+        if (title) title.textContent = 'Ganti Nama';
+        if (desc) {
+          desc.textContent = '';
+          desc.style.display = 'none';
+        }
+        if (submitBtn) submitBtn.innerHTML = '<span>Simpan</span>';
         if (input) input.value = currentName;
       } else {
-        if (title) title.textContent = 'Masuk menyang Javanesia';
-        if (desc) desc.textContent = 'Ketik jenengmu supaya biji kuis lan pencapaian budaya kacathet kanthi trep.';
-        if (submitBtn) submitBtn.innerHTML = '<span>Simpan &amp; Mulai Sinau</span> <span>✨</span>';
+        if (title) title.textContent = 'Masuk ke Sikipli';
+        if (desc) {
+          desc.textContent = '';
+          desc.style.display = 'none';
+        }
+        if (submitBtn) submitBtn.innerHTML = '<span>Mulai</span>';
         if (input) input.value = currentName || '';
       }
 
@@ -384,19 +351,18 @@
       modalEl.innerHTML = `
         <div class="auth-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
           <button type="button" class="auth-modal-close" id="authModalClose" aria-label="Tutup">&times;</button>
-          <img src="assets/icons/avatar-wayang.svg" alt="Avatar Budaya" class="auth-modal-icon">
-          <h3 class="auth-modal-title" id="authModalTitle">Masuk menyang Javanesia</h3>
-          <p class="auth-modal-desc" id="authModalDesc">Ketik jenengmu supaya biji kuis lan pencapaian budaya kacathet kanthi trep.</p>
+          <img src="assets/images/model.png" alt="Model SIKIPLI" class="auth-modal-icon">
+          <h3 class="auth-modal-title" id="authModalTitle">Masuk ke Sikipli</h3>
+          <p class="auth-modal-desc" id="authModalDesc" style="display: none;"></p>
           <form id="authNameForm" autocomplete="off">
             <div class="auth-input-group">
               <label for="authUserNameInput" class="auth-input-label">NAMA LENGKAP / PANGGILAN</label>
               <div class="auth-input-wrapper">
-                <span class="auth-input-prefix">👤</span>
-                <input type="text" id="authUserNameInput" class="auth-input-field" placeholder="Contoh: Budi Santoso" maxlength="30" required autocomplete="name" />
+                <input type="text" id="authUserNameInput" class="auth-input-field" placeholder="contoh: budi" maxlength="30" required autocomplete="name" />
               </div>
             </div>
-            <button type="submit" class="btn btn-gold" id="authSubmitBtn" style="width: 100%; justify-content: center; padding: 12px; font-weight: 700; gap: 8px;">
-              <span>Simpan &amp; Mulai Sinau</span> <span>✨</span>
+            <button type="submit" class="btn btn-gold" id="authSubmitBtn" style="width: 100%; justify-content: center; padding: 12px; font-weight: 700;">
+              <span>Mulai</span>
             </button>
           </form>
         </div>
@@ -424,14 +390,14 @@
           const input = document.getElementById('authUserNameInput');
           const val = input ? input.value.trim() : '';
           if (!val) {
-            if (window.showToast) window.showToast('Mangga ketik jenengmu dhisik! ✍️');
+            if (window.showToast) window.showToast('Silakan ketik namamu terlebih dahulu! ✍️');
             return;
           }
 
           JavanesiaAuth.setUserName(val);
           JavanesiaAuth.closeModal();
           if (window.showToast) {
-            window.showToast(`Sugeng rawuh, ${val}! 🙏`);
+            window.showToast(`Selamat datang, ${val}! 🙏`);
           }
         });
       }
@@ -442,7 +408,6 @@
       this.injectModal();
       this.updateUI();
 
-      // Bind header auth buttons
       document.addEventListener('click', function (e) {
         const authBtn = e.target.closest('.btn-header-auth, #btn-header-auth');
         if (authBtn) {
@@ -455,7 +420,6 @@
           return;
         }
 
-        // Close dropdown when clicking outside
         const dropdown = document.getElementById('authUserDropdown');
         if (dropdown && dropdown.style.display === 'block') {
           if (!e.target.closest('#authUserDropdown') && !e.target.closest('.btn-header-auth, #btn-header-auth')) {

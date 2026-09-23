@@ -1,13 +1,223 @@
-/* ==========================================================================
-   JAVANESIA — pages.css
-   Page-specific components: Bahasa Jawa (kamus, usage rows), Aksara Jawa
-   (hanacaraka, sandhangan), Cerita Rakyat (folklore, places), Wayang
-   (catalog, filters), Evaluasi/Kuis (profile, levels, quiz card).
-   ========================================================================== */
+.translator-card-box {
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 28px;
+}
 
-/* -------------------------------------------------------------------------
-   1. Bahasa Jawa — Kamus
-   ------------------------------------------------------------------------- */
+.translator-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.translator-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.translator-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold-soft-bg);
+  border: 1px solid #EAD8A9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.translator-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.translator-lang-selector-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.translator-select-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.translator-select {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--card-border);
+  background: var(--cream-bg-soft);
+  font-family: inherit;
+  font-size: 0.82rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.18s;
+}
+.translator-select:focus {
+  border-color: var(--gold-primary);
+}
+
+.translator-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.translator-single-input {
+  flex: 1;
+  height: 44px;
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-pill);
+  padding: 0 18px;
+  background: var(--cream-bg-soft);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+  box-sizing: border-box;
+}
+.translator-single-input:focus {
+  border-color: var(--gold-primary);
+  background: #FFF;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+}
+
+.translator-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.translator-btn-group .btn {
+  height: 44px;
+  padding: 0 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+}
+
+.translator-results-single-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trans-result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--card-border);
+  background: var(--cream-bg-soft);
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+.trans-result-row:hover {
+  background: var(--cream-card);
+}
+
+.trans-result-row.card-res-id {
+  border-left: 4px solid #C0392B;
+}
+.trans-result-row.card-res-ngoko {
+  border-left: 4px solid #274C39;
+}
+.trans-result-row.card-res-krama {
+  border-left: 4px solid var(--gold-primary);
+}
+
+.trans-row-lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 170px;
+  flex-shrink: 0;
+}
+
+.trans-lang-name {
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--text-heading);
+}
+
+.trans-badge-usage {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-muted);
+}
+
+.trans-row-content {
+  flex: 1;
+}
+
+.trans-result-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  word-break: break-word;
+}
+
+.trans-copy-btn-simple {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-pill);
+  padding: 6px 12px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.trans-copy-btn-simple:hover {
+  background: var(--navy-dark);
+  color: #FFF;
+  border-color: var(--navy-dark);
+}
+
+@media (max-width: 768px) {
+  .translator-input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .translator-btn-group {
+    justify-content: flex-end;
+  }
+  .trans-result-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .trans-copy-btn-simple {
+    align-self: flex-end;
+  }
+}
+
 .kamus-card-box {
   background: var(--card-bg);
   border: 1.5px solid var(--card-border);
@@ -127,9 +337,6 @@
   color: #FFF;
 }
 
-/* -------------------------------------------------------------------------
-   2. Contoh Penggunaan — usage rows (shared: Bahasa Jawa & Aksara Jawa)
-   ------------------------------------------------------------------------- */
 .usage-rows-container {
   display: flex;
   flex-direction: column;
@@ -191,9 +398,6 @@
 .usage-col-ngoko strong,
 .usage-col-krama strong { color: var(--gold-dark); }
 
-/* -------------------------------------------------------------------------
-   3. Aksara Jawa — Hanacaraka & Sandhangan
-   ------------------------------------------------------------------------- */
 .hanacaraka-20-grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -271,9 +475,6 @@
 
 .sandhangan-read-label { font-size: 0.76rem; color: var(--text-muted); }
 
-/* -------------------------------------------------------------------------
-   4. Cerita Rakyat — Folklore rows & Places
-   ------------------------------------------------------------------------- */
 .folklore-cards-wrap {
   display: flex;
   flex-direction: column;
@@ -283,7 +484,7 @@
 .folklore-row-card {
   position: relative;
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: 24px;
   background: var(--card-bg);
   border: 1.5px solid var(--card-border);
@@ -317,7 +518,8 @@
 .folklore-img-frame {
   border-radius: var(--radius-md);
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--card-border);
 }
 .folklore-img-frame img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -365,80 +567,239 @@
 .place-name { font-weight: 700; font-size: 0.9rem; }
 .place-location { font-size: 0.72rem; opacity: 0.85; margin-top: 2px; }
 
-/* -------------------------------------------------------------------------
-   5. Wayang Kulit — filters & catalog
-   ------------------------------------------------------------------------- */
-.wayang-filter-pills {
+.wayang-catalog-master-frame {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius-lg, 16px);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 8px;
+  position: relative;
+}
+
+.wayang-catalog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.wayang-search-box {
+  position: relative;
+  flex: 1;
+  max-width: 380px;
+}
+
+.wayang-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.wayang-search-input {
+  width: 100%;
+  padding: 10px 16px 10px 38px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--card-border);
+  background: var(--cream-bg, #FAF6F0);
+  font-size: 0.88rem;
+  color: var(--text-heading);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.wayang-search-input:focus {
+  border-color: var(--gold-primary);
+  background: #FFF;
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.15);
+}
+
+.wayang-page-status {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.wayang-4x4-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  min-height: 480px;
+}
+
+.wayang-item-card {
+  background: #FFF;
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-md, 12px);
+  padding: 14px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.wayang-item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(92, 61, 30, 0.1);
+  border-color: var(--gold-primary, #C59B27);
+}
+
+.wayang-item-stage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(160deg, #FAF6F0, #F3E9DC);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding: 10px;
 }
 
-.wayang-filter-btn {
+.wayang-item-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.12));
+  transition: transform 0.25s ease;
+}
+
+.wayang-item-card:hover .wayang-item-img {
+  transform: scale(1.06);
+}
+
+.wayang-item-name {
+  font-family: var(--font-serif, "Cinzel", "Playfair Display", serif);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-heading, #2C1810);
+  line-height: 1.3;
+  margin: 0;
+  text-align: center;
+  word-break: break-word;
+}
+
+.wayang-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.wayang-page-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 22px;
-  border-radius: var(--radius-pill);
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: var(--radius-md, 8px);
   border: 1.5px solid var(--card-border);
-  background: var(--card-bg);
+  background: var(--card-bg, #FFF);
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text-muted);
-  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  color: var(--text-heading);
+  cursor: pointer;
+  transition: all 0.18s ease;
 }
-.wayang-filter-btn:hover { border-color: var(--gold-primary); color: var(--gold-dark); }
-.wayang-filter-btn.active {
-  background: var(--navy-dark);
-  border-color: var(--navy-dark);
+
+.wayang-page-btn:hover:not(:disabled) {
+  border-color: var(--gold-primary);
+  color: var(--gold-dark);
+  background: var(--cream-bg);
+}
+
+.wayang-page-btn.active {
+  background: var(--navy-dark, #1B263B);
+  border-color: var(--navy-dark, #1B263B);
   color: #FFF;
 }
 
-.wayang-category-block { margin-bottom: 44px; }
+.wayang-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 
-.wayang-5-grid {
+.wayang-page-ellipsis {
+  padding: 0 4px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.pentas-wayang-section {
+  margin-top: 48px;
+}
+
+.pentas-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 18px;
 }
 
-.wayang-char-card {
-  background: var(--card-bg);
+.pentas-img-card {
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
   border: 1.5px solid var(--card-border);
-  border-radius: var(--radius-lg);
-  padding: 18px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-.wayang-char-card:hover {
-  transform: translateY(-6px);
+
+.pentas-img-card:hover {
+  transform: translateY(-5px);
   box-shadow: var(--shadow-md);
+  border-color: var(--gold-primary);
 }
 
-.wayang-art-stage {
-  background: linear-gradient(160deg, var(--cream-bg-soft), var(--cream-bg));
-  border-radius: var(--radius-md);
-  padding: 16px;
-  margin-bottom: 14px;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.pentas-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
 }
 
-.wayang-char-name {
-  font-size: 1rem;
-  margin-bottom: 12px;
-  color: var(--text-heading);
+.pentas-img-card:hover .pentas-img {
+  transform: scale(1.04);
 }
 
-/* -------------------------------------------------------------------------
-   6. Evaluasi — profile card & level grid
-   ------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .wayang-4x4-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pentas-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .wayang-4x4-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .pentas-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .wayang-catalog-master-frame {
+    padding: 16px;
+  }
+}
+
 .eval-profile-header-card {
   display: grid;
   grid-template-columns: 90px 1.4fr 1fr;
@@ -500,13 +861,71 @@
   min-width: 90px;
 }
 
-.eval-quote-box {
+.eval-point-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FDF6E2 100%) !important;
+  border: 2px solid var(--gold-primary) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 12px 24px !important;
+  box-shadow: 0 4px 16px rgba(201, 162, 39, 0.2) !important;
+  min-width: 170px !important;
+  text-align: left !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.eval-point-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(201, 162, 39, 0.28) !important;
+}
+
+.eval-point-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFDF79 0%, #C9A227 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  box-shadow: 0 2px 8px rgba(201, 162, 39, 0.38);
+  flex-shrink: 0;
+}
+
+.eval-point-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.eval-point-number {
   font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  text-align: right;
-  max-width: 220px;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.1;
+}
+
+.pencapaian-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .pencapaian-badges-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .pencapaian-badges-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .levels-4-grid,
@@ -571,9 +990,6 @@
   color: var(--gold-dark);
 }
 
-/* -------------------------------------------------------------------------
-   7. Kuis — quiz card
-   ------------------------------------------------------------------------- */
 .quiz-card-exact {
   position: relative;
   background: var(--card-bg);
@@ -660,7 +1076,6 @@
   line-height: 1.45;
 }
 
-/* Quiz Dots Indicator */
 .quiz-dot {
   width: 12px;
   height: 12px;
@@ -689,7 +1104,6 @@
   background: #d63031;
 }
 
-/* Quiz Feedback Box */
 .quiz-feedback-box {
   margin-top: 18px;
   padding: 14px 18px;
@@ -724,9 +1138,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* -------------------------------------------------------------------------
-   7b. Quiz Result Modal & Review (Compact, Clean, Viewport-Safe)
-   ------------------------------------------------------------------------- */
 .modal-backdrop#quizResultModal {
   align-items: center !important;
   justify-content: center !important;
@@ -809,7 +1220,6 @@
   border-radius: 4px;
 }
 
-/* Metrics Grid (3 columns) */
 .quiz-metrics-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -853,7 +1263,6 @@
   margin-top: 3px;
 }
 
-/* Review Section / Toggle */
 .quiz-review-toggle-bar {
   display: flex;
   align-items: center;
@@ -973,7 +1382,6 @@
   line-height: 1.45;
 }
 
-/* Modal Footer */
 .quiz-modal-footer {
   padding: 12px 18px;
   background: #F5EEDB;
@@ -991,10 +1399,6 @@
   border-radius: var(--radius-pill) !important;
 }
 
-
-/* -------------------------------------------------------------------------
-   8. Responsive
-   ------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .hanacaraka-20-grid { grid-template-columns: repeat(5, 1fr); }
   .sandhangan-5-grid { grid-template-columns: repeat(3, 1fr); }

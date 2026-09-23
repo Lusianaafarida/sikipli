@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Materi Wayang Kulit - JAVANESIA</title>
   <meta name="description" content="Katalog tokoh Wayang Kulit: Punokawan, Mahabarata, dan Ramayana, beserta nilai filosofisnya.">
-  
-  <link rel="icon" type="image/svg+xml" href="assets/icons/gunungan.svg">
+
+  <link rel="icon" type="image/png" href="assets/icons/logo.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
 
-  <!-- Reusable Header Component -->
   <!-- @component:navbar:start -->
   <header class="site-header">
   <div class="container nav-container">
     <a href="index.html" class="brand-logo" id="nav-brand-logo">
-      <img src="assets/icons/logo.png" alt="logo-javanesia" class="brand-icon">
+      <img src="assets/icons/logo.png" alt="Logo SIKIPLI (Karya Orisinal Pengembang)" title="Logo SIKIPLI - Karya Orisinal Pengembang" class="brand-icon">
       <div class="brand-text-group">
-        <span class="brand-title">JAVANESIA</span>
+        <span class="brand-title">SIKIPLI</span>
+        <span class="brand-tagline">Sahabat Interaktif Kanggo Piwulangan lan Pitedah</span>
       </div>
     </a>
 
@@ -50,14 +50,11 @@
       <div class="nav-item">
         <a href="evaluasi.html" class="nav-link" data-nav="evaluasi" id="nav-link-evaluasi">Evaluasi</a>
       </div>
-      <div class="nav-item">
-        <a href="tentang-kami.html" class="nav-link" data-nav="tentang" id="nav-link-tentang">Tentang Kami</a>
-      </div>
     </nav>
 
     <div class="nav-actions">
       <a href="javascript:void(0)" class="btn-header-auth" id="btn-header-auth">
-        Masuk / Mulai <span>👤</span>
+        Mulai
       </a>
       <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle menu">
         <span></span>
@@ -69,21 +66,11 @@
 </header>
   <!-- @component:navbar:end -->
 
-  <!-- Page Banner -->
   <section class="subpage-banner">
     <div class="container">
-      <div class="breadcrumbs">
-        <a href="index.html" class="breadcrumb-link">Beranda</a>
-        <span class="breadcrumb-sep">&gt;</span>
-        <span class="breadcrumb-link">Materi</span>
-        <span class="breadcrumb-sep">&gt;</span>
-        <span class="breadcrumb-current">Wayang Kulit</span>
-      </div>
-
       <div class="subpage-banner-layout">
         <div>
           <h1 class="subpage-title">Wayang Kulit</h1>
-          <div class="subpage-subtitle">Bayang-bayang luhur, filosofi kehidupan.</div>
           <img src="assets/icons/divider.svg" alt="Flourish" class="flourish-divider" style="margin: 4px 0 14px; width: 64px;">
           <p class="subpage-desc">
             Wayang Kulit merupakan seni pertunjukan tradisional Jawa yang telah diakui dunia. Setiap tokoh dan lakon mengandung filosofi mendalam tentang kebajikan, kepemimpinan, dan perjalanan hidup manusia.
@@ -91,322 +78,93 @@
         </div>
 
         <div class="subpage-art-box">
-          <img src="assets/images/wayang/semar.svg" alt="Wayang Kulit" class="subpage-art-img" style="max-height: 180px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));">
+          <img src="assets/images/model-wayang.png" alt="Karakter Wayang Kulit (Hasil karya dari Gemini 3.6 Flash)" title="Karakter Wayang Kulit - Hasil karya dari Gemini 3.6 Flash" class="subpage-art-img" style="max-height: 220px; width: auto; object-fit: contain;">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Katalog Wayang Section -->
   <section class="page-section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" style="margin-bottom: 24px;">
         <div class="section-tag-flourish">
           <img src="assets/icons/divider.svg" alt="Flourish" class="flourish-divider">
         </div>
         <h2 class="section-title">Katalog Wayang</h2>
-        <p class="section-description">Jelajahi berbagai tokoh wayang dari berbagai kisah pewayangan Jawa.</p>
       </div>
 
-      <!-- Filter bar -->
-      <div class="wayang-filter-pills">
-        <button class="wayang-filter-btn active" data-wayang-filter="all">Semua</button>
-        <button class="wayang-filter-btn" data-wayang-filter="punokawan">
-          <span>👤</span> Punokawan
-        </button>
-        <button class="wayang-filter-btn" data-wayang-filter="mahabarata">
-          <span>👑</span> Mahabarata
-        </button>
-        <button class="wayang-filter-btn" data-wayang-filter="ramayana">
-          <span>🏹</span> Ramayana
-        </button>
+      <div class="wayang-catalog-master-frame" id="wayangMasterFrame">
+        <div class="wayang-catalog-toolbar">
+          <div class="wayang-search-box">
+            <span class="wayang-search-icon">🔍</span>
+            <input type="text" id="wayangSearchInput" class="wayang-search-input" placeholder="Cari nama tokoh wayang..." aria-label="Cari nama tokoh wayang">
+          </div>
+          <div class="wayang-page-status" id="wayangPageStatus">
+            Memuat karakter wayang...
+          </div>
+        </div>
+
+        <div class="wayang-4x4-grid" id="wayangGridContainer">
+
+        </div>
+
+        <div class="wayang-pagination" id="wayangPagination"></div>
       </div>
 
-      <!-- Category 1: Punokawan -->
-      <div class="wayang-category-block" data-category="punokawan">
-        <div style="margin-bottom: 14px;">
-          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--text-heading);">
-            <span>👤</span> Punokawan
-          </h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">
-            Para abdi yang setia dan bijaksana, menjadi penasihat dan penghibur dalam setiap lakon.
-          </p>
+      <div class="pentas-wayang-section">
+        <div class="section-header" style="margin-bottom: 20px;">
+          <div class="section-tag-flourish">
+            <img src="assets/icons/divider.svg" alt="Flourish" class="flourish-divider">
+          </div>
+          <h2 class="section-title">Pementasan Wayang</h2>
         </div>
 
-        <div class="wayang-5-grid">
-          <div class="wayang-char-card" onclick="showWayangDetail('semar')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/semar.svg" alt="Semar">
-            </div>
-            <h4 class="wayang-char-name">Semar</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('gareng')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/gareng.svg" alt="Gareng">
-            </div>
-            <h4 class="wayang-char-name">Gareng</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('petruk')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/petruk.svg" alt="Petruk">
-            </div>
-            <h4 class="wayang-char-name">Petruk</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('bagong')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/bagong.svg" alt="Bagong">
-            </div>
-            <h4 class="wayang-char-name">Bagong</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('togog')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/togog.svg" alt="Togog">
-            </div>
-            <h4 class="wayang-char-name">Togog</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Category 2: Mahabarata -->
-      <div class="wayang-category-block" data-category="mahabarata">
-        <div style="margin-bottom: 14px;">
-          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--text-heading);">
-            <span>👑</span> Mahabarata
-          </h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">
-            Kisah besar tentang perjuangan, dharma, dan takdir para ksatria Pandawa dan Kurawa.
-          </p>
-        </div>
-
-        <div class="wayang-5-grid">
-          <div class="wayang-char-card" onclick="showWayangDetail('yudistira')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/yudistira.svg" alt="Yudistira">
-            </div>
-            <h4 class="wayang-char-name">Yudistira</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('bima')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/bima.svg" alt="Bima">
-            </div>
-            <h4 class="wayang-char-name">Bima</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('arjuna')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/arjuna.svg" alt="Arjuna">
-            </div>
-            <h4 class="wayang-char-name">Arjuna</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('nakula')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/nakula.svg" alt="Nakula">
-            </div>
-            <h4 class="wayang-char-name">Nakula</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('sadewa')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/sadewa.svg" alt="Sadewa">
-            </div>
-            <h4 class="wayang-char-name">Sadewa</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Category 3: Ramayana -->
-      <div class="wayang-category-block" data-category="ramayana">
-        <div style="margin-bottom: 14px;">
-          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--text-heading);">
-            <span>🏹</span> Ramayana
-          </h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">
-            Kisah kepahlawanan Rama dalam mencari Sinta dan melawan kejahatan Rahwana.
-          </p>
-        </div>
-
-        <div class="wayang-5-grid">
-          <div class="wayang-char-card" onclick="showWayangDetail('rama')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/rama.svg" alt="Rama">
-            </div>
-            <h4 class="wayang-char-name">Rama</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('sinta')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/sinta.svg" alt="Sinta">
-            </div>
-            <h4 class="wayang-char-name">Sinta</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('laksmana')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/laksmana.svg" alt="Laksmana">
-            </div>
-            <h4 class="wayang-char-name">Laksmana</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('rahwana')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/rahwana.svg" alt="Rahwana">
-            </div>
-            <h4 class="wayang-char-name">Rahwana</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-
-          <div class="wayang-char-card" onclick="showWayangDetail('hanoman')">
-            <div class="wayang-art-stage">
-              <img src="assets/images/wayang/hanoman.svg" alt="Hanoman">
-            </div>
-            <h4 class="wayang-char-name">Hanoman</h4>
-            <button class="btn-detail-dark">Lihat Detail →</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Banner: Lebih dari Sekadar Pertunjukan -->
-      <div style="background: var(--card-bg); border: 1.5px solid var(--card-border); border-radius: var(--radius-lg); padding: 24px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 24px; align-items: center; box-shadow: var(--shadow-sm); margin-top: 24px;">
-        <img src="assets/images/wayang-performance.jpg" alt="Pementasan" style="width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-md);">
-        <div>
-          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--text-heading); margin-bottom: 6px;">Lebih dari Sekadar Pertunjukan</h3>
-          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px;">
-            Wayang kulit mengandung nilai-nilai luhur seperti kesetiaan, keberanian, kebijaksanaan, dan pengendalian diri yang relevan hingga kini.
-          </p>
-          <button class="btn btn-pill-dark" onclick="showWayangDetail('semar')">
-            <span>Pelajari Filosofi Wayang</span>
-            <span>→</span>
-          </button>
+        <div class="pentas-gallery-grid">
+          <a href="https://www.kompas.com/stori/read/2021/09/22/130000679/sejarah-wayang-kulit" target="_blank" rel="noopener" class="pentas-img-card" title="Pementasan Wayang Kulit - Sumber: Kompas.com (https://www.kompas.com/stori/read/2021/09/22/130000679/sejarah-wayang-kulit)" style="text-decoration: none; display: block;">
+            <img src="assets/images/pentas-wayang1.jpg" alt="Pementasan Wayang Kulit 1 (Sumber: Kompas.com - https://www.kompas.com/stori/read/2021/09/22/130000679/sejarah-wayang-kulit)" title="Pementasan Wayang Kulit 1 - Sumber: Kompas.com" class="pentas-img" loading="lazy">
+          </a>
+          <a href="https://jatimnet.com/dalang-ini-bikin-pertunjukan-wayang-kulit-dengan-bahasa-polandia" target="_blank" rel="noopener" class="pentas-img-card" title="Pementasan Wayang Kulit - Sumber: Jatimnet.com (https://jatimnet.com/dalang-ini-bikin-pertunjukan-wayang-kulit-dengan-bahasa-polandia)" style="text-decoration: none; display: block;">
+            <img src="assets/images/pentas-wayang2.jpg" alt="Pementasan Wayang Kulit 2 (Sumber: Jatimnet.com - https://jatimnet.com/dalang-ini-bikin-pertunjukan-wayang-kulit-dengan-bahasa-polandia)" title="Pementasan Wayang Kulit 2 - Sumber: Jatimnet.com" class="pentas-img" loading="lazy">
+          </a>
+          <a href="https://www.blorakab.go.id/index.php/public/berita/detail/597/sosialisasi-hasil-hasil-pembangunan-melalui-pagelaran-wayang-kulit-di-desa-tawangrejo" target="_blank" rel="noopener" class="pentas-img-card" title="Pementasan Wayang Kulit - Sumber: Pemerintah Kabupaten Blora (https://www.blorakab.go.id/index.php/public/berita/detail/597/sosialisasi-hasil-hasil-pembangunan-melalui-pagelaran-wayang-kulit-di-desa-tawangrejo)" style="text-decoration: none; display: block;">
+            <img src="assets/images/pentas-wayang3.jpg" alt="Pementasan Wayang Kulit 3 (Sumber: blorakab.go.id - https://www.blorakab.go.id/index.php/public/berita/detail/597/sosialisasi-hasil-hasil-pembangunan-melalui-pagelaran-wayang-kulit-di-desa-tawangrejo)" title="Pementasan Wayang Kulit 3 - Sumber: blorakab.go.id" class="pentas-img" loading="lazy">
+          </a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Reusable Footer Component -->
   <!-- @component:footer:start -->
   <footer class="site-footer footer-dark">
   <div class="container footer-main">
     <div class="footer-grid">
+
       <div class="footer-col footer-brand-col">
         <div class="brand-logo">
-          <img src="assets/icons/gunungan.svg" alt="Gunungan" class="brand-icon" style="width: 28px; height: 38px;">
+          <img src="assets/icons/logo.png" alt="Logo SIKIPLI (Karya Orisinal Pengembang)" title="Logo SIKIPLI - Karya Orisinal Pengembang" class="brand-icon" style="height: 34px; width: auto;">
           <div class="brand-text-group">
-            <span class="brand-title" style="font-size: 1.25rem; color: var(--gold-light);">JAVANESIA</span>
-            <span class="brand-tagline" style="font-size: 0.65rem;">Kenali. Pahami. Lestarikan.</span>
+            <span class="brand-title" style="font-size: 1.25rem; color: var(--gold-light);">SIKIPLI</span>
+            <span class="brand-tagline" style="font-size: 0.65rem;">Sahabat Interaktif Kanggo Piwulangan lan Pitedah</span>
           </div>
         </div>
-        <p class="footer-brand-desc" style="font-size: 0.82rem; margin-top: 6px;">
-          Belajar budaya Jawa,<br>mengenal warisan,<br>melestarikan makna.
+        <p class="footer-brand-desc" style="font-size: 0.84rem; margin-top: 10px; line-height: 1.6;">
+          Platform media pembelajaran digital interaktif untuk mengenal, memahami, dan melestarikan kekayaan seni, bahasa, aksara, dan sastra budaya Jawa.
         </p>
-        <div class="footer-socials" style="margin-top: 8px;">
-          <a href="#" class="social-icon-btn" aria-label="Instagram">📷</a>
-          <a href="#" class="social-icon-btn" aria-label="YouTube">▶️</a>
-          <a href="#" class="social-icon-btn" aria-label="Email">✉️</a>
-        </div>
       </div>
 
       <div class="footer-col">
-        <h4 class="footer-col-title">Navigasi</h4>
+        <h4 class="footer-col-title">Daftar Pustaka</h4>
         <div class="footer-links-list">
-          <a href="index.html">Beranda</a>
-          <a href="bahasa-jawa.html">
-            <span>Materi</span>
-            <span class="footer-dropdown-arrow">▾</span>
-          </a>
-          <a href="evaluasi.html">Evaluasi</a>
-          <a href="tentang-kami.html">Tentang Kami</a>
+          <a href="#">Katalog Dias Oktri Raka Setiadi</a>
+          <a href="#">Gramore Studio Series</a>
+          <a href="#">Scribd</a>
         </div>
       </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Sumber &amp; Referensi</h4>
-        <div class="footer-links-list">
-          <a href="#">Daftar Sumber</a>
-          <a href="#">Buku &amp; Artikel</a>
-          <a href="#">Perpustakaan Digital</a>
-          <a href="#">Balai Bahasa</a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Kontak</h4>
-        <div class="footer-contact-row">
-          <span class="footer-contact-icon">✉</span>
-          <span>hello@javanesia.id</span>
-        </div>
-        <div class="footer-contact-row">
-          <span class="footer-contact-icon">📞</span>
-          <span>+62 812-3456-7890</span>
-        </div>
-        <div class="footer-contact-row">
-          <span class="footer-contact-icon">📍</span>
-          <span>Yogyakarta, Indonesia</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom-bar-wrapper">
-    <img src="assets/icons/batik-center-crest.svg" alt="Crest" class="footer-center-crest">
-    <div class="footer-bottom-bar">
-      <p>© 2024 Javanesia. All rights reserved.</p>
     </div>
   </div>
 </footer>
   <!-- @component:footer:end -->
-
-  <!-- Modal Wayang Detail -->
-  <div class="modal-backdrop" id="wayangDetailModal">
-    <div class="modal-dialog">
-      <button class="modal-close-btn" aria-label="Tutup">✕</button>
-      <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 18px;">
-        <div style="width: 100px; height: 140px; background: #F4EADA; border-radius: var(--radius-md); border: 1.5px solid var(--card-border); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <img id="wayangModalImg" src="" alt="Tokoh" style="max-height: 125px; width: auto;">
-        </div>
-        <div>
-          <span id="wayangModalCategory" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--gold-dark); background: #E8D8C4; padding: 2px 8px; border-radius: 4px;">Kategori</span>
-          <h2 id="wayangModalName" style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--text-heading); margin: 4px 0 2px;">Nama Tokoh</h2>
-          <div id="wayangModalTitle" style="font-size: 0.85rem; color: var(--text-muted); font-style: italic;">Julukan</div>
-          <div id="wayangModalTraits" style="margin-top: 8px;"></div>
-        </div>
-      </div>
-
-      <div style="margin-bottom: 14px;">
-        <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--text-heading); margin-bottom: 2px;">Ringkasan Karakter</h4>
-        <p id="wayangModalSummary" style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.55;"></p>
-      </div>
-
-      <div style="margin-bottom: 14px;">
-        <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--text-heading); margin-bottom: 2px;">Pusaka / Keahlian</h4>
-        <p id="wayangModalWeapon" style="font-size: 0.85rem; color: #8C5F16; font-weight: 600;"></p>
-      </div>
-
-      <div style="background: #EFE4D6; border-left: 3px solid var(--gold-primary); padding: 10px 14px; border-radius: 4px;">
-        <strong style="color: #4A3222; font-size: 0.85rem;">📜 Pitutur Luhur (Filosofi):</strong>
-        <p id="wayangModalPhilosophy" style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;"></p>
-      </div>
-    </div>
-  </div>
 
   <script src="js/main.js"></script>
   <script src="js/wayang.js"></script>

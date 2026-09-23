@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evaluasi & Kuis - JAVANESIA</title>
+  <title>Evaluasi &amp; Kuis - SIKIPLI</title>
   <meta name="description" content="Dashboard evaluasi pembelajaran budaya Jawa, level kuis, badge pencapaian, dan leaderboard.">
-  
-  <link rel="icon" type="image/svg+xml" href="assets/icons/gunungan.svg">
+
+  <link rel="icon" type="image/png" href="assets/icons/logo.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
@@ -17,9 +17,10 @@
   <header class="site-header">
   <div class="container nav-container">
     <a href="index.html" class="brand-logo" id="nav-brand-logo">
-      <img src="assets/icons/logo.png" alt="logo-javanesia" class="brand-icon">
+      <img src="assets/icons/logo.png" alt="Logo SIKIPLI (Karya Orisinal Pengembang)" title="Logo SIKIPLI - Karya Orisinal Pengembang" class="brand-icon">
       <div class="brand-text-group">
-        <span class="brand-title">JAVANESIA</span>
+        <span class="brand-title">SIKIPLI</span>
+        <span class="brand-tagline">Sahabat Interaktif Kanggo Piwulangan lan Pitedah</span>
       </div>
     </a>
 
@@ -49,14 +50,11 @@
       <div class="nav-item">
         <a href="evaluasi.html" class="nav-link active" data-nav="evaluasi" id="nav-link-evaluasi">Evaluasi</a>
       </div>
-      <div class="nav-item">
-        <a href="tentang-kami.html" class="nav-link" data-nav="tentang" id="nav-link-tentang">Tentang Kami</a>
-      </div>
     </nav>
 
     <div class="nav-actions">
       <a href="javascript:void(0)" class="btn-header-auth" id="btn-header-auth">
-        Masuk / Mulai <span>👤</span>
+        Mulai
       </a>
       <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle menu">
         <span></span>
@@ -68,215 +66,143 @@
 </header>
   <!-- @component:navbar:end -->
 
-  <!-- Page Banner -->
-  <section class="subpage-banner" style="padding: 32px 0 36px;">
-    <div class="container subpage-banner-layout">
-      <div>
-        <h1 class="subpage-title">Evaluasi &amp; Kuis</h1>
-        <div class="subpage-subtitle">Uji pemahamanmu, raih ilmu dan jadi bagian pelestari budaya Jawa!</div>
-        <p class="subpage-desc">
-          Kerjakan kuis menarik di setiap level untuk mengasah pengetahuanmu tentang Bahasa Jawa, Wayang, Cerita Rakyat, dan Aksara Jawa. Semakin tinggi levelmu, semakin luas wawasan yang kamu dapatkan!
-        </p>
-      </div>
+  <section class="subpage-banner">
+    <div class="container">
+      <div class="subpage-banner-layout">
+        <div>
+          <h1 class="subpage-title">Evaluasi &amp; Kuis</h1>
+          <img src="assets/icons/divider.svg" alt="Flourish" class="flourish-divider" style="margin: 4px 0 14px; width: 64px;">
+          <p class="subpage-desc">
+            Kerjakan kuis menarik di setiap level untuk mengasah pengetahuanmu tentang Bahasa Jawa, Wayang, Cerita Rakyat, dan Aksara Jawa. Semakin tinggi levelmu, semakin luas wawasan yang kamu dapatkan!
+          </p>
+        </div>
 
-      <div class="subpage-art-box">
-        <img src="assets/icons/avatar-wayang.svg" alt="Wayang Figure" class="subpage-art-img" style="max-height: 150px;">
+        <div class="subpage-art-box">
+          <img src="assets/images/model.png" alt="Model Evaluasi SIKIPLI (Hasil karya dari Gemini 3.6 Flash)" title="Model Evaluasi SIKIPLI - Hasil karya dari Gemini 3.6 Flash" class="subpage-art-img" style="max-height: 220px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Evaluation Main Content Section -->
   <section class="page-section" style="padding-top: 28px;">
     <div class="container">
-      
-      <!-- User Profile Card -->
+
       <div class="eval-profile-header-card" style="padding: 20px 28px; margin-bottom: 36px;">
-        <div class="eval-avatar-round" style="width: 80px; height: 80px;">
-          <img src="assets/icons/avatar-wayang.svg" alt="Avatar Budaya" class="eval-avatar-img" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <div class="eval-avatar-round" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--gold-soft-bg);">
+          <img src="assets/images/model.png" alt="Avatar Pengguna (Hasil karya dari Gemini 3.6 Flash)" title="Avatar Pengguna - Hasil karya dari Gemini 3.6 Flash" class="eval-avatar-img" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;">
         </div>
 
         <div>
-          <h2 class="eval-user-heading" style="font-size: 1.3rem;">Tamu Budaya</h2>
-          <div class="eval-role-tag">
-            <span>⭐</span>
-            <span>Pelajar Budaya Jawa</span>
-          </div>
-          <div class="eval-level-bar-row">
-            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-dark);">Level</span>
-            <img src="assets/icons/level-shield-1.svg" alt="Shield 1" class="level-shield-icon">
-            <span style="font-size: 0.85rem; font-weight: 700; color: var(--gold-dark);" id="evalLevelLabel">1 - Pemula</span>
-          </div>
+          <h2 class="eval-user-heading" style="font-size: 1.3rem; margin-bottom: 6px;">Tamu Budaya</h2>
+          <div class="eval-role-tag" style="margin-bottom: 0;">Pelajar</div>
         </div>
 
         <div class="eval-right-stats-wrap">
-          <div style="display: flex; gap: 12px;">
-            <div class="eval-stat-round-box" style="padding: 6px 16px; min-width: 85px;">
-              <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Poin</div>
-              <div style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--text-dark);" id="evalUserPoin">120</div>
+          <div class="eval-stat-round-box eval-point-card">
+            <div class="eval-point-icon-badge">
+              ⭐
             </div>
-            <div class="eval-stat-round-box" style="padding: 6px 16px; min-width: 85px;">
-              <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Peringkat</div>
-              <div style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--text-dark);">#120</div>
+            <div style="text-align: left;">
+              <div class="eval-point-label">Poin</div>
+              <div class="eval-point-number" id="evalUserPoin">0</div>
             </div>
-          </div>
-          <div class="eval-quote-box" style="margin-top: 4px;">
-            "Belajar hari ini, lestarikan selamanya."
           </div>
         </div>
       </div>
 
-      <!-- Section: Pilih Level Kuis -->
       <div class="section-header">
         <div class="section-tag-flourish">
           <img src="assets/icons/divider.svg" alt="Flourish" class="flourish-divider">
         </div>
         <h2 class="section-title">Pilih Level Kuis</h2>
-        <p class="section-description">Tingkatkan levelmu dan dapatkan hadiah menarik!</p>
       </div>
 
-      <!-- 4 Level Cards -->
       <div class="levels-4-grid">
-        <!-- Level 1 -->
+
         <div class="level-tall-card" style="border-color: var(--gold-primary);">
           <span class="level-tag-top open">TERBUKA</span>
           <h3 class="level-num-title">Level 1</h3>
           <div class="level-subtitle">Tingkat Dasar (Kelas 1)</div>
           <div class="level-art-box">
-            <img src="assets/icons/book-level.svg" alt="Level 1" style="width: 75px; height: 75px;">
+            <img src="assets/icons/book-level.svg" alt="Badge Level 1 (Hasil karya dari Gemini 3.8 Flash)" title="Badge Level 1 - Hasil karya dari Gemini 3.8 Flash" style="width: 75px; height: 75px;">
           </div>
-          <p class="level-req-text">
-            Pemahaman tembung, basa sedina-dina, sesorah prasaja, lan wayang.
-          </p>
+          <p class="level-req-text" style="display: none;"></p>
           <a href="kuis.html?level=1" class="btn btn-pill-dark" style="width: 100%; font-size: 0.8rem; padding: 7px 12px; margin-bottom: 10px;">
             <span>Mulai Kuis</span>
             <span>▶</span>
           </a>
-          <div class="level-reward-text">Hadiah ⭐ 50 Poin</div>
+          <div class="level-reward-text">Hadiah ⭐ Hingga 100 Poin</div>
         </div>
 
-        <!-- Level 2 -->
         <div class="level-tall-card">
           <span class="level-tag-top locked">🔒 TERKUNCI</span>
           <h3 class="level-num-title">Level 2</h3>
           <div class="level-subtitle">Tingkat Menengah (Kelas 4)</div>
           <div class="level-art-box">
-            <img src="assets/icons/padlock.svg" alt="Terkunci" style="width: 60px; height: 60px; opacity: 0.75;">
+            <img src="assets/icons/padlock.svg" alt="Ikon Level Terkunci (Hasil karya dari Gemini 3.8 Flash)" title="Ikon Level Terkunci - Hasil karya dari Gemini 3.8 Flash" style="width: 60px; height: 60px; opacity: 0.75;">
           </div>
           <p class="level-req-text">
-            Crita rakyat Timun Mas, jinis dongeng, lan paugeran tembang Gambuh.
+            Cerita rakyat Timun Mas, jenis dongeng, dan aturan tembang Gambuh.
           </p>
           <div style="width: 40px; height: 1px; background: var(--card-border); margin: 6px auto 10px;"></div>
-          <div class="level-reward-text" style="color: var(--text-muted);">Hadiah 100 Poin</div>
+          <div class="level-reward-text" style="color: var(--text-muted);">Hadiah Hingga 100 Poin</div>
         </div>
 
-        <!-- Level 3 -->
         <div class="level-tall-card">
           <span class="level-tag-top locked">🔒 TERKUNCI</span>
           <h3 class="level-num-title">Level 3</h3>
           <div class="level-subtitle">Tingkat Lanjutan (Kelas 5)</div>
           <div class="level-art-box">
-            <img src="assets/icons/padlock.svg" alt="Terkunci" style="width: 60px; height: 60px; opacity: 0.75;">
+            <img src="assets/icons/padlock.svg" alt="Ikon Level Terkunci (Hasil karya dari Gemini 3.8 Flash)" title="Ikon Level Terkunci - Hasil karya dari Gemini 3.8 Flash" style="width: 60px; height: 60px; opacity: 0.75;">
           </div>
           <p class="level-req-text">
-            Teks sesorah, basa krama, piranti pewayangan, lan Pandhawa lima.
+            Teks pidato, bahasa krama, perlengkapan wayang, dan Pandhawa lima.
           </p>
           <div style="width: 40px; height: 1px; background: var(--card-border); margin: 6px auto 10px;"></div>
-          <div class="level-reward-text" style="color: var(--text-muted);">Hadiah 150 Poin</div>
+          <div class="level-reward-text" style="color: var(--text-muted);">Hadiah Hingga 100 Poin</div>
         </div>
 
-        <!-- Level 4 -->
         <div class="level-tall-card">
           <span class="level-tag-top locked">🔒 TERKUNCI</span>
           <h3 class="level-num-title">Level 4</h3>
           <div class="level-subtitle">Tingkat Mahir (Kelas 6)</div>
           <div class="level-art-box">
-            <img src="assets/icons/padlock.svg" alt="Terkunci" style="width: 60px; height: 60px; opacity: 0.75;">
+            <img src="assets/icons/padlock.svg" alt="Ikon Level Terkunci (Hasil karya dari Gemini 3.8 Flash)" title="Ikon Level Terkunci - Hasil karya dari Gemini 3.8 Flash" style="width: 60px; height: 60px; opacity: 0.75;">
           </div>
           <p class="level-req-text">
-            Geguritan modern, analisis sesorah resmi, makna konotatif, lan basa alus.
+            Geguritan modern, analisis pidato resmi, makna konotatif, dan bahasa krama alus.
           </p>
           <div style="width: 40px; height: 1px; background: var(--card-border); margin: 6px auto 10px;"></div>
-          <div class="level-reward-text" style="color: var(--text-muted);">Hadiah 200 Poin</div>
+          <div class="level-reward-text" style="color: var(--text-muted);">Hadiah Hingga 100 Poin</div>
         </div>
       </div>
 
-      <!-- Bottom Layout: Pencapaian (Left) & Papan Peringkat (Right) -->
-      <div style="display: grid; grid-template-columns: 1fr 1.25fr; gap: 24px;">
-        <!-- Pencapaian -->
-        <div style="background: var(--card-bg); border: 1.5px solid var(--card-border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px;">
-            <span style="font-size: 1.2rem;">🏆</span>
-            <h3 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--text-heading);">Pencapaian</h3>
-          </div>
-
-          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; text-align: center;">
-            <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 14px 8px;">
-              <img src="assets/icons/badge-pemula.svg" alt="Pemula Hebat" style="width: 52px; height: 60px; margin: 0 auto 6px;">
-              <div style="font-family: var(--font-serif); font-size: 0.82rem; font-weight: 700; color: var(--text-heading);">Pemula Hebat</div>
-              <div style="font-size: 0.68rem; color: var(--text-muted);">Level 1 (Kelas 1)</div>
-            </div>
-
-            <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 14px 8px;">
-              <img src="assets/icons/badge-kata.svg" alt="Pangripta Cerita" style="width: 52px; height: 60px; margin: 0 auto 6px;">
-              <div style="font-family: var(--font-serif); font-size: 0.82rem; font-weight: 700; color: #88786C;">Pangripta Cerita</div>
-              <div style="font-size: 0.68rem; color: var(--text-muted);">Level 2 (Kelas 4)</div>
-            </div>
-
-            <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 14px 8px;">
-              <img src="assets/icons/badge-wayang.svg" alt="Wayang Expert" style="width: 52px; height: 60px; margin: 0 auto 6px;">
-              <div style="font-family: var(--font-serif); font-size: 0.82rem; font-weight: 700; color: #88786C;">Wayang Expert</div>
-              <div style="font-size: 0.68rem; color: var(--text-muted);">Level 3 (Kelas 5)</div>
-            </div>
-
-            <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 14px 8px;">
-              <img src="assets/icons/gunungan.svg" alt="Master Sastra" style="width: 46px; height: 60px; margin: 0 auto 6px; opacity: 0.85;">
-              <div style="font-family: var(--font-serif); font-size: 0.82rem; font-weight: 700; color: #88786C;">Master Sastra</div>
-              <div style="font-size: 0.68rem; color: var(--text-muted);">Level 4 (Kelas 6)</div>
-            </div>
-          </div>
+      <div style="background: var(--card-bg); border: 1.5px solid var(--card-border); border-radius: var(--radius-lg); padding: 26px 28px; box-shadow: var(--shadow-sm);">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 22px;">
+          <span style="font-size: 1.3rem;">🏆</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-heading);">Pencapaian</h3>
         </div>
 
-        <!-- Papan Peringkat -->
-        <div style="background: var(--card-bg); border: 1.5px solid var(--card-border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-size: 1.2rem;">👑</span>
-              <h3 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--text-heading);">Papan Peringkat</h3>
-            </div>
-            <button class="btn btn-pill-cream" style="font-size: 0.75rem; padding: 4px 14px;" onclick="window.showToast('Menampilkan seluruh papan peringkat...')">
-              Lihat Semua
-            </button>
+        <div class="pencapaian-badges-grid">
+          <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 20px 12px;">
+            <img src="assets/icons/badge-pemula.svg" alt="Badge Pencapaian Dasar (Hasil karya dari Gemini 3.8 Flash)" title="Badge Pencapaian Dasar - Hasil karya dari Gemini 3.8 Flash" style="width: 54px; height: 62px; margin: 0 auto 10px;">
+            <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 700; color: var(--text-heading);">Dasar</div>
           </div>
 
-          <table style="width: 100%; border-collapse: separate; border-spacing: 0 4px; font-size: 0.86rem;">
-            <tbody>
-              <tr style="border-bottom: 1px solid #EFE4D6; height: 38px;">
-                <td style="width: 42px; font-weight: 700; color: #BD6827; padding: 6px 12px;">1</td>
-                <td style="padding: 6px 12px;">👑 <strong>Raden Anindya</strong></td>
-                <td style="padding: 6px 12px; color: var(--text-muted);">Level 4</td>
-                <td style="padding: 6px 12px; text-align: right; font-weight: 700; color: var(--text-dark);">2500 Poin</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #EFE4D6; height: 38px;">
-                <td style="width: 42px; font-weight: 700; color: #88786C; padding: 6px 12px;">2</td>
-                <td style="padding: 6px 12px;">🥈 <strong>Dewi Lestari</strong></td>
-                <td style="padding: 6px 12px; color: var(--text-muted);">Level 4</td>
-                <td style="padding: 6px 12px; text-align: right; font-weight: 700; color: var(--text-dark);">2400 Poin</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #EFE4D6; height: 38px;">
-                <td style="width: 42px; font-weight: 700; color: #88786C; padding: 6px 12px;">3</td>
-                <td style="padding: 6px 12px;">🥉 <strong>Arjuna Wijaya</strong></td>
-                <td style="padding: 6px 12px; color: var(--text-muted);">Level 4</td>
-                <td style="padding: 6px 12px; text-align: right; font-weight: 700; color: var(--text-dark);">2300 Poin</td>
-              </tr>
-              <!-- User (Highlighted Row) -->
-              <tr style="background: #E8B966; height: 42px; font-weight: 700; color: #2C1A10;">
-                <td style="width: 42px; padding: 6px 12px; font-weight: 800; border-radius: 6px 0 0 6px;">120</td>
-                <td id="evalLeaderboardUserName" style="padding: 6px 12px;">Tamu Budaya (Kamu)</td>
-                <td style="padding: 6px 12px;">Level 1</td>
-                <td style="padding: 6px 12px; text-align: right; border-radius: 0 6px 6px 0;">120 Poin</td>
-              </tr>
-            </tbody>
-          </table>
+          <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 20px 12px;">
+            <img src="assets/icons/badge-pemula.svg" alt="Badge Pencapaian Menengah (Hasil karya dari Gemini 3.8 Flash)" title="Badge Pencapaian Menengah - Hasil karya dari Gemini 3.8 Flash" style="width: 54px; height: 62px; margin: 0 auto 10px;">
+            <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 700; color: var(--text-heading);">Menengah</div>
+          </div>
+
+          <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 20px 12px;">
+            <img src="assets/icons/badge-pemula.svg" alt="Badge Pencapaian Menengah Atas (Hasil karya dari Gemini 3.8 Flash)" title="Badge Pencapaian Menengah Atas - Hasil karya dari Gemini 3.8 Flash" style="width: 54px; height: 62px; margin: 0 auto 10px;">
+            <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 700; color: var(--text-heading);">Menengah Atas</div>
+          </div>
+
+          <div style="background: var(--cream-card); border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 20px 12px;">
+            <img src="assets/icons/badge-pemula.svg" alt="Badge Pencapaian Handal (Hasil karya dari Gemini 3.8 Flash)" title="Badge Pencapaian Handal - Hasil karya dari Gemini 3.8 Flash" style="width: 54px; height: 62px; margin: 0 auto 10px;">
+            <div style="font-family: var(--font-serif); font-size: 0.95rem; font-weight: 700; color: var(--text-heading);">Handal</div>
+          </div>
         </div>
       </div>
 
@@ -287,69 +213,28 @@
   <footer class="site-footer footer-dark">
   <div class="container footer-main">
     <div class="footer-grid">
+
       <div class="footer-col footer-brand-col">
         <div class="brand-logo">
-          <img src="assets/icons/gunungan.svg" alt="Gunungan" class="brand-icon" style="width: 28px; height: 38px;">
+          <img src="assets/icons/logo.png" alt="Logo SIKIPLI (Karya Orisinal Pengembang)" title="Logo SIKIPLI - Karya Orisinal Pengembang" class="brand-icon" style="height: 34px; width: auto;">
           <div class="brand-text-group">
-            <span class="brand-title" style="font-size: 1.25rem; color: var(--gold-light);">JAVANESIA</span>
-            <span class="brand-tagline" style="font-size: 0.65rem;">Kenali. Pahami. Lestarikan.</span>
+            <span class="brand-title" style="font-size: 1.25rem; color: var(--gold-light);">SIKIPLI</span>
+            <span class="brand-tagline" style="font-size: 0.65rem;">Sahabat Interaktif Kanggo Piwulangan lan Pitedah</span>
           </div>
         </div>
-        <p class="footer-brand-desc" style="font-size: 0.82rem; margin-top: 6px;">
-          Belajar budaya Jawa,<br>mengenal warisan,<br>melestarikan makna.
+        <p class="footer-brand-desc" style="font-size: 0.84rem; margin-top: 10px; line-height: 1.6;">
+          Platform media pembelajaran digital interaktif untuk mengenal, memahami, dan melestarikan kekayaan seni, bahasa, aksara, dan sastra budaya Jawa.
         </p>
-        <div class="footer-socials" style="margin-top: 8px;">
-          <a href="#" class="social-icon-btn" aria-label="Instagram">📷</a>
-          <a href="#" class="social-icon-btn" aria-label="YouTube">▶️</a>
-          <a href="#" class="social-icon-btn" aria-label="Email">✉️</a>
-        </div>
       </div>
 
       <div class="footer-col">
-        <h4 class="footer-col-title">Navigasi</h4>
+        <h4 class="footer-col-title">Daftar Pustaka</h4>
         <div class="footer-links-list">
-          <a href="index.html">Beranda</a>
-          <a href="bahasa-jawa.html">
-            <span>Materi</span>
-            <span class="footer-dropdown-arrow">▾</span>
-          </a>
-          <a href="evaluasi.html">Evaluasi</a>
-          <a href="tentang-kami.html">Tentang Kami</a>
+          <a href="#">Katalog Dias Oktri Raka Setiadi</a>
+          <a href="#">Gramore Studio Series</a>
+          <a href="#">Scribd</a>
         </div>
       </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Sumber &amp; Referensi</h4>
-        <div class="footer-links-list">
-          <a href="#">Daftar Sumber</a>
-          <a href="#">Buku &amp; Artikel</a>
-          <a href="#">Perpustakaan Digital</a>
-          <a href="#">Balai Bahasa</a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Kontak</h4>
-        <div class="footer-contact-row">
-          <span class="footer-contact-icon">✉</span>
-          <span>hello@javanesia.id</span>
-        </div>
-        <div class="footer-contact-row">
-          <span class="footer-contact-icon">📞</span>
-          <span>+62 812-3456-7890</span>
-        </div>
-        <div class="footer-contact-row">
-          <span class="footer-contact-icon">📍</span>
-          <span>Yogyakarta, Indonesia</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom-bar-wrapper">
-    <img src="assets/icons/batik-center-crest.svg" alt="Crest" class="footer-center-crest">
-    <div class="footer-bottom-bar">
-      <p>© 2024 Javanesia. All rights reserved.</p>
     </div>
   </div>
 </footer>

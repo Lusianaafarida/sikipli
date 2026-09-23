@@ -6,7 +6,6 @@
   <circle cx="92" cy="14" r="2.5" fill="#C9A227"/>
   <circle cx="10" cy="14" r="2" fill="#C9A227"/>
   <circle cx="150" cy="14" r="2" fill="#C9A227"/>
-  <!-- Curved Accent Petals -->
   <path d="M74,9 Q80,4 86,9" stroke="#C9A227" stroke-width="1.5" fill="none" stroke-linecap="round"/>
   <path d="M74,19 Q80,24 86,19" stroke="#C9A227" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 </svg>

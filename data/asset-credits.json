@@ -1,0 +1,222 @@
+{
+  "beranda": [
+    {
+      "file": "assets/icons/logo.png",
+      "nama_aset": "Logo SIKIPLI",
+      "deskripsi": "Identitas visual dan logo utama SIKIPLI",
+      "kreator": "Karya Orisinal Pengembang",
+      "metode": "Dibuat dan digambar sendiri secara manual",
+      "lisensi": "Hak Cipta Terlindungi"
+    },
+    {
+      "file": "assets/images/model.png",
+      "nama_aset": "Karakter Maskot SIKIPLI",
+      "deskripsi": "Ilustrasi maskot edukatif penyambut pengunjung di halaman beranda",
+      "kreator": "Google Gemini 3.6 Flash",
+      "metode": "AI Image Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    },
+    {
+      "file": "assets/video/tentang-javanesia.mp4",
+      "nama_aset": "Video Profil SIKIPLI",
+      "deskripsi": "Video multimedia profil dan pengenalan budaya Jawa interaktif",
+      "kreator": "Hasil karya yang dibuat oleh Google AI",
+      "metode": "AI Video Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    },
+    {
+      "file": "assets/icons/icon-materi",
+      "daftar_file": [
+        "assets/icons/icon-bahasa.png",
+        "assets/icons/icon-wayang.png",
+        "assets/icons/icon-cerita.png",
+        "assets/icons/icon-aksara.png",
+        "assets/icons/icon-evaluasi.png"
+      ],
+      "nama_aset": "Ikon Fitur Materi",
+      "deskripsi": "Ikon navigasi materi Bahasa Jawa, Wayang, Cerita Rakyat, Aksara Jawa, dan Evaluasi",
+      "kreator": "OpenAI GPT",
+      "metode": "AI Image Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    },
+    {
+      "file": "assets/icons/visi-misi",
+      "daftar_file": [
+        "assets/icons/mengenal.png",
+        "assets/icons/belajar.png",
+        "assets/icons/lestari.png"
+      ],
+      "nama_aset": "Ikon Visi & Misi (Mengenal, Belajar, Melestarikan)",
+      "deskripsi": "Ikon representasi pilar tujuan kehadiran SIKIPLI",
+      "kreator": "Google Gemini 3.6 Flash",
+      "metode": "AI Image Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    }
+  ],
+  "materi_bahasa": [
+    {
+      "file": "assets/images/model-bahasa.png",
+      "nama_aset": "Model Karakter Bahasa Jawa",
+      "deskripsi": "Ilustrasi model karakter pada banner halaman materi Bahasa Jawa",
+      "kreator": "Gemini 3.6 Flash",
+      "metode": "AI Image Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    }
+  ],
+  "materi_cerita_rakyat": [
+    {
+      "file": "assets/images/model-cerita.png",
+      "nama_aset": "Model Karakter Cerita Rakyat (Header)",
+      "deskripsi": "Ilustrasi model karakter pada banner header materi Cerita Rakyat",
+      "kreator": "Gemini AI",
+      "metode": "AI Image Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    },
+    {
+      "kategori": "Preview Cerita Rakyat",
+      "daftar_file": [
+        "assets/images/asal-usul-kudus.png",
+        "assets/images/roro-kidul.png",
+        "assets/images/keong-mas.png",
+        "assets/images/watu-ulo.png",
+        "assets/images/kidang.png"
+      ],
+      "nama_aset": "Preview Cerita Rakyat",
+      "deskripsi": "Gambar preview ilustrasi cerita rakyat (Asal Usul Kota Kudus, Legenda Nyi Roro Kidul, Keong Mas, Legenda Watu Ulo, Kawah si Kidang)",
+      "kreator": "ChatGPT",
+      "metode": "AI Image Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    },
+    {
+      "kategori": "Showcase Jejak Cerita di Dunia Nyata",
+      "file": "assets/images/kudus.jpg",
+      "nama_aset": "Foto Jejak Cerita - Kudus",
+      "deskripsi": "Foto Masjid Menara Kudus untuk showcase jejak cerita di dunia nyata",
+      "sumber": "https://tourism.kuduskab.go.id/id/masjid-menara-kudus/",
+      "kreator": "Pariwisata Kudus (tourism.kuduskab.go.id)"
+    },
+    {
+      "kategori": "Showcase Jejak Cerita di Dunia Nyata",
+      "file": "assets/images/pantai-selatan.jpg",
+      "nama_aset": "Foto Jejak Cerita - Pantai Selatan",
+      "deskripsi": "Foto wisata Pantai Selatan Jawa untuk showcase jejak cerita di dunia nyata",
+      "sumber": "https://www.traveloka.com/id-id/explore/destination/wisata-pantai-selatan-jawa-acc/564990",
+      "kreator": "Traveloka Explore"
+    },
+    {
+      "kategori": "Showcase Jejak Cerita di Dunia Nyata",
+      "file": "assets/images/keong-mas.jpg",
+      "nama_aset": "Foto Jejak Cerita - Keong Mas",
+      "deskripsi": "Foto Teater Keong Mas untuk showcase jejak cerita di dunia nyata",
+      "sumber": "https://id.wikipedia.org/wiki/Keong_Mas",
+      "kreator": "Wikipedia"
+    },
+    {
+      "kategori": "Showcase Jejak Cerita di Dunia Nyata",
+      "file": "assets/images/watu-ulo.jpg",
+      "nama_aset": "Foto Jejak Cerita - Pantai Watu Ulo",
+      "deskripsi": "Foto Pantai Watu Ulo Jember untuk showcase jejak cerita di dunia nyata",
+      "sumber": "https://www.traveloka.com/id-id/explore/destination/lokasi-cara-menuju-dan-harga-tiket-masuk-pantai-watu-ulo-jember-trp/491482",
+      "kreator": "Traveloka Explore"
+    },
+    {
+      "kategori": "Showcase Jejak Cerita di Dunia Nyata",
+      "file": "assets/images/kawah-kidang.jpg",
+      "nama_aset": "Foto Jejak Cerita - Kawah Kidang",
+      "deskripsi": "Foto Kawah Sikidang Banjarnegara untuk showcase jejak cerita di dunia nyata",
+      "sumber": "https://atourin.com/destination/banjarnegara/kawah-sikidang",
+      "kreator": "Atourin"
+    }
+  ],
+  "materi_aksara_jawa": [
+    {
+      "file": "assets/images/model-aksara.png",
+      "nama_aset": "Model Karakter Aksara Jawa",
+      "deskripsi": "Ilustrasi model karakter pada banner halaman materi Aksara Jawa",
+      "kreator": "Gemini 3.6 Flash",
+      "metode": "AI Image Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    }
+  ],
+  "materi_wayang_kulit": [
+    {
+      "file": "assets/images/model-wayang.png",
+      "nama_aset": "Model Karakter Wayang Kulit (Header)",
+      "deskripsi": "Ilustrasi model karakter pada banner halaman materi Wayang Kulit",
+      "kreator": "Gemini 3.6 Flash",
+      "metode": "AI Image Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    },
+    {
+      "kategori": "Katalog Tokoh Wayang",
+      "folder": "assets/wayang/",
+      "jumlah_tokoh": 341,
+      "nama_aset": "Koleksi Ilustrasi Tokoh Wayang Kulit (341 Tokoh)",
+      "deskripsi": "Seluruh gambar tokoh wayang kulit dalam master frame katalog 4x4",
+      "sumber": "Katalog milik Dias Oktri Raka Setiadi",
+      "kreator": "Dias Oktri Raka Setiadi",
+      "lisensi": "Koleksi Katalog Budaya"
+    },
+    {
+      "kategori": "Showcase Pertunjukan Wayang",
+      "file": "assets/images/pentas-wayang1.jpg",
+      "posisi": "Paling Kiri",
+      "nama_aset": "Foto Pementasan Wayang Kulit 1",
+      "deskripsi": "Dokumentasi foto pementasan wayang kulit",
+      "sumber": "https://www.kompas.com/stori/read/2021/09/22/130000679/sejarah-wayang-kulit",
+      "kreator": "Kompas.com (Stori)"
+    },
+    {
+      "kategori": "Showcase Pertunjukan Wayang",
+      "file": "assets/images/pentas-wayang2.jpg",
+      "posisi": "Tengah",
+      "nama_aset": "Foto Pementasan Wayang Kulit 2",
+      "deskripsi": "Dokumentasi foto pertunjukan wayang kulit dalang berbahasa Polandia",
+      "sumber": "https://jatimnet.com/dalang-ini-bikin-pertunjukan-wayang-kulit-dengan-bahasa-polandia",
+      "kreator": "Jatimnet.com"
+    },
+    {
+      "kategori": "Showcase Pertunjukan Wayang",
+      "file": "assets/images/pentas-wayang3.jpg",
+      "posisi": "Paling Kanan",
+      "nama_aset": "Foto Pementasan Wayang Kulit 3",
+      "deskripsi": "Dokumentasi foto pagelaran wayang kulit di Desa Tawangrejo",
+      "sumber": "https://www.blorakab.go.id/index.php/public/berita/detail/597/sosialisasi-hasil-hasil-pembangunan-melalui-pagelaran-wayang-kulit-di-desa-tawangrejo",
+      "kreator": "Pemerintah Kabupaten Blora (blorakab.go.id)"
+    }
+  ],
+  "evaluasi": [
+    {
+      "file": "assets/images/model.png",
+      "nama_aset": "Model Karakter & Avatar Evaluasi",
+      "deskripsi": "Ilustrasi model karakter pada banner halaman evaluasi/kuis serta avatar profil pengguna",
+      "kreator": "Gemini 3.6 Flash",
+      "metode": "AI Image Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    },
+    {
+      "kategori": "Badge Level Kuis",
+      "daftar_file": [
+        "assets/icons/book-level.svg",
+        "assets/icons/badge-kata.svg",
+        "assets/icons/badge-wayang.svg",
+        "assets/icons/gunungan.svg",
+        "assets/icons/padlock.svg"
+      ],
+      "nama_aset": "Badge Level Kuis (Level 1–4 & Status Terkunci)",
+      "deskripsi": "Ikon visual penanda level kuis evaluasi 1 sampai 4 beserta indikator status gembok terkunci",
+      "kreator": "Gemini 3.8 Flash",
+      "metode": "AI Image / Vector Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    },
+    {
+      "kategori": "Badge Pencapaian",
+      "file": "assets/icons/badge-pemula.svg",
+      "nama_aset": "Badge Pencapaian Evaluasi",
+      "deskripsi": "Badge penghargaan pencapaian tingkat Dasar, Menengah, Menengah Atas, dan Handal",
+      "kreator": "Gemini 3.8 Flash",
+      "metode": "AI Image / Vector Generation",
+      "lisensi": "Penggunaan Edukasi SIKIPLI"
+    }
+  ]
+}
